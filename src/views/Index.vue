@@ -2,19 +2,22 @@
   <div>
     <Header></Header>
     <div class="hero-banner">
-      <h1>Aidan Byrne</h1>
-      <h3>Full stack web developer</h3>
+      <Signature id="signature" />
+      <!-- <h1>Aidan Byrne</h1>
+      <h3>Full stack web developer</h3> -->
     </div>
   </div>
 </template>
 
 <script>
 import Header from "@/components/Header.vue";
+import Signature from "@/assets/signature2.svg";
 
 export default {
   name: "Index",
   components: {
     Header,
+    Signature,
   },
 };
 </script>
@@ -28,5 +31,8 @@ export default {
   justify-content: center;
   align-items: center;
   color: #b32222;
+  .sig {
+    stroke-dasharray: 100;
+  }
 }
 </style>

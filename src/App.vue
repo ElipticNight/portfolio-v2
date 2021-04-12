@@ -18,4 +18,10 @@ body {
   pad: 0;
   background-color: #1a1b29;
 }
+
+@font-face {
+  font-family: "Champignon";
+  src: local("Champignon"),
+    url(./assets/fonts/Champignon.otf) format("truetype");
+}
 </style>
