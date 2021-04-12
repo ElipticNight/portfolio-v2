@@ -22,27 +22,27 @@ export default {};
 <style lang="scss" scoped>
 .container {
   width: 100%;
-  height: 80px;
+  height: 65px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background-color: #232433;
+  background-color: #212130;
   .title {
     padding-left: 75px;
-    font-size: 22px;
-    font-weight: bold;
+    font-size: 20px;
+    font-weight: normal;
   }
   .navbar {
     margin-left: auto;
     padding-right: 30px;
     .link {
       padding: 0px 20px;
-      font-size: 18px;
+      font-size: 16px;
     }
   }
 }
 .link {
-  color: #fc3636;
+  color: #b32222;
   text-decoration: none;
 }
 </style>

@@ -16,6 +16,6 @@ html,
 body {
   margin: 0;
   pad: 0;
-  background-color: #1c1d2b;
+  background-color: #1a1b29;
 }
 </style>
