@@ -7,10 +7,11 @@
       </router-link>
     </div>
     <div class="navbar">
-      <router-link :to="{ name: 'Index' }" class="link"> One </router-link>
-      <router-link :to="{ name: 'Index' }" class="link"> Two </router-link>
-      <router-link :to="{ name: 'Index' }" class="link"> Three </router-link>
-      <router-link :to="{ name: 'Index' }" class="link"> Four </router-link>
+      <router-link :to="{ name: 'Index' }" class="link"> Home </router-link>
+      <router-link :to="{ name: 'Index' }" class="link"> Projects </router-link>
+      <router-link :to="{ name: 'Index' }" class="link"> Blog </router-link>
+      <router-link :to="{ name: 'Index' }" class="link"> About Me </router-link>
+      <router-link :to="{ name: 'Index' }" class="link"> Contact </router-link>
     </div>
     <div class="hamburger"></div>
   </div>
@@ -38,7 +39,6 @@ export default {
   .title {
     padding-top: 5px;
     padding-left: 75px;
-    font-family: serif;
     font-size: 20px;
     font-weight: normal;
     #header-signature {
@@ -55,7 +55,6 @@ export default {
     padding-right: 30px;
     .link {
       padding: 20px 25px;
-      font-family: serif;
       font-size: 18px;
       &:hover {
         text-decoration: underline;

@@ -1,9 +1,10 @@
 <template>
   <div>
-    <Header></Header>
+    <Header />
     <div class="hero-banner">
       <Signature id="signature" />
     </div>
+    <Projects />
   </div>
 </template>
 
@@ -11,12 +12,14 @@
 import anime from "animejs/lib/anime.es.js";
 import Header from "@/components/Header.vue";
 import Signature from "@/assets/signature.svg";
+import Projects from "@/views/sections/Projects.vue";
 
 export default {
   name: "Index",
   components: {
     Header,
     Signature,
+    Projects,
   },
   data() {
     return {
@@ -99,16 +102,16 @@ export default {
 <style lang="scss" scoped>
 .hero-banner {
   width: 100%;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 65px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #b32222;
+  color: var(--red);
   #signature {
-    width: 100vw;
+    width: 100%;
     .letter {
-      stroke: #b32222;
+      stroke: var(--red);
       stroke-width: 0.1;
       fill: none;
     }
