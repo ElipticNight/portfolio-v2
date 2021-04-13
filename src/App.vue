@@ -29,5 +29,6 @@ body {
 /* Colours */
 :root {
   --red: #b32222;
+  --dgrey: #212130;
 }
 </style>
