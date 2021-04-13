@@ -3,6 +3,7 @@
     <div class="title">
       <router-link :to="{ name: 'Index' }" class="link">
         Aidan Byrne
+        <Signature v-if="false" id="header-signature" />
       </router-link>
     </div>
     <div class="navbar">
@@ -16,7 +17,14 @@
 </template>
 
 <script>
-export default {};
+import Signature from "@/assets/signature.svg";
+
+export default {
+  name: "Header",
+  components: {
+    Signature,
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -28,9 +36,21 @@ export default {};
   justify-content: flex-start;
   background-color: #212130;
   .title {
+    padding-top: 5px;
     padding-left: 75px;
     font-size: 20px;
     font-weight: normal;
+    #header-signature {
+      width: 160px;
+      .letter {
+        // stroke-dasharray: 410;
+        // stroke-dashoffset: 410;
+        stroke: #b32222;
+        stroke-width: 0.1;
+        fill: #b32222;
+        // fill: none;
+      }
+    }
   }
   .navbar {
     margin-left: auto;
