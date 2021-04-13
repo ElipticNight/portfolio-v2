@@ -11,7 +11,7 @@
 
 <script>
 import Header from "@/components/Header.vue";
-import Signature from "@/assets/signature2.svg";
+import Signature from "@/assets/signature.svg";
 
 export default {
   name: "Index",
@@ -31,8 +31,16 @@ export default {
   justify-content: center;
   align-items: center;
   color: #b32222;
-  .sig {
-    stroke-dasharray: 100;
+  #signature {
+    width: 100vw;
+    .letter {
+      // stroke-dasharray: 410;
+      // stroke-dashoffset: 410;
+      stroke: #b32222;
+      stroke-width: 0.1;
+      fill: #b32222;
+      // fill: none;
+    }
   }
 }
 </style>
