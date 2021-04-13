@@ -1,7 +1,7 @@
 <template>
   <div>
     <SectionTemplate>
-      <template v-slot:title> Projects </template>
+      <template v-slot:title> Client Projects </template>
       <template v-slot:content>
         <div class="placeholder">No projects yet</div>
       </template>
