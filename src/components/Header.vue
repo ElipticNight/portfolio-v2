@@ -35,7 +35,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background-color: var(--dgrey);
+  background-color: var(--dblue-grey);
   .title {
     padding-top: 5px;
     padding-left: 75px;

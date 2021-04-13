@@ -3,26 +3,97 @@
     <div class="title">
       <slot name="title"></slot>
     </div>
-    <div class="content">
-      <slot name="content"></slot>
+    <div class="main">
+      <div class="image">
+        <slot name="image"></slot>
+      </div>
+      <div class="description">
+        <slot name="description"></slot>
+      </div>
+    </div>
+    <div class="buttons">
+      <div @click="viewSource()" class="source">View Source</div>
+      <div @click="viewLive()" class="live">View Live</div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "ProjectTemplate",
+  methods: {
+    viewSource() {
+      //
+    },
+    viewLive() {
+      //
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   width: 550px;
-  height: 350px;
+  height: 320px;
   border-radius: 10px;
-  background-color: var(--dgrey);
+  background-color: var(--dblue-grey);
   box-shadow: 0 0 3px 1px var(--red);
   transition: transform 200ms;
   &:hover {
     transform: scale(1.01);
+  }
+  .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    font-size: 22px;
+    color: var(--red);
+  }
+  .main {
+    display: flex;
+    height: 60%;
+    width: 100%;
+    margin-top: 10px;
+    .image {
+      width: 50%;
+      height: 100%;
+      padding: 0px 0px;
+      img {
+        max-width: 90%;
+        max-height: 90%;
+      }
+    }
+    .description {
+      width: 50%;
+      height: 100%;
+      padding: 0px 10px;
+      text-align: left;
+    }
+  }
+  .buttons {
+    height: 20%;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    .source,
+    .live {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 50%;
+      border-top: 0.5px solid var(--red);
+    }
+    .source {
+      border-right: 0.5px solid var(--red);
+    }
   }
 }
 </style>

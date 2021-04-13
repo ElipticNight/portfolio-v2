@@ -26,7 +26,7 @@ export default {
 
 <style lang="scss" scoped>
 .projects-container {
-  min-height: 600px;
+  min-height: 400px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 50px;
