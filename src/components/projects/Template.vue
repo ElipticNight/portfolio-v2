@@ -40,9 +40,10 @@ export default {
   width: 550px;
   height: 320px;
   border-radius: 10px;
-  background-color: var(--dblue-grey);
-  box-shadow: 0 0 3px 1px var(--red);
+  background-color: var(--vdblue-grey);
+  box-shadow: 0 0 5px 2px var(--dred);
   transition: transform 200ms;
+  cursor: pointer;
   &:hover {
     transform: scale(1.01);
   }
@@ -89,10 +90,13 @@ export default {
       align-items: center;
       height: 100%;
       width: 50%;
-      border-top: 0.5px solid var(--red);
+      border-top: 0.5px solid var(--dred);
+      &:hover {
+        background-color: var(--blue-grey);
+      }
     }
     .source {
-      border-right: 0.5px solid var(--red);
+      border-right: 0.5px solid var(--dred);
     }
   }
 }

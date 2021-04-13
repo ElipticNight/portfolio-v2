@@ -8,8 +8,11 @@
 /* Colours */
 :root {
   --red: #b32222;
-  --dblue-grey: #202024;
+  --dred: #662525;
+  --blue: #282841;
+  --blue-grey: #232330;
   --dblue-grey: #212130;
+  --vdblue-grey: #1c1c27;
 }
 
 #app {
