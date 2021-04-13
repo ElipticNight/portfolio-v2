@@ -3,8 +3,6 @@
     <Header></Header>
     <div class="hero-banner">
       <Signature id="signature" />
-      <!-- <h1>Aidan Byrne</h1>
-      <h3>Full stack web developer</h3> -->
     </div>
   </div>
 </template>
@@ -25,43 +23,43 @@ export default {
       letters: {
         one: {
           duration: 1000,
-          relativeOffset: 0,
+          relativeOffset: 300,
         },
         two: {
           duration: 500,
-          relativeOffset: 500,
+          relativeOffset: -500,
         },
         three: {
           duration: 500,
-          relativeOffset: 250,
+          relativeOffset: -250,
         },
         four: {
           duration: 500,
-          relativeOffset: 250,
+          relativeOffset: -250,
         },
         five: {
           duration: 500,
-          relativeOffset: 250,
+          relativeOffset: -250,
         },
         six: {
-          duration: 1000,
-          relativeOffset: 250,
+          duration: 1500,
+          relativeOffset: -250,
         },
         seven: {
           duration: 500,
-          relativeOffset: 250,
+          relativeOffset: -750,
         },
         eight: {
           duration: 500,
-          relativeOffset: 250,
+          relativeOffset: -350,
         },
         nine: {
           duration: 500,
-          relativeOffset: 250,
+          relativeOffset: -250,
         },
         ten: {
           duration: 500,
-          relativeOffset: 250,
+          relativeOffset: -250,
         },
       },
     };
@@ -83,7 +81,7 @@ export default {
     for (let letter in this.letters) {
       let classID = `.${letter}`;
       let duration = this.letters[letter].duration;
-      let relativeOffset = `-=${this.letters[letter].relativeOffset}`;
+      let relativeOffset = `+=${this.letters[letter].relativeOffset}`;
       t1.add(
         {
           targets: classID,

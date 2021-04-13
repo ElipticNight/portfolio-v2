@@ -38,17 +38,15 @@ export default {
   .title {
     padding-top: 5px;
     padding-left: 75px;
+    font-family: serif;
     font-size: 20px;
     font-weight: normal;
     #header-signature {
       width: 160px;
       .letter {
-        // stroke-dasharray: 410;
-        // stroke-dashoffset: 410;
         stroke: #b32222;
         stroke-width: 0.1;
         fill: #b32222;
-        // fill: none;
       }
     }
   }
@@ -56,8 +54,12 @@ export default {
     margin-left: auto;
     padding-right: 30px;
     .link {
-      padding: 0px 20px;
-      font-size: 16px;
+      padding: 20px 25px;
+      font-family: serif;
+      font-size: 18px;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
