@@ -71,8 +71,11 @@ export default {
       strokeDashoffset: [anime.setDashoffset, 0],
       easing: "easeInOutSine",
       complete: () => {
-        anime.set(".letter", {
-          class: "letter filled",
+        anime({
+          targets: ".letter",
+          fill: "#b32222",
+          easing: "easeInOutSine",
+          duration: 1000,
         });
       },
     });
@@ -110,9 +113,6 @@ export default {
       stroke: #b32222;
       stroke-width: 0.1;
       fill: none;
-      &.filled {
-        fill: #b32222;
-      }
     }
   }
 }
