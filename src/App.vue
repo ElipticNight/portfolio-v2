@@ -26,6 +26,10 @@ div {
   box-sizing: border-box !important;
 }
 
+a {
+  text-decoration: none;
+}
+
 html,
 body {
   scroll-behavior: smooth;

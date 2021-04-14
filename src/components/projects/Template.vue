@@ -12,8 +12,8 @@
       </div>
     </div>
     <div class="buttons">
-      <div @click="viewSource()" class="source">View Source</div>
-      <div @click="viewLive()" class="live">View Live</div>
+      <a :href="sourceLink" target="_blank" class="source"> View Source </a>
+      <a :href="liveLink" target="_blank" class="live"> View Live </a>
     </div>
   </div>
 </template>
@@ -21,12 +21,14 @@
 <script>
 export default {
   name: "ProjectTemplate",
-  methods: {
-    viewSource() {
-      //
+  props: {
+    sourceLink: {
+      type: String,
+      default: "",
     },
-    viewLive() {
-      //
+    liveLink: {
+      type: String,
+      default: "",
     },
   },
 };
@@ -46,6 +48,7 @@ export default {
   cursor: pointer;
   &:hover {
     transform: scale(1.01);
+    box-shadow: 0 0 5px 4px var(--dred);
   }
   .title {
     display: flex;
@@ -90,6 +93,7 @@ export default {
       align-items: center;
       height: 100%;
       width: 50%;
+      color: var(--red);
       border-top: 0.5px solid var(--dred);
       &:hover {
         background-color: var(--blue-grey);

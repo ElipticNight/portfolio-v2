@@ -1,5 +1,8 @@
 <template>
-  <ProjectTemplate>
+  <ProjectTemplate
+    sourceLink="https://google.com"
+    liveLink="https://google.com"
+  >
     <template v-slot:title> Leeds Tech Map </template>
     <template v-slot:image>
       <img
