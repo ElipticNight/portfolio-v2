@@ -12,7 +12,7 @@
   --blue: #282841;
   --blue-grey: #232330;
   --dblue-grey: #212130;
-  --vdblue-grey: #1c1c27;
+  --xdblue-grey: #1c1c27;
 }
 
 #app {

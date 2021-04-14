@@ -53,7 +53,7 @@ export default {
   width: 550px;
   height: 320px;
   border-radius: 10px;
-  background-color: var(--vdblue-grey);
+  background-color: var(--xdblue-grey);
   box-shadow: 0 0 5px 2px var(--dred);
   transition: transform 200ms;
   cursor: pointer;
