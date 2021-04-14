@@ -1,6 +1,9 @@
 <template>
   <div @click="close" class="underlay" id="underlay">
     <div class="container">
+      <div class="exit">
+        <i @click="close" id="close" class="fas fa-times"></i>
+      </div>
       <div class="title">
         <slot name="title"></slot>
       </div>
@@ -13,8 +16,22 @@
         </div>
       </div>
       <div class="buttons">
-        <a :href="sourceLink" target="_blank" class="source"> View Source </a>
-        <a :href="liveLink" target="_blank" class="live"> View Live </a>
+        <a
+          :href="sourceLink"
+          target="_blank"
+          class="source"
+          v-bind:class="{ disabled: this.sourceLink === null }"
+        >
+          View Source
+        </a>
+        <a
+          :href="liveLink"
+          target="_blank"
+          class="live"
+          v-bind:class="{ disabled: this.liveLink === null }"
+        >
+          View Live
+        </a>
       </div>
     </div>
   </div>
@@ -22,13 +39,24 @@
 
 <script>
 export default {
+  props: {
+    sourceLink: {
+      type: String,
+      default: "",
+    },
+    liveLink: {
+      type: String,
+      default: "",
+    },
+  },
   mounted() {
-    console.log("orehgier");
+    document.body.style.overflow = "hidden";
   },
   methods: {
     close(e) {
       if (e.target.id === "underlay" || e.target.id === "close") {
         this.$emit("close");
+        document.body.style.overflow = "visible";
       }
     },
   },
@@ -52,11 +80,24 @@ export default {
     border-radius: 10px;
     background-color: var(--xdblue-grey);
     box-shadow: 0 0 5px 2px var(--dred);
+    .exit {
+      height: 5%;
+      display: flex;
+      justify-content: flex-end;
+      padding: 15px 25px;
+      i {
+        font-size: 22px;
+        cursor: pointer;
+        transition: transform 200ms;
+        &:hover {
+          transform: scale(1.25);
+        }
+      }
+    }
     .title {
       display: flex;
       justify-content: center;
-      align-items: center;
-      height: 20%;
+      height: 10%;
       width: 100%;
       border-radius: 10px 10px 0 0;
       font-size: 22px;
@@ -64,12 +105,14 @@ export default {
     }
     .main {
       display: flex;
-      height: 60%;
+      height: 70%;
       width: 100%;
-      margin-top: 10px;
       .image {
         width: 50%;
         height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 0px 0px;
         img {
           max-width: 90%;
@@ -78,14 +121,14 @@ export default {
       }
       .description {
         width: 50%;
-        height: 100%;
+        height: 95%;
         padding: 0px 10px;
         text-align: left;
-        overflow-y: scroll;
+        overflow-y: auto;
       }
     }
     .buttons {
-      height: 20%;
+      height: 15%;
       width: 100%;
       border-radius: 0 0 10px 10px;
       display: flex;
@@ -100,6 +143,12 @@ export default {
         border-top: 0.5px solid var(--dred);
         &:hover {
           background-color: var(--blue-grey);
+        }
+        &.disabled {
+          cursor: not-allowed;
+          &:hover {
+            background-color: transparent;
+          }
         }
       }
       .source {

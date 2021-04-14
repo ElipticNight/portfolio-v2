@@ -13,8 +13,22 @@
         </div>
       </div>
       <div class="buttons">
-        <a :href="sourceLink" target="_blank" class="source"> View Source </a>
-        <a :href="liveLink" target="_blank" class="live"> View Live </a>
+        <a
+          :href="sourceLink"
+          target="_blank"
+          class="source"
+          v-bind:class="{ disabled: this.sourceLink === null }"
+        >
+          View Source
+        </a>
+        <a
+          :href="liveLink"
+          target="_blank"
+          class="live"
+          v-bind:class="{ disabled: this.liveLink === null }"
+        >
+          View Live
+        </a>
       </div>
     </div>
   </div>
@@ -27,11 +41,11 @@ export default {
   props: {
     sourceLink: {
       type: String,
-      default: "",
+      default: null,
     },
     liveLink: {
       type: String,
-      default: "",
+      default: null,
     },
   },
   data() {
@@ -108,6 +122,12 @@ export default {
       border-top: 0.5px solid var(--dred);
       &:hover {
         background-color: var(--blue-grey);
+      }
+      &.disabled {
+        cursor: not-allowed;
+        &:hover {
+          background-color: transparent;
+        }
       }
     }
     .source {
