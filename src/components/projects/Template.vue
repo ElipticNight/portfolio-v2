@@ -1,19 +1,21 @@
 <template>
-  <div class="container">
-    <div class="title">
-      <slot name="title"></slot>
-    </div>
-    <div class="main">
-      <div class="image">
-        <slot name="image"></slot>
+  <div>
+    <div class="container">
+      <div @click="expand()" class="title">
+        <slot name="title"></slot>
       </div>
-      <div class="description">
-        <slot name="description"></slot>
+      <div @click="expand()" class="main">
+        <div class="image">
+          <slot name="image"></slot>
+        </div>
+        <div class="description">
+          <slot name="description"></slot>
+        </div>
       </div>
-    </div>
-    <div class="buttons">
-      <a :href="sourceLink" target="_blank" class="source"> View Source </a>
-      <a :href="liveLink" target="_blank" class="live"> View Live </a>
+      <div class="buttons">
+        <a :href="sourceLink" target="_blank" class="source"> View Source </a>
+        <a :href="liveLink" target="_blank" class="live"> View Live </a>
+      </div>
     </div>
   </div>
 </template>
@@ -21,6 +23,7 @@
 <script>
 export default {
   name: "ProjectTemplate",
+  components: {},
   props: {
     sourceLink: {
       type: String,
@@ -29,6 +32,14 @@ export default {
     liveLink: {
       type: String,
       default: "",
+    },
+  },
+  data() {
+    return {};
+  },
+  methods: {
+    expand() {
+      this.$emit("expand");
     },
   },
 };
