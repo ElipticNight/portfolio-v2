@@ -3,6 +3,7 @@
     <Header />
     <div class="hero-banner">
       <Signature id="signature" />
+      <Subtitle id="subtitle" />
       <a href="#projects"><i class="fas fa-chevron-down"></i></a>
     </div>
     <Projects id="projects" />
@@ -15,7 +16,8 @@
 <script>
 import anime from "animejs/lib/anime.es.js";
 import Header from "@/components/Header.vue";
-import Signature from "@/assets/signature.svg";
+import Signature from "@/assets/svgs/signature.svg";
+import Subtitle from "@/assets/svgs/Subtitle.svg";
 import Projects from "@/views/sections/Projects.vue";
 import ClientProjects from "@/views/sections/ClientProjects.vue";
 import AboutMe from "@/views/sections/AboutMe.vue";
@@ -26,6 +28,7 @@ export default {
   components: {
     Header,
     Signature,
+    Subtitle,
     Projects,
     ClientProjects,
     AboutMe,
@@ -74,6 +77,94 @@ export default {
           duration: 500,
           relativeOffset: -250,
         },
+        eleven: {
+          duration: 500,
+          relativeOffset: 100,
+        },
+        twelve: {
+          duration: 250,
+          relativeOffset: -250,
+        },
+        thirteen: {
+          duration: 250,
+          relativeOffset: -125,
+        },
+        fourteen: {
+          duration: 250,
+          relativeOffset: -125,
+        },
+        fifteen: {
+          duration: 500,
+          relativeOffset: -125,
+        },
+        sixteen: {
+          duration: 250,
+          relativeOffset: -250,
+        },
+        seventeen: {
+          duration: 250,
+          relativeOffset: -125,
+        },
+        eighteen: {
+          duration: 250,
+          relativeOffset: -125,
+        },
+        nineteen: {
+          duration: 250,
+          relativeOffset: -125,
+        },
+        twenty: {
+          duration: 500,
+          relativeOffset: -125,
+        },
+        twentyone: {
+          duration: 250,
+          relativeOffset: -250,
+        },
+        twentytwo: {
+          duration: 250,
+          relativeOffset: -125,
+        },
+        twentythree: {
+          duration: 500,
+          relativeOffset: -125,
+        },
+        twentyfour: {
+          duration: 250,
+          relativeOffset: -250,
+        },
+        twentyfive: {
+          duration: 250,
+          relativeOffset: -125,
+        },
+        twentysix: {
+          duration: 250,
+          relativeOffset: -125,
+        },
+        twentyseven: {
+          duration: 250,
+          relativeOffset: -125,
+        },
+        twentyeight: {
+          duration: 250,
+          relativeOffset: -125,
+        },
+        twentynine: {
+          duration: 250,
+          relativeOffset: -125,
+        },
+        thirty: {
+          duration: 250,
+          relativeOffset: -125,
+        },
+        thirtyone: {
+          duration: 250,
+          relativeOffset: -125,
+        },
+        thirtytwo: {
+          duration: 250,
+          relativeOffset: -125,
+        },
       },
     };
   },
@@ -120,6 +211,16 @@ export default {
   color: var(--red);
   #signature {
     width: 100%;
+    transform: scale(2);
+    .letter {
+      stroke: var(--red);
+      stroke-width: 0.1;
+      fill: none;
+    }
+  }
+  #subtitle {
+    width: 100%;
+    transform: scale(0.5);
     .letter {
       stroke: var(--red);
       stroke-width: 0.1;

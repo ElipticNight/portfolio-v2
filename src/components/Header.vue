@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import Signature from "@/assets/signature.svg";
+import Signature from "@/assets/svgs/signature.svg";
 
 export default {
   name: "Header",
