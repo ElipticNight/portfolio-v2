@@ -16,7 +16,7 @@ import SectionTemplate from "@/views/sections/SectionTemplate.vue";
 import LeedsTechMap from "@/components/projects/LeedsTechMap.vue";
 
 export default {
-  name: "Projects",
+  name: "ClientProjects",
   components: {
     SectionTemplate,
     LeedsTechMap,

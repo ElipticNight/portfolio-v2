@@ -1,9 +1,12 @@
 <template>
   <div>
     <SectionTemplate>
-      <template v-slot:title> Projects </template>
+      <template v-slot:title> Personal Projects </template>
       <template v-slot:content>
-        <div class="placeholder">No projects yet</div>
+        <div class="projects-container">
+          <PirateGame />
+          <TicTacToe />
+        </div>
       </template>
     </SectionTemplate>
   </div>
@@ -11,17 +14,25 @@
 
 <script>
 import SectionTemplate from "@/views/sections/SectionTemplate.vue";
+import PirateGame from "@/components/projects/PirateGame.vue";
+import TicTacToe from "@/components/projects/TicTacToe.vue";
 
 export default {
   name: "Projects",
   components: {
     SectionTemplate,
+    PirateGame,
+    TicTacToe,
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.placeholder {
-  height: 600px;
+.projects-container {
+  min-height: 400px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 50px;
+  row-gap: 50px;
 }
 </style>

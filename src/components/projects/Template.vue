@@ -125,6 +125,7 @@ export default {
       }
       &.disabled {
         cursor: not-allowed;
+        color: var(--dred);
         &:hover {
           background-color: transparent;
         }

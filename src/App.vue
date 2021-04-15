@@ -37,6 +37,7 @@ body {
   padding: 0;
   background-color: #1a1b29;
   color: var(--red);
+  overflow-x: hidden;
 }
 
 @font-face {
