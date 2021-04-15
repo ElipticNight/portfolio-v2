@@ -203,7 +203,7 @@ export default {
 <style lang="scss" scoped>
 .hero-banner {
   width: 100%;
-  height: calc(100vh - 65px);
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
