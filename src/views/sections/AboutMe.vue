@@ -3,7 +3,7 @@
     <SectionTemplate>
       <template v-slot:title> About Me </template>
       <template v-slot:content>
-        <div class="placeholder">No info yet</div>
+        <div class="content">I am a full-stack web developer</div>
       </template>
     </SectionTemplate>
   </div>
@@ -21,7 +21,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.placeholder {
-  height: 600px;
+.content {
+  min-height: 300px;
+  margin-bottom: 30px;
 }
 </style>

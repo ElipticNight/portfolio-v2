@@ -3,7 +3,10 @@
     <SectionTemplate>
       <template v-slot:title> Contact </template>
       <template v-slot:content>
-        <div class="placeholder">No info yet</div>
+        <div class="placeholder">
+          <div>Get in touch at:</div>
+          <div>contact@aidan-byrne.org.uk</div>
+        </div>
       </template>
     </SectionTemplate>
   </div>
@@ -13,10 +16,11 @@
 import SectionTemplate from "@/views/sections/SectionTemplate.vue";
 
 export default {
-  name: "Projects",
+  name: "Contact",
   components: {
     SectionTemplate,
   },
+  mounted() {},
 };
 </script>
 

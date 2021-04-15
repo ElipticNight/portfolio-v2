@@ -9,7 +9,7 @@
     <div class="navbar">
       <router-link :to="{ name: 'Index' }" class="link"> Home </router-link>
       <router-link :to="{ name: 'Index' }" class="link"> Projects </router-link>
-      <router-link :to="{ name: 'Index' }" class="link"> Blog </router-link>
+      <router-link :to="{ name: 'Blog' }" class="link"> Blog </router-link>
       <router-link :to="{ name: 'Index' }" class="link"> About Me </router-link>
       <router-link :to="{ name: 'Index' }" class="link"> Contact </router-link>
     </div>
@@ -30,6 +30,8 @@ export default {
 
 <style lang="scss" scoped>
 .container {
+  position: absolute;
+  z-index: 900;
   width: 100%;
   height: 65px;
   display: flex;
