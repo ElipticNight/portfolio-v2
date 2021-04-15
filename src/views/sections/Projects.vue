@@ -3,9 +3,7 @@
     <SectionTemplate>
       <template v-slot:title> Projects </template>
       <template v-slot:content>
-        <div class="projects-container">
-          <LeedsTechMap />
-        </div>
+        <div class="placeholder">No projects yet</div>
       </template>
     </SectionTemplate>
   </div>
@@ -13,23 +11,17 @@
 
 <script>
 import SectionTemplate from "@/views/sections/SectionTemplate.vue";
-import LeedsTechMap from "@/components/projects/LeedsTechMap.vue";
 
 export default {
   name: "Projects",
   components: {
     SectionTemplate,
-    LeedsTechMap,
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.projects-container {
-  min-height: 400px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 50px;
-  row-gap: 50px;
+.placeholder {
+  height: 600px;
 }
 </style>

@@ -4,10 +4,10 @@
     <div class="hero-banner">
       <Signature id="signature" />
       <Subtitle id="subtitle" />
-      <a href="#projects"><i class="fas fa-chevron-down"></i></a>
+      <a href="#client-projects"><i class="fas fa-chevron-down"></i></a>
     </div>
-    <Projects id="projects" />
-    <ClientProjects />
+    <ClientProjects id="client-projects" />
+    <Projects />
     <AboutMe />
     <Contact />
   </div>
