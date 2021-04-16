@@ -16,14 +16,20 @@
     <div class="hamburger">
       <i @click="openPopInMenu()" class="fas fa-bars"></i>
     </div>
-    <div v-if="popInMenuVisible">pop in menu placeholder!!!!</div>
+    <PopInMenu v-if="popInMenuVisible" @close="closePopInMenu()"
+      >pop in menu placeholder!!!!</PopInMenu
+    >
   </div>
 </template>
 
 <script>
+import PopInMenu from "@/components/PopInMenu.vue";
+
 export default {
   name: "Header",
-  components: {},
+  components: {
+    PopInMenu,
+  },
   data() {
     return {
       popInMenuVisible: false,
@@ -32,6 +38,9 @@ export default {
   methods: {
     openPopInMenu() {
       this.popInMenuVisible = true;
+    },
+    closePopInMenu() {
+      this.popInMenuVisible = false;
     },
   },
 };

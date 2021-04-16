@@ -14,20 +14,8 @@
   --dblue-grey: #212130;
   --xdblue-grey: #1c1c27;
 }
-
-#app {
-  font-family: serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-}
-
-div {
+* {
   box-sizing: border-box !important;
-}
-
-a {
-  text-decoration: none;
 }
 
 html,
@@ -38,6 +26,18 @@ body {
   background-color: #1a1b29;
   color: $red;
   overflow-x: hidden;
+}
+
+#app {
+  font-family: serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: $red;
 }
 
 @font-face {
