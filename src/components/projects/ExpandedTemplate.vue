@@ -78,8 +78,8 @@ export default {
     height: 650px;
     width: 1100px;
     border-radius: 10px;
-    background-color: var(--xdblue-grey);
-    box-shadow: 0 0 5px 2px var(--dred);
+    background-color: $xdblue-grey;
+    box-shadow: 0 0 5px 2px $dred;
     .exit {
       height: 5%;
       display: flex;
@@ -101,7 +101,7 @@ export default {
       width: 100%;
       border-radius: 10px 10px 0 0;
       font-size: 22px;
-      color: var(--red);
+      color: $red;
     }
     .main {
       display: flex;
@@ -139,21 +139,21 @@ export default {
         align-items: center;
         height: 100%;
         width: 50%;
-        color: var(--red);
-        border-top: 0.5px solid var(--dred);
+        color: $red;
+        border-top: 0.5px solid $dred;
         &:hover {
-          background-color: var(--blue-grey);
+          background-color: $blue-grey;
         }
         &.disabled {
           cursor: not-allowed;
-          color: var(--dred);
+          color: $dred;
           &:hover {
             background-color: transparent;
           }
         }
       }
       .source {
-        border-right: 0.5px solid var(--dred);
+        border-right: 0.5px solid $dred;
       }
     }
   }

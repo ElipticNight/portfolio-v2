@@ -208,12 +208,12 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: var(--red);
+  color: $red;
   #signature {
     width: 100%;
     transform: scale(2);
     .letter {
-      stroke: var(--red);
+      stroke: $red;
       stroke-width: 0.1;
       fill: none;
     }
@@ -222,7 +222,7 @@ export default {
     width: 100%;
     transform: scale(0.5);
     .letter {
-      stroke: var(--red);
+      stroke: $red;
       stroke-width: 0.1;
       fill: none;
     }
@@ -232,7 +232,7 @@ export default {
     margin-bottom: 30px;
     font-size: 60px;
     transition: transform 1000ms;
-    color: var(--red);
+    color: $red;
     &:hover {
       transform: translateY(-15px);
     }

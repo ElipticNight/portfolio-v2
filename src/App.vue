@@ -4,9 +4,9 @@
   </div>
 </template>
 
-<style>
-/* Colours */
+<style lang="scss">
 :root {
+  /* Colours */
   --red: #b32222;
   --dred: #662525;
   --blue: #282841;
@@ -36,7 +36,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #1a1b29;
-  color: var(--red);
+  color: $red;
   overflow-x: hidden;
 }
 
