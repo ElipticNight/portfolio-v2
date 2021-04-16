@@ -35,18 +35,22 @@ export default {
   justify-content: flex-start;
   background-color: $dblue-grey;
   .title {
-    padding-top: 5px;
-    padding-left: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
     font-size: 20px;
     font-weight: normal;
   }
   .filler {
     height: 100%;
-    width: 50%;
+    width: 45%;
   }
   .navbar {
-    display: hidden;
-    padding-right: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 35%;
     .link {
       padding: 20px 25px;
       font-size: 18px;
@@ -56,7 +60,7 @@ export default {
     }
   }
   .hamburger {
-    display: hidden;
+    visibility: hidden;
   }
 }
 .link {
@@ -81,35 +85,74 @@ export default {
 @media screen and (min-width: $xl) and (max-width: $xxl) {
   .container {
     .filler {
-      // background-color: yellow;
+      width: 35%;
+    }
+    .navbar {
+      width: 45%;
+    }
+    .hamburger {
+      display: none;
     }
   }
 }
 @media screen and (min-width: $l) and (max-width: $xl) {
   .container {
     .filler {
-      // background-color: fuchsia;
+      width: 30%;
+    }
+    .navbar {
+      width: 50%;
+      .link {
+        padding: 20px 20px;
+      }
+    }
+    .hamburger {
+      display: none;
     }
   }
 }
 @media screen and (min-width: $m) and (max-width: $l) {
   .container {
     .filler {
-      // background-color: green;
+      width: 20%;
+    }
+    .navbar {
+      width: 60%;
+      .link {
+        padding: 20px 15px;
+      }
+    }
+    .hamburger {
+      display: none;
     }
   }
 }
 @media screen and (min-width: $s) and (max-width: $m) {
   .container {
     .filler {
-      // background-color: blue;
+      width: 30%;
+    }
+    .navbar {
+      display: none;
+    }
+    .hamburger {
+      display: none;
     }
   }
 }
 @media screen and (max-width: $s) {
   .container {
+    .title {
+      width: 30%;
+    }
     .filler {
-      // background-color: red;
+      width: 30%;
+    }
+    .navbar {
+      display: none;
+    }
+    .hamburger {
+      display: none;
     }
   }
 }
