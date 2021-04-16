@@ -13,7 +13,10 @@
       <router-link :to="{ name: 'Index' }" class="link"> About Me </router-link>
       <router-link :to="{ name: 'Index' }" class="link"> Contact </router-link>
     </div>
-    <div class="hamburger"></div>
+    <div class="hamburger">
+      <i @click="openPopInMenu()" class="fas fa-bars"></i>
+    </div>
+    <div v-if="popInMenuVisible">pop in menu placeholder!!!!</div>
   </div>
 </template>
 
@@ -21,6 +24,16 @@
 export default {
   name: "Header",
   components: {},
+  data() {
+    return {
+      popInMenuVisible: false,
+    };
+  },
+  methods: {
+    openPopInMenu() {
+      this.popInMenuVisible = true;
+    },
+  },
 };
 </script>
 
@@ -60,28 +73,40 @@ export default {
     }
   }
   .hamburger {
-    visibility: hidden;
+    height: 100%;
+    width: 15%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 30px;
+    font-size: 30px;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 .link {
   color: $red;
   text-decoration: none;
 }
+
 //4k
-@media screen and (min-width: $xxxl) {
-  .container {
-    .filler {
-      // background-color: yellow;
-    }
-  }
-}
-@media screen and (min-width: $xxl) and (max-width: $xxxl) {
-  .container {
-    .filler {
-      // background-color: yellow;
-    }
-  }
-}
+// @media screen and (min-width: $xxxl) {
+//   .container {
+//     .filler {
+
+//     }
+//   }
+// }
+//2k
+// @media screen and (min-width: $xxl) and (max-width: $xxxl) {
+//   .container {
+//     .filler {
+
+//     }
+//   }
+// }
+
 @media screen and (min-width: $xl) and (max-width: $xxl) {
   .container {
     .filler {
@@ -129,13 +154,13 @@ export default {
 }
 @media screen and (min-width: $s) and (max-width: $m) {
   .container {
+    .title {
+      width: 25%;
+    }
     .filler {
-      width: 30%;
+      width: 60%;
     }
     .navbar {
-      display: none;
-    }
-    .hamburger {
       display: none;
     }
   }
@@ -143,15 +168,12 @@ export default {
 @media screen and (max-width: $s) {
   .container {
     .title {
-      width: 30%;
+      width: 40%;
     }
     .filler {
-      width: 30%;
+      width: 55%;
     }
     .navbar {
-      display: none;
-    }
-    .hamburger {
       display: none;
     }
   }
