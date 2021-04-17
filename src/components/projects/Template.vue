@@ -221,4 +221,9 @@ export default {
     display: none;
   }
 }
+@media screen and (min-width: $s) {
+  .mobile-container {
+    display: none;
+  }
+}
 </style>
