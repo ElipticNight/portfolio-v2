@@ -48,8 +48,6 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  position: absolute;
-  z-index: 900;
   width: 100%;
   height: 65px;
   display: flex;
