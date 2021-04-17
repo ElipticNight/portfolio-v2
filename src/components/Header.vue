@@ -8,10 +8,16 @@
     <div class="filler"></div>
     <div class="navbar">
       <router-link :to="{ name: 'Index' }" class="link"> Home </router-link>
-      <router-link :to="{ name: 'Index' }" class="link"> Projects </router-link>
+      <router-link :to="{ name: 'Projects' }" class="link">
+        Projects
+      </router-link>
       <router-link :to="{ name: 'Blog' }" class="link"> Blog </router-link>
-      <router-link :to="{ name: 'Index' }" class="link"> About Me </router-link>
-      <router-link :to="{ name: 'Index' }" class="link"> Contact </router-link>
+      <router-link :to="{ name: 'AboutMe' }" class="link">
+        About Me
+      </router-link>
+      <router-link :to="{ name: 'Contact' }" class="link">
+        Contact
+      </router-link>
     </div>
     <div class="hamburger">
       <i @click="openPopInMenu()" class="fas fa-bars"></i>
