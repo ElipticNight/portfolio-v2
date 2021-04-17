@@ -74,12 +74,13 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: $lred;
   .container {
     height: 650px;
     width: 1100px;
     border-radius: 10px;
-    background-color: $xdblue-grey;
-    box-shadow: 0 0 5px 2px $dred;
+    background-color: $dblue;
+    box-shadow: 0 0 5px 2px $red;
     .exit {
       height: 5%;
       display: flex;
@@ -101,7 +102,6 @@ export default {
       width: 100%;
       border-radius: 10px 10px 0 0;
       font-size: 22px;
-      color: $red;
     }
     .main {
       display: flex;
@@ -139,10 +139,10 @@ export default {
         align-items: center;
         height: 100%;
         width: 50%;
-        color: $red;
         border-top: 0.5px solid $dred;
+        color: $lred;
         &:hover {
-          background-color: $blue-grey;
+          background-color: $lblue;
         }
         &.disabled {
           cursor: not-allowed;

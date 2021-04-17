@@ -67,13 +67,14 @@ export default {
   width: 550px;
   height: 320px;
   border-radius: 10px;
-  background-color: $xdblue-grey;
-  box-shadow: 0 0 5px 2px $dred;
+  background-color: $dblue;
+  box-shadow: 0 0 5px 2px $red;
   transition: transform 200ms;
   cursor: pointer;
+  color: $lred;
   &:hover {
     transform: scale(1.01);
-    box-shadow: 0 0 5px 4px $dred;
+    box-shadow: 0 0 5px 4px $red;
   }
   .title {
     display: flex;
@@ -83,7 +84,6 @@ export default {
     width: 100%;
     border-radius: 10px 10px 0 0;
     font-size: 22px;
-    color: $red;
   }
   .main {
     display: flex;
@@ -118,10 +118,10 @@ export default {
       align-items: center;
       height: 100%;
       width: 50%;
-      color: $red;
       border-top: 0.5px solid $dred;
+      color: $lred;
       &:hover {
-        background-color: $blue-grey;
+        background-color: $lblue;
       }
       &.disabled {
         cursor: not-allowed;
@@ -133,6 +133,10 @@ export default {
     }
     .source {
       border-right: 0.5px solid $dred;
+      border-radius: 0 0 0 10px;
+    }
+    .live {
+      border-radius: 0 0 10px 0;
     }
   }
 }

@@ -55,7 +55,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background-color: $dblue-grey;
+  background-color: $dblue;
   .title {
     display: flex;
     justify-content: center;

@@ -24,7 +24,7 @@ export default {};
   width: 100vw;
   top: 0;
   left: 0;
-  background-color: $dblue-grey;
+  background-color: $dblue;
   .exit {
     height: 50px;
     display: flex;
