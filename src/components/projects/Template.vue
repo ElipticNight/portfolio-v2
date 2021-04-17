@@ -104,6 +104,7 @@ export default {
       height: 100%;
       padding: 0px 10px;
       text-align: left;
+      line-height: 20px;
     }
   }
   .buttons {
