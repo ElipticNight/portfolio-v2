@@ -5,7 +5,7 @@
       <template v-slot:content>
         <div class="projects-container">
           <PirateGame />
-          <TicTacToe />
+          <!-- <TicTacToe /> -->
         </div>
       </template>
     </SectionTemplate>
@@ -15,14 +15,14 @@
 <script>
 import SectionTemplate from "@/views/sections/SectionTemplate.vue";
 import PirateGame from "@/components/projects/PirateGame.vue";
-import TicTacToe from "@/components/projects/TicTacToe.vue";
+// import TicTacToe from "@/components/projects/TicTacToe.vue";
 
 export default {
   name: "Projects",
   components: {
     SectionTemplate,
     PirateGame,
-    TicTacToe,
+    // TicTacToe,
   },
 };
 </script>
