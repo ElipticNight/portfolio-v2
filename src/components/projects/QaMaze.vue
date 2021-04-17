@@ -1,28 +1,27 @@
 <template>
   <div>
     <ProjectTemplate
-      sourceLink="https://github.com/ElipticNight/pirate-client"
-      :liveLink="null"
+      sourceLink="https://github.com/ElipticNight/maze-game"
+      liveLink="https://qamaze.aidanbyrne.tech"
       @expand="expanded = true"
     >
-      <template v-slot:title> Pirate Game (in progress) </template>
+      <template v-slot:title> QA Maze Game </template>
       <template v-slot:image>
-        <img :src="getImgUrl('PirateGameOne.png')" alt="" />
+        <img :src="getImgUrl('QaMazeOne.png')" alt="" />
       </template>
       <template v-slot:description>
-        A websockets based multiplayer board game with support for multiple
-        simultaneous games
+        A 2d maze game made for my apprenticeship
       </template>
     </ProjectTemplate>
     <ExpandedTemplate
       v-if="expanded"
       @close="expanded = false"
-      sourceLink="https://github.com/ElipticNight/pirate-client"
-      :liveLink="null"
+      sourceLink="https://github.com/ElipticNight/maze-game"
+      liveLink="https://qamaze.aidanbyrne.tech"
     >
-      <template v-slot:title> Pirate Game (in progress) </template>
+      <template v-slot:title> QA Maze Game </template>
       <template v-slot:image>
-        <img :src="getImgUrl('PirateGameOne.png')" alt="" />
+        <img :src="getImgUrl('QaMazeOne.png')" alt="" />
       </template>
       <template v-slot:description>
         <h2>Techologies</h2>
@@ -37,7 +36,7 @@ import ProjectTemplate from "@/components/projects/Template.vue";
 import ExpandedTemplate from "@/components/projects/ExpandedTemplate";
 
 export default {
-  name: "LeedsTechMapProject",
+  name: "QaMazeProject",
   components: {
     ProjectTemplate,
     ExpandedTemplate,
