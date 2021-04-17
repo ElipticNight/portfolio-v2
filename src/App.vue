@@ -5,15 +5,6 @@
 </template>
 
 <style lang="scss">
-:root {
-  /* Colours */
-  --red: #b32222;
-  --dred: #662525;
-  --blue: #282841;
-  --blue-grey: #232330;
-  --dblue-grey: #212130;
-  --xdblue-grey: #1c1c27;
-}
 * {
   box-sizing: border-box !important;
 }
@@ -23,7 +14,7 @@ body {
   scroll-behavior: smooth;
   margin: 0;
   padding: 0;
-  background-color: #1a1b29;
+  background-color: $blue;
   color: $red;
   overflow-x: hidden;
 }

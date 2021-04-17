@@ -8,9 +8,11 @@ $s: 600px;
 $xs: 400px;
 
 /* Colours */
-$red: #b32222;
-$dred: #662525;
-$blue: #282841;
-$blue-grey: #232330;
-$dblue-grey: #212130;
-$xdblue-grey: #1c1c27;
+
+$lred: hsl(0, 68%, 50%);
+$red: hsl(0, 68%, 40%);
+$dred: hsl(0, 68%, 20%);
+$lblue: hsl(240, 24%, 30%);
+$blue: hsl(240, 24%, 20%);
+$dblue: hsl(240, 24%, 17%);
+$xdblue: hsl(240, 24%, 15%);
