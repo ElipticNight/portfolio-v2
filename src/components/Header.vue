@@ -103,69 +103,20 @@ export default {
   text-decoration: none;
 }
 
-//4k
-// @media screen and (min-width: $xxxl) {
-//   .container {
-//     .filler {
-
-//     }
-//   }
-// }
-//2k
-// @media screen and (min-width: $xxl) and (max-width: $xxxl) {
-//   .container {
-//     .filler {
-
-//     }
-//   }
-// }
-
-@media screen and (min-width: $xl) and (max-width: $xxl) {
+@media screen and (max-width: $s) {
   .container {
+    .title {
+      width: 40%;
+    }
     .filler {
-      width: 35%;
+      width: 55%;
     }
     .navbar {
-      width: 45%;
-    }
-    .hamburger {
       display: none;
     }
   }
 }
-@media screen and (min-width: $l) and (max-width: $xl) {
-  .container {
-    .filler {
-      width: 30%;
-    }
-    .navbar {
-      width: 50%;
-      .link {
-        padding: 20px 20px;
-      }
-    }
-    .hamburger {
-      display: none;
-    }
-  }
-}
-@media screen and (min-width: $m) and (max-width: $l) {
-  .container {
-    .filler {
-      width: 20%;
-    }
-    .navbar {
-      width: 60%;
-      .link {
-        padding: 20px 15px;
-      }
-    }
-    .hamburger {
-      display: none;
-    }
-  }
-}
-@media screen and (min-width: $s) and (max-width: $m) {
+@media screen and (min-width: $s) {
   .container {
     .title {
       width: 25%;
@@ -178,15 +129,72 @@ export default {
     }
   }
 }
-@media screen and (max-width: $s) {
+@media screen and (min-width: $m) {
   .container {
-    .title {
-      width: 40%;
-    }
     .filler {
-      width: 55%;
+      width: 20%;
     }
     .navbar {
+      display: flex;
+      width: 60%;
+      .link {
+        padding: 20px 15px;
+      }
+    }
+    .hamburger {
+      display: none;
+    }
+  }
+}
+@media screen and (min-width: $l) {
+  .container {
+    .filler {
+      width: 30%;
+    }
+    .navbar {
+      display: flex;
+      width: 50%;
+      .link {
+        padding: 20px 15px;
+      }
+    }
+    .hamburger {
+      display: none;
+    }
+  }
+}
+@media screen and (min-width: $xl) {
+  .container {
+    .filler {
+      width: 35%;
+    }
+    .navbar {
+      display: flex;
+      width: 45%;
+    }
+    .hamburger {
+      display: none;
+    }
+  }
+}
+@media screen and (min-width: $xxl) {
+  .container {
+    .navbar {
+      display: flex;
+      width: 45%;
+    }
+    .hamburger {
+      display: none;
+    }
+  }
+}
+@media screen and (min-width: $xxxl) {
+  .container {
+    .navbar {
+      display: flex;
+      width: 45%;
+    }
+    .hamburger {
       display: none;
     }
   }

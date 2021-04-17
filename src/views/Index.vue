@@ -39,13 +39,12 @@ export default {
   height: calc(100vh - 65px);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   color: $red;
   i {
     margin-top: auto;
     padding: 20px;
-    margin-bottom: 30px;
     font-size: 60px;
     transition: transform 1000ms;
     color: $red;
