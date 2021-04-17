@@ -103,23 +103,32 @@ export default {
   text-decoration: none;
 }
 
-//4k
-// @media screen and (min-width: $xxxl) {
-//   .container {
-//     .filler {
-
-//     }
-//   }
-// }
-//2k
-// @media screen and (min-width: $xxl) and (max-width: $xxxl) {
-//   .container {
-//     .filler {
-
-//     }
-//   }
-// }
-
+@media screen and (min-width: $xxxl) {
+  .container {
+    // .filler {
+    //   width: 35%;
+    // }
+    // .navbar {
+    //   width: 45%;
+    // }
+    .hamburger {
+      display: none;
+    }
+  }
+}
+@media screen and (min-width: $xxl) and (max-width: $xxxl) {
+  .container {
+    // .filler {
+    //   width: 35%;
+    // }
+    // .navbar {
+    //   width: 45%;
+    // }
+    .hamburger {
+      display: none;
+    }
+  }
+}
 @media screen and (min-width: $xl) and (max-width: $xxl) {
   .container {
     .filler {
