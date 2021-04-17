@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container">
+    <div class="desktop-container">
       <div @click="expand()" class="title">
         <slot name="title"></slot>
       </div>
@@ -31,6 +31,27 @@
         </a>
       </div>
     </div>
+    <div class="mobile-container" v-bind:class="{ expanded: expanded }">
+      <div class="row-title">
+        <div class="title">
+          <slot name="title"></slot>
+        </div>
+        <i
+          @click="expanded = !expanded"
+          v-if="!expanded"
+          class="fas fa-chevron-down"
+        ></i>
+        <i @click="expanded = !expanded" v-else class="fas fa-chevron-up"></i>
+      </div>
+      <div @click="expand()" v-if="expanded" class="main">
+        <div class="image">
+          <slot name="image"></slot>
+        </div>
+        <div class="description">
+          <slot name="description"></slot>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -49,7 +70,9 @@ export default {
     },
   },
   data() {
-    return {};
+    return {
+      expanded: false,
+    };
   },
   methods: {
     expand() {
@@ -60,7 +83,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
+.desktop-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -139,6 +162,63 @@ export default {
     .live {
       border-radius: 0 0 10px 0;
     }
+  }
+}
+
+.mobile-container {
+  width: 85vw;
+  height: 75px;
+  border-radius: 10px;
+  background-color: $dblue;
+  box-shadow: 0 0 5px 2px $red;
+  transition: transform 200ms;
+  cursor: pointer;
+  color: $lred;
+  display: flex;
+  flex-direction: column;
+  &:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 5px 4px $red;
+  }
+  &.expanded {
+    min-height: 300px;
+  }
+  .row-title {
+    height: 75px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    font-size: 20px;
+  }
+  .main {
+    display: flex;
+    flex-direction: column;
+    height: 60%;
+    width: 100%;
+    margin-top: 10px;
+    padding-bottom: 30px;
+    .image {
+      height: 100%;
+      padding: 0px 0px;
+      img {
+        max-width: 90%;
+        max-height: 90%;
+      }
+    }
+    .description {
+      height: 100%;
+      padding: 0px 10px;
+      text-align: left;
+      line-height: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: $s) {
+  .desktop-container {
+    display: none;
   }
 }
 </style>
