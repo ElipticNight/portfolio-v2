@@ -172,7 +172,6 @@ export default {
   background-color: $dblue;
   box-shadow: 0 0 5px 2px $red;
   transition: transform 200ms;
-  cursor: pointer;
   color: $lred;
   display: flex;
   flex-direction: column;
@@ -189,8 +188,12 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 30px;
+    padding: 0 10px 0 30px;
     font-size: 20px;
+    i {
+      padding: 20px;
+      cursor: pointer;
+    }
   }
   .main {
     display: flex;
