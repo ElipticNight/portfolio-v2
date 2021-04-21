@@ -159,4 +159,30 @@ export default {
     }
   }
 }
+
+@media screen and (max-width: $s) {
+  .underlay {
+    .container {
+      height: 80vh;
+      width: 85vw;
+      .main {
+        flex-direction: column;
+        .image {
+          width: 100%;
+          max-height: 300px;
+        }
+        .description {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: $xl) {
+  .underlay {
+    .container {
+      width: 85vw;
+    }
+  }
+}
 </style>
