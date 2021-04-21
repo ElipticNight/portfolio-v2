@@ -3,7 +3,9 @@
     <SectionTemplate>
       <template v-slot:title> About Me </template>
       <template v-slot:content>
-        <div class="content">I am a full-stack web developer</div>
+        <div class="content">
+          I am a full-stack web developer Specialising in VueJs, NodeJs and PHP
+        </div>
       </template>
     </SectionTemplate>
   </div>
