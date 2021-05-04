@@ -157,7 +157,7 @@ export default {
       complete: () => {
         anime({
           targets: ".letter",
-          fill: "hsl(0, 68%, 40%)",
+          fill: "hsl(258, 11%, 90%)",
           easing: "easeOutSine",
           duration: 1500,
         });
@@ -186,26 +186,26 @@ export default {
 .signature-container {
   margin-top: 75px;
   #signature {
-    width: 100vw;
+    width: 80vw;
     .letter {
-      stroke: $red;
+      stroke: $llavender-grey;
       stroke-width: 0.1;
       fill: none;
     }
     @media screen and (max-width: $l) {
-      width: 150vw;
+      width: 130vw;
     }
   }
   #subtitle {
     margin-top: -35px;
-    width: 40vw;
+    width: 30vw;
     .letter {
-      stroke: $red;
+      stroke: $llavender-grey;
       stroke-width: 0.1;
       fill: none;
     }
     @media screen and (max-width: $l) {
-      width: 60vw;
+      width: 45vw;
     }
   }
 }

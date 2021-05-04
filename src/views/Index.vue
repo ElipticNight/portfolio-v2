@@ -5,9 +5,13 @@
       <SplashSignature />
       <a href="#client-projects"><i class="fas fa-chevron-down"></i></a>
     </div>
+    <Divider class="divider" />
     <ClientProjects id="client-projects" />
+    <Divider class="divider" />
     <Projects />
+    <Divider class="divider" />
     <AboutMe />
+    <Divider class="divider" />
     <Contact />
   </div>
 </template>
@@ -15,6 +19,7 @@
 <script>
 import Header from "@/components/Header.vue";
 import SplashSignature from "@/components/SplashSignature.vue";
+import Divider from "@/assets/dividers/divider2.svg";
 import Projects from "@/views/sections/Projects.vue";
 import ClientProjects from "@/views/sections/ClientProjects.vue";
 import AboutMe from "@/views/sections/AboutMe.vue";
@@ -25,6 +30,7 @@ export default {
   components: {
     Header,
     SplashSignature,
+    Divider,
     Projects,
     ClientProjects,
     AboutMe,
@@ -41,16 +47,22 @@ export default {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  color: $red;
   i {
     margin-top: auto;
     padding: 20px;
     font-size: 60px;
     transition: transform 1000ms;
-    color: $red;
+    color: $white;
     &:hover {
       transform: translateY(-15px);
     }
   }
+}
+.divider {
+  stroke: $llavender-grey;
+  fill: $llavender-grey;
+  margin: 20px 0;
+  width: 30vw;
+  height: 75px;
 }
 </style>

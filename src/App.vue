@@ -14,8 +14,10 @@ body {
   scroll-behavior: smooth;
   margin: 0;
   padding: 0;
-  background-color: $blue;
-  color: $red;
+  // background-color: $violet;
+  background-image: url(./assets/backgrounds/dark.jpg);
+  background-repeat: repeat;
+  color: $lavender-grey;
   overflow-x: hidden;
 }
 
@@ -28,7 +30,7 @@ body {
 
 a {
   text-decoration: none;
-  color: $red;
+  color: $lavender-grey;
 }
 
 @font-face {
