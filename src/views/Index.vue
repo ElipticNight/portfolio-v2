@@ -5,13 +5,13 @@
       <SplashSignature />
       <a href="#client-projects"><i class="fas fa-chevron-down"></i></a>
     </div>
-    <Divider class="divider" />
+    <Divider />
     <ClientProjects id="client-projects" />
-    <Divider class="divider" />
+    <Divider />
     <Projects />
-    <Divider class="divider" />
+    <Divider />
     <AboutMe />
-    <Divider class="divider" />
+    <Divider />
     <Contact />
   </div>
 </template>
@@ -19,7 +19,7 @@
 <script>
 import Header from "@/components/Header.vue";
 import SplashSignature from "@/components/SplashSignature.vue";
-import Divider from "@/assets/dividers/divider2.svg";
+import Divider from "@/components/PageDivider.vue";
 import Projects from "@/views/sections/Projects.vue";
 import ClientProjects from "@/views/sections/ClientProjects.vue";
 import AboutMe from "@/views/sections/AboutMe.vue";
@@ -57,12 +57,5 @@ export default {
       transform: translateY(-15px);
     }
   }
-}
-.divider {
-  stroke: $llavender-grey;
-  fill: $llavender-grey;
-  margin: 20px 0;
-  width: 30vw;
-  height: 75px;
 }
 </style>
