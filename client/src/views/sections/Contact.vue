@@ -3,21 +3,25 @@
     <SectionTemplate>
       <template v-slot:title> Contact </template>
       <template v-slot:content>
+        <div class="contact-info">
+          <div>Email me at: contact@aidan-byrne.org.uk</div>
+          <div>or fill in the form below</div>
+        </div>
         <div class="form">
           <div class="row-headings">
-            <TextInput
-              v-model="contactForm.email"
-              label="Email"
-              validation="email"
-              class="email"
-              v-bind:isValid.sync="isValid.email"
-            />
             <TextInput
               v-model="contactForm.name"
               label="Name"
               validation="text"
               class="name"
               v-bind:isValid.sync="isValid.name"
+            />
+            <TextInput
+              v-model="contactForm.email"
+              label="Email"
+              validation="email"
+              class="email"
+              v-bind:isValid.sync="isValid.email"
             />
           </div>
           <div class="row-message">
@@ -31,9 +35,7 @@
             />
           </div>
           <div class="row-send">
-            <div @click="sendEmail" class="send-button">
-              Send
-            </div>
+            <div @click="sendEmail" class="send-button">Send</div>
           </div>
         </div>
       </template>
@@ -57,36 +59,42 @@ export default {
       contactForm: {
         email: "",
         name: "",
-        message: ""
+        message: "",
       },
       isValid: {
         email: false,
         name: false,
-        message: false
-      }
-    }
+        message: false,
+      },
+    };
   },
   mounted() {
     emailjs.init("user_guZtTc7shPrwarg4itFEZ");
   },
   methods: {
     sendEmail() {
-      if (!Object.keys(this.isValid).every(k => !!this.isValid[k])) {
+      if (!Object.keys(this.isValid).every((k) => !!this.isValid[k])) {
         this.$root.$emit("flash-invalid");
         return;
       }
-      this.$root.$emit("reset-inputs")
+      this.$root.$emit("reset-inputs");
       emailjs.send("contact_service", "contact_form", {
         user_name: this.contactForm.name,
         user_email: this.contactForm.email,
         message: this.contactForm.message,
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
+.contact-info {
+  margin-bottom: 60px;
+  div {
+    margin-bottom: 5px;
+  }
+}
 .form {
   width: 750px;
   .email,
@@ -96,10 +104,10 @@ export default {
   }
   .row-headings {
     display: flex;
-    .email {
+    .name {
       margin-right: 30px;
     }
-    .name {
+    .email {
       margin-left: 30px;
     }
   }

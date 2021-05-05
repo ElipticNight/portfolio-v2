@@ -36,10 +36,7 @@
         <div class="title">
           <slot name="title"></slot>
         </div>
-        <i
-          v-if="!expanded"
-          class="fas fa-chevron-down"
-        ></i>
+        <i v-if="!expanded" class="fas fa-chevron-down"></i>
         <i @click="expanded = !expanded" v-else class="fas fa-chevron-up"></i>
       </div>
       <div @click="expand()" v-if="expanded" class="main">
