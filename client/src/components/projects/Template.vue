@@ -32,12 +32,11 @@
       </div>
     </div>
     <div class="mobile-container" v-bind:class="{ expanded: expanded }">
-      <div class="row-title">
+      <div class="row-title" @click="expanded = !expanded">
         <div class="title">
           <slot name="title"></slot>
         </div>
         <i
-          @click="expanded = !expanded"
           v-if="!expanded"
           class="fas fa-chevron-down"
         ></i>
@@ -191,9 +190,9 @@ export default {
     align-items: center;
     padding: 0 10px 0 30px;
     font-size: 20px;
+    cursor: pointer;
     i {
       padding: 20px;
-      cursor: pointer;
     }
   }
   .main {

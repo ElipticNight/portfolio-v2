@@ -3,9 +3,25 @@
     <SectionTemplate>
       <template v-slot:title> Contact </template>
       <template v-slot:content>
-        <div class="placeholder">
-          <div>Get in touch at:</div>
-          <div>contact@aidan-byrne.org.uk</div>
+        <div class="form">
+          <TextInput
+            v-model="contactForm.email"
+            label="Email"
+            validation="email"
+            class="email"
+          />
+          <TextInput
+            v-model="contactForm.name"
+            label="Name"
+            validation="text"
+            class="name"
+          />
+          <TextInput
+            v-model="contactForm.message"
+            label="Message"
+            validation="text"
+            class="message"
+          />
         </div>
       </template>
     </SectionTemplate>
@@ -14,6 +30,7 @@
 
 <script>
 import SectionTemplate from "@/views/sections/SectionTemplate.vue";
+import TextInput from "@/components/form/Input";
 import { init } from "emailjs-com";
 import { send } from "emailjs-com";
 
@@ -21,6 +38,14 @@ export default {
   name: "Contact",
   components: {
     SectionTemplate,
+    TextInput,
+  },
+  data() {
+    return {
+      contactForm: {
+        email: ""
+      }
+    }
   },
   mounted() {
     init("user_guZtTc7shPrwarg4itFEZ");
@@ -32,12 +57,17 @@ export default {
         message: "hello",
       });
     }
-  },
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-.placeholder {
-  height: 600px;
+.form {
+  width: 500px;
+  .email,
+  .name,
+  .message {
+    margin-bottom: 35px;
+  }
 }
 </style>
