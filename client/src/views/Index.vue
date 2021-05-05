@@ -3,10 +3,15 @@
     <Header />
     <div class="hero-banner">
       <SplashSignature />
-      <a href="#about-me"><i class="fas fa-chevron-down"></i></a>
+      <a
+        ><i
+          class="fas fa-chevron-down"
+          @click="scrollToSection('main-page')"
+        ></i
+      ></a>
     </div>
-    <Divider />
-    <AboutMe id="about-me" />
+    <Divider id="main-page" />
+    <AboutMe />
     <Divider />
     <ClientProjects />
     <Divider />
@@ -36,6 +41,11 @@ export default {
     ClientProjects,
     AboutMe,
     Contact,
+  },
+  methods: {
+    scrollToSection(section) {
+      document.getElementById(section).scrollIntoView();
+    },
   },
 };
 </script>
