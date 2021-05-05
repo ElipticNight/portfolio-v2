@@ -30,7 +30,8 @@ export default {};
   width: 100vw;
   top: 0;
   left: 0;
-  background-color: $dblue;
+  background-image: url(../assets/backgrounds/dark.jpg);
+  background-repeat: repeat;
   .exit {
     height: 50px;
     display: flex;
@@ -56,7 +57,7 @@ export default {};
       justify-content: flex-start;
       align-items: center;
       padding-left: 30px;
-      border-bottom: solid 2px $red;
+      border-bottom: solid 1px $lavender-grey;
       font-size: 26px;
     }
   }

@@ -22,7 +22,7 @@ export default {};
   .title {
     margin-top: 30px;
     font-size: 36px;
-    color: $red;
+    color: $llavender-grey;
   }
   .content {
     margin-top: 50px;

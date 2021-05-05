@@ -7,12 +7,15 @@ $m: 768px;
 $s: 600px;
 $xs: 400px;
 
-/* Colours */
 
-$lred: hsl(0, 68%, 50%);
-$red: hsl(0, 68%, 40%);
-$dred: hsl(0, 68%, 20%);
-$lblue: hsl(240, 24%, 30%);
-$blue: hsl(240, 24%, 20%);
-$dblue: hsl(240, 24%, 17%);
-$xdblue: hsl(240, 24%, 15%);
+/*colours */
+
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+
+$lavender-grey: hsl(258, 11%, 80%);
+$llavender-grey: hsl(258, 11%, 90%);
+$dlavender-grey: hsl(258, 11%, 50%);
+
+$rich-black: hsl(207, 95%, 8%);
+$lrich-black: hsl(207, 95%, 10%);

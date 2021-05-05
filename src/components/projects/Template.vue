@@ -90,14 +90,14 @@ export default {
   width: 550px;
   height: 320px;
   border-radius: 10px;
-  background-color: $dblue;
-  box-shadow: 0 0 5px 2px $red;
+  background-color: $rich-black;
+  box-shadow: 0 0 3px 1px $llavender-grey;
   transition: transform 200ms;
   cursor: pointer;
-  color: $lred;
+  color: $lavender-grey;
   &:hover {
     transform: scale(1.01);
-    box-shadow: 0 0 5px 4px $red;
+    box-shadow: 0 0 3px 2px $llavender-grey;
   }
   .title {
     display: flex;
@@ -142,21 +142,21 @@ export default {
       align-items: center;
       height: 100%;
       width: 50%;
-      border-top: 0.5px solid $dred;
-      color: $lred;
+      border-top: 0.5px solid $lavender-grey;
+      color: $lavender-grey;
       &:hover {
-        background-color: $lblue;
+        background-color: $lrich-black;
       }
       &.disabled {
         cursor: not-allowed;
-        color: $dred;
+        color: $dlavender-grey;
         &:hover {
           background-color: transparent;
         }
       }
     }
     .source {
-      border-right: 0.5px solid $dred;
+      border-right: 0.5px solid $lavender-grey;
       border-radius: 0 0 0 10px;
     }
     .live {
@@ -169,18 +169,19 @@ export default {
   width: 85vw;
   height: 75px;
   border-radius: 10px;
-  background-color: $dblue;
-  box-shadow: 0 0 5px 2px $red;
+  background-color: $rich-black;
+  box-shadow: 0 0 3px 1px $lavender-grey;
   transition: transform 200ms;
-  color: $lred;
+  color: $lavender-grey;
   display: flex;
   flex-direction: column;
-  &:hover {
-    transform: scale(1.01);
-    box-shadow: 0 0 5px 4px $red;
-  }
   &.expanded {
     min-height: 300px;
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.01);
+      box-shadow: 0 0 3px 2px $lavender-grey;
+    }
   }
   .row-title {
     height: 75px;

@@ -59,7 +59,6 @@ export default {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background-color: $dblue;
   .title {
     display: flex;
     justify-content: center;
@@ -99,7 +98,7 @@ export default {
   }
 }
 .link {
-  color: $red;
+  color: $white;
   text-decoration: none;
 }
 
