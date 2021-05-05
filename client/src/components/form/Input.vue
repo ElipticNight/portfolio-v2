@@ -6,7 +6,6 @@
         <input
             v-model="content"
             @input="handleInput"
-            v-on:keyup.enter="enter()"
             :type="type"
             :id="name"
             :name="name"
@@ -17,7 +16,6 @@
         <label :class="content ? 'input-with-value' : ''">
             <span>{{ label }}</span>
         </label>
-        <i v-if="icon" :class="'fal fa-' + icon" class="icon" />
     </div>
 </template>
 
@@ -26,13 +24,6 @@ export default {
     name: "Input",
     props: {
         value: {},
-        icon: {
-            type: String
-        },
-        updateable: {
-            type: Boolean,
-            default: false
-        },
         label: {
             type: String
         },
@@ -75,19 +66,8 @@ export default {
                 }, 400);
             }
         });
-        this.$root.$on("update-form-inputs", () => {
-            if (this.updateable === true) {
-                setTimeout(() => {
-                    this.content = this.value;
-                    this.handleInput();
-                }, 0);
-            }
-        });
     },
     methods: {
-        enter() {
-            this.$emit("inputKeyUpEnter", this.content);
-        },
         handleInput() {
             this.validateInput();
             this.$emit("input", this.content);
