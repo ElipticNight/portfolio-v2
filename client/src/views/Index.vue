@@ -3,16 +3,17 @@
     <Header />
     <div class="hero-banner">
       <SplashSignature />
-      <a href="#client-projects"><i class="fas fa-chevron-down"></i></a>
+      <a href="#about-me"><i class="fas fa-chevron-down"></i></a>
     </div>
     <Divider />
-    <ClientProjects id="client-projects" />
+    <AboutMe id="about-me" />
+    <Divider />
+    <ClientProjects />
     <Divider />
     <Projects />
     <Divider />
-    <AboutMe />
-    <Divider />
     <Contact />
+    <div class="footer"></div>
   </div>
 </template>
 
@@ -57,5 +58,8 @@ export default {
       transform: translateY(-15px);
     }
   }
+}
+.footer {
+  margin-top: 200px;
 }
 </style>

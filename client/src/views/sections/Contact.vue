@@ -3,9 +3,40 @@
     <SectionTemplate>
       <template v-slot:title> Contact </template>
       <template v-slot:content>
-        <div class="placeholder">
-          <div>Get in touch at:</div>
-          <div>contact@aidan-byrne.org.uk</div>
+        <div class="contact-info">
+          <div>Email me at: contact@aidan-byrne.org.uk</div>
+          <div>or fill in the form below</div>
+        </div>
+        <div class="form">
+          <div class="row-headings">
+            <TextInput
+              v-model="contactForm.name"
+              label="Name"
+              validation="text"
+              class="name"
+              v-bind:isValid.sync="isValid.name"
+            />
+            <TextInput
+              v-model="contactForm.email"
+              label="Email"
+              validation="email"
+              class="email"
+              v-bind:isValid.sync="isValid.email"
+            />
+          </div>
+          <div class="row-message">
+            <TextInput
+              v-model="contactForm.message"
+              type="textarea"
+              label="Message"
+              validation="text"
+              class="message"
+              v-bind:isValid.sync="isValid.message"
+            />
+          </div>
+          <div class="row-send">
+            <div @click="sendEmail" class="send-button">Send</div>
+          </div>
         </div>
       </template>
     </SectionTemplate>
@@ -14,18 +45,89 @@
 
 <script>
 import SectionTemplate from "@/views/sections/SectionTemplate.vue";
+import TextInput from "@/components/form/Input";
+import emailjs from "emailjs-com";
 
 export default {
   name: "Contact",
   components: {
     SectionTemplate,
+    TextInput,
   },
-  mounted() {},
+  data() {
+    return {
+      contactForm: {
+        email: "",
+        name: "",
+        message: "",
+      },
+      isValid: {
+        email: false,
+        name: false,
+        message: false,
+      },
+    };
+  },
+  mounted() {
+    emailjs.init("user_guZtTc7shPrwarg4itFEZ");
+  },
+  methods: {
+    sendEmail() {
+      if (!Object.keys(this.isValid).every((k) => !!this.isValid[k])) {
+        this.$root.$emit("flash-invalid");
+        return;
+      }
+      this.$root.$emit("reset-inputs");
+      emailjs.send("contact_service", "contact_form", {
+        user_name: this.contactForm.name,
+        user_email: this.contactForm.email,
+        message: this.contactForm.message,
+      });
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-.placeholder {
-  height: 600px;
+.contact-info {
+  margin-bottom: 60px;
+  div {
+    margin-bottom: 5px;
+  }
+}
+.form {
+  width: 750px;
+  .email,
+  .name,
+  .message {
+    margin-bottom: 40px;
+  }
+  .row-headings {
+    display: flex;
+    .name {
+      margin-right: 30px;
+    }
+    .email {
+      margin-left: 30px;
+    }
+  }
+  .row-send {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .send-button {
+      width: 130px;
+      height: 50px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $blue;
+      cursor: pointer;
+      &:hover {
+        background-color: $lblue;
+      }
+    }
+  }
 }
 </style>
