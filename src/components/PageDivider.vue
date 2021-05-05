@@ -17,7 +17,7 @@ export default {
 .divider {
   stroke: $llavender-grey;
   fill: $llavender-grey;
-  margin: 20px 0;
+  margin: 35px 0;
   width: 30vw;
   height: 75px;
 }

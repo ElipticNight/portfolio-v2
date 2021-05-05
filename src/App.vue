@@ -14,7 +14,6 @@ body {
   scroll-behavior: smooth;
   margin: 0;
   padding: 0;
-  // background-color: $violet;
   background-image: url(./assets/backgrounds/dark.jpg);
   background-repeat: repeat;
   color: $lavender-grey;

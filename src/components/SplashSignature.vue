@@ -157,7 +157,7 @@ export default {
       complete: () => {
         anime({
           targets: ".letter",
-          fill: "hsl(258, 11%, 90%)",
+          fill: "hsl(258, 11%, 80%)",
           easing: "easeOutSine",
           duration: 1500,
         });
