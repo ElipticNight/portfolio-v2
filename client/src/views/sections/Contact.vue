@@ -100,6 +100,15 @@ export default {
   }
 }
 .form {
+  @media screen and (max-width: $l) {
+    width: 700px;
+  }
+  @media screen and (max-width: $m) {
+    width: 600px;
+  }
+  @media screen and (max-width: $s) {
+    width: 80vw;
+  }
   width: 750px;
   .email,
   .name,
@@ -113,6 +122,13 @@ export default {
     }
     .email {
       margin-left: 30px;
+    }
+    @media screen and (max-width: $s) {
+      flex-direction: column;
+      .name,
+      .email {
+        margin: 0 0 40px 0;
+      }
     }
   }
   .row-send {
