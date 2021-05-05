@@ -74,14 +74,14 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: $lred;
+  color: $lavender-grey;
   background-color: rgba(5, 1, 26, 0.65);
   .container {
     height: 650px;
     width: 1100px;
     border-radius: 10px;
-    background-color: $dblue;
-    box-shadow: 0 0 5px 2px $red;
+    background-color: $rich-black;
+    box-shadow: 0 0 3px 1px $lavender-grey;
     .exit {
       height: 5%;
       display: flex;
@@ -140,21 +140,21 @@ export default {
         align-items: center;
         height: 100%;
         width: 50%;
-        border-top: 0.5px solid $dred;
-        color: $lred;
+        border-top: 0.5px solid $lavender-grey;
+        color: $lavender-grey;
         &:hover {
-          background-color: $lblue;
+          background-color: $lrich-black;
         }
         &.disabled {
           cursor: not-allowed;
-          color: $dred;
+          color: $dlavender-grey;
           &:hover {
             background-color: transparent;
           }
         }
       }
       .source {
-        border-right: 0.5px solid $dred;
+        border-right: 0.5px solid $lavender-grey;
       }
     }
   }

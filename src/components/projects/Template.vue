@@ -145,7 +145,7 @@ export default {
       border-top: 0.5px solid $lavender-grey;
       color: $lavender-grey;
       &:hover {
-        background-color: $dviolet;
+        background-color: $lrich-black;
       }
       &.disabled {
         cursor: not-allowed;
