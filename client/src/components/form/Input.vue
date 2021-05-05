@@ -12,7 +12,17 @@
             :min="min"
             :max="max"
             v-bind:class="{ invalid: !isValid }"
+            v-if="type !== 'textarea'"
         />
+        <textarea
+            v-else
+            ref="textarea"
+            v-model="content"
+            @input="handleInput"
+            :id="name"
+            :name="name"
+            v-bind:class="{ invalid: !isValid }"
+        ></textarea>
         <label :class="content ? 'input-with-value' : ''">
             <span>{{ label }}</span>
         </label>
@@ -46,7 +56,6 @@ export default {
     },
     data() {
         return {
-            reset: this.value,
             content: this.value,
             isValid: true,
             regex: {
@@ -55,8 +64,8 @@ export default {
         };
     },
     mounted() {
-        this.$root.$on("resetFormInputs", () => {
-            this.$emit("reset", this.reset);
+        this.$root.$on("reset-inputs", () => {
+            this.content = "";
         });
         this.$root.$on("flash-invalid", () => {
             if (this.validation !== undefined && this.isValid && this.content.length === 0) {
@@ -69,6 +78,9 @@ export default {
     },
     methods: {
         handleInput() {
+            if (this.type === "textarea") {
+                this.content = this.$refs.textarea.value;
+            }
             this.validateInput();
             this.$emit("input", this.content);
             this.$emit("update:isValid", this.isValid);
@@ -122,7 +134,7 @@ export default {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    height: 40px;
+    min-height: 40px;
     width: 100%;
     .required-container {
         position: relative;
@@ -140,7 +152,8 @@ export default {
         right: 30px;
     }
 
-    input {
+    input,
+    textarea {
         display: flex;
         flex-direction: column;
         flex: 10;
@@ -153,6 +166,13 @@ export default {
         &.invalid {
             border: solid 1px $red;
         }
+    }
+
+    textarea {
+        resize: none;
+        height: 150px !important;
+        padding-top: 10px;
+        font-size: 15px;
     }
 
     label {
@@ -180,6 +200,7 @@ export default {
     }
 
     input:focus + label,
+    textarea:focus + label,
     .input-with-value {
         transform: translate(-20px, -15px);
         transform: font-size 0.3s;

@@ -10,20 +10,24 @@
               label="Email"
               validation="email"
               class="email"
+              v-bind:isValid.sync="isValid.email"
             />
             <TextInput
               v-model="contactForm.name"
               label="Name"
               validation="text"
               class="name"
+              v-bind:isValid.sync="isValid.name"
             />
           </div>
           <div class="row-message">
             <TextInput
               v-model="contactForm.message"
+              type="textarea"
               label="Message"
               validation="text"
               class="message"
+              v-bind:isValid.sync="isValid.message"
             />
           </div>
           <div class="row-send">
@@ -51,7 +55,14 @@ export default {
   data() {
     return {
       contactForm: {
-        email: ""
+        email: "",
+        name: "",
+        message: ""
+      },
+      isValid: {
+        email: false,
+        name: false,
+        message: false
       }
     }
   },
@@ -60,16 +71,16 @@ export default {
   },
   methods: {
     sendEmail() {
-      if (this.isValidForm()) {
-        emailjs.send("contact_service", "contact_form", {
-          user_name: this.contactForm.name,
-          user_email: this.contactForm.email,
-          message: this.contactForm.message,
-        });
+      if (!Object.keys(this.isValid).every(k => !!this.isValid[k])) {
+        this.$root.$emit("flash-invalid");
+        return;
       }
-    },
-    isValidForm() {
-      return true;
+      this.$root.$emit("reset-inputs")
+      emailjs.send("contact_service", "contact_form", {
+        user_name: this.contactForm.name,
+        user_email: this.contactForm.email,
+        message: this.contactForm.message,
+      });
     }
   }
 };
@@ -105,6 +116,9 @@ export default {
       align-items: center;
       background-color: $blue;
       cursor: pointer;
+      &:hover {
+        background-color: $lblue;
+      }
     }
   }
 }
