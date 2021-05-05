@@ -14,13 +14,25 @@
 
 <script>
 import SectionTemplate from "@/views/sections/SectionTemplate.vue";
+import { init } from 'emailjs-com';
+import { send } from 'emailjs-com';
 
 export default {
   name: "Contact",
   components: {
     SectionTemplate,
   },
-  mounted() {},
+  mounted() {
+    init("user_guZtTc7shPrwarg4itFEZ");
+    let x = false;
+    if (x) {
+      send('contact_service', 'contact_form', {
+        user_name: "aidan",
+        user_email: "email",
+        message: "hello"
+      });
+    }
+  },
 };
 </script>
 
