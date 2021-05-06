@@ -1,25 +1,34 @@
 <template>
   <div>
     <ProjectDefault
+      @expand="expanded = true"
       :title="title"
       :summary="summary"
       :images="images"
       :sourceLink="sourceLink"
       :liveLink="liveLink"
-      @expand="expanded = true"
+    />
+    <ProjectExpanded
+      v-if="expanded"
+      @close="expanded = false"
+      :title="title"
+      :summary="summary"
+      :images="images"
+      :sourceLink="sourceLink"
+      :liveLink="liveLink"
     />
   </div>
 </template>
 
 <script>
 import ProjectDefault from "@/components/home/ProjectDefault.vue";
-// import ProjectExpanded from "@/components/home/ProjectExpanded";
+import ProjectExpanded from "@/components/home/ProjectExpanded";
 
 export default {
   name: "Project",
   components: {
     ProjectDefault,
-    // ProjectExpanded,
+    ProjectExpanded,
   },
   props: {
     projectID: {
@@ -39,13 +48,6 @@ export default {
   },
   mounted() {
     //fetch project info
-  },
-  methods: {
-    //this will be used until i store images on the server
-    getImgUrl(file) {
-      let image = require("@/assets/images/" + file);
-      return image;
-    },
   },
 };
 </script>

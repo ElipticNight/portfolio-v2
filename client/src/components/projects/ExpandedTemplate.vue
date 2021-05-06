@@ -75,7 +75,7 @@ export default {
   justify-content: center;
   align-items: center;
   color: $lavender-grey;
-  background-color: rgba(5, 1, 26, 0.65);
+  background-color: rgba(0, 0, 0, 0.8);
   .container {
     height: 650px;
     width: 1100px;
