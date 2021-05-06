@@ -1,12 +1,12 @@
 <template>
   <div>
     <ProjectDefault
-    :title="title"
-    :summary="summary"
-    :images="images"
-    :sourceLink="sourceLink"
-    :liveLink="liveLink"
-    @expand="expanded = true"
+      :title="title"
+      :summary="summary"
+      :images="images"
+      :sourceLink="sourceLink"
+      :liveLink="liveLink"
+      @expand="expanded = true"
     />
   </div>
 </template>
@@ -24,8 +24,8 @@ export default {
   props: {
     projectID: {
       type: Number,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
@@ -35,7 +35,7 @@ export default {
       images: ["LeedsTechMapOne.png"],
       sourceLink: null,
       liveLink: null,
-    }
+    };
   },
   mounted() {
     //fetch project info
@@ -47,9 +47,7 @@ export default {
       return image;
     },
   },
-}
+};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

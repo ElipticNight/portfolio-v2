@@ -79,7 +79,7 @@ export default {
   data() {
     return {
       expanded: false,
-    }
+    };
   },
   methods: {
     expand() {
@@ -90,7 +90,7 @@ export default {
       return image;
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

@@ -5,9 +5,7 @@
       <template v-slot:content>
         <div class="projects-container">
           <PirateGame />
-          <Project
-            :projectID="1"
-          />
+          <Project :projectID="1" />
         </div>
       </template>
     </SectionTemplate>
