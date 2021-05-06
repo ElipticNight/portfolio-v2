@@ -28,6 +28,10 @@ class Database
 		});
 		this.query = util.promisify(this.con.query).bind(this.con);
 	}
+
+	async getProjects() {
+		return await this.query("SELECT * FROM projects");
+	}
 }
 
 module.exports = Database;

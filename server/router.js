@@ -8,7 +8,7 @@ var express = require('express'),
 
 	router.get('/test', cors(), (req, res) => {
 		(async() => {
-			res.send(await Projects.test());
+			res.send(await Projects.getAll());
 		})();
 	})
 

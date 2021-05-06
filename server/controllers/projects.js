@@ -2,9 +2,9 @@ const Database = require('../database');
 
 class Projects
 {
-    static async test() {
-        console.log(Database.connect());
-        return "Database.connect()";
+    static async getAll() {
+        let db = Database.connect();
+        return await db.getProjects();
     }
 }
 
