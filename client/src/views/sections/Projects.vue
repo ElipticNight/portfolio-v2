@@ -4,8 +4,9 @@
       <template v-slot:title> Personal Projects </template>
       <template v-slot:content>
         <div class="projects-container">
+          <Project :projectID="3" />
           <PirateGame />
-          <Project :projectID="1" />
+          <Project :projectID="2" />
         </div>
       </template>
     </SectionTemplate>

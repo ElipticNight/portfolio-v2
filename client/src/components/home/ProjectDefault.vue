@@ -63,7 +63,9 @@ export default {
       type: String,
       default: null,
     },
-    image: {},
+    image: {
+      type: String,
+    },
     sourceLink: {
       type: String,
       default: null,
@@ -81,10 +83,6 @@ export default {
   methods: {
     expand() {
       this.$emit("expand");
-    },
-    getImgUrl(file) {
-      let image = require("@/assets/images/" + file);
-      return image;
     },
   },
 };

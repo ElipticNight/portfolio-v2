@@ -9,7 +9,7 @@
       </div>
       <div class="main">
         <div class="image">
-          <img :src="getImgUrl(images[0])" alt="" />
+          <img :src="images[0]" alt="" />
         </div>
         <div class="summary">
           {{ summary }}
@@ -51,7 +51,7 @@ export default {
     },
     images: {
       type: Array,
-      default: () => ["LeedsTechMapOne.png"],
+      default: () => [],
     },
     sourceLink: {
       type: String,
@@ -68,10 +68,6 @@ export default {
         this.$emit("close");
         document.body.style.overflow = "visible";
       }
-    },
-    getImgUrl(file) {
-      let image = require("@/assets/images/" + file);
-      return image;
     },
   },
 };

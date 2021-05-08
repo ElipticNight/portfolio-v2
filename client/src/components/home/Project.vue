@@ -13,7 +13,9 @@
       @close="expanded = false"
       :title="title"
       :summary="summary"
-      :images="images"
+      :description="description"
+      :images="[image]"
+      :imageNo="imageNo"
       :sourceLink="sourceLink"
       :liveLink="liveLink"
     />
@@ -40,9 +42,11 @@ export default {
   data() {
     return {
       expanded: false,
-      title: "example title",
-      summary: "this is an example summary",
+      title: "",
+      summary: "",
+      description: "",
       image: null,
+      imageNo: null,
       sourceLink: null,
       liveLink: null,
     };
@@ -50,7 +54,13 @@ export default {
   mounted() {
     axios.get(`http://127.0.0.1:3000/project/${this.projectID}`).then(
       (response) => {
-        console.log(response.data[0]);
+        let res = response.data[0];
+        this.title = res.title;
+        this.summary = res.summary;
+        this.description = res.description
+        this.sourceLink = res.sourceLink;
+        this.liveLink = res.liveLink;
+        this.imageNo = res.imageNo;
       },
       (error) => {
         console.log(error);
@@ -63,6 +73,7 @@ export default {
       .then(
         (response) => {
           this.image = URL.createObjectURL(response.data);
+          console.log(typeof(this.image));
         },
         (error) => {
           console.log(error);
