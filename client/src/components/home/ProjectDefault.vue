@@ -63,9 +63,7 @@ export default {
       type: String,
       default: null,
     },
-    image: {
-
-    },
+    image: {},
     sourceLink: {
       type: String,
       default: null,

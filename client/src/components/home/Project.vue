@@ -49,21 +49,25 @@ export default {
   },
   mounted() {
     axios.get(`http://127.0.0.1:3000/project/${this.projectID}`).then(
-      response => {
-        console.log((response.data[0]));
+      (response) => {
+        console.log(response.data[0]);
       },
-      error => {
+      (error) => {
         console.log(error);
       }
     );
-    axios.get(`http://127.0.0.1:3000/project/${this.projectID}/images/0`, { responseType: 'blob' }).then(
-      response => {
-        this.image = URL.createObjectURL(response.data);
-      },
-      error => {
-        console.log(error);
-      }
-    );
+    axios
+      .get(`http://127.0.0.1:3000/project/${this.projectID}/images/0`, {
+        responseType: "blob",
+      })
+      .then(
+        (response) => {
+          this.image = URL.createObjectURL(response.data);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
   },
 };
 </script>
