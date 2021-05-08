@@ -23,6 +23,7 @@
 <script>
 import ProjectDefault from "@/components/home/ProjectDefault.vue";
 import ProjectExpanded from "@/components/home/ProjectExpanded";
+import axios from "axios";
 
 export default {
   name: "Project",
@@ -47,7 +48,18 @@ export default {
     };
   },
   mounted() {
-    //fetch project info
+    axios.get("http://127.0.0.1:3000/project/" + this.projectID).then(
+      response => {
+        // console.log(response.data[0].images.map((obj) => {
+        //   return JSON.parse(obj);
+        // }));
+        // console.log(JSON.parse(response.data[0].images));
+        console.log((response.data[0].images));
+      },
+      error => {
+        console.log(error);
+      }
+    );
   },
 };
 </script>

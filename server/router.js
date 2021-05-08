@@ -6,9 +6,9 @@ var express = require('express'),
 	router.use(cors());
 	router.use(express.json());
 
-	router.get('/test', cors(), (req, res) => {
+	router.get('/project/:id', cors(), (req, res) => {
 		(async() => {
-			res.send(await Projects.getAll());
+			res.send(await Projects.get(req.params.id));
 		})();
 	})
 
