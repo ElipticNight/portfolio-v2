@@ -16,28 +16,28 @@
             <div>
               Technologies
               <ul class="list">
-                <li v-for="technology in technologies" :key="technology.id">{{ technology.name }}</li>
+                <li v-for="technology in technologies" :key="technology.id">
+                  {{ technology.name }}
+                </li>
               </ul>
             </div>
             <div>
               Skills
               <ul class="list">
-                <li v-for="skill in skills" :key="skill.id">{{ skill.name }}</li>
+                <li v-for="skill in skills" :key="skill.id">
+                  {{ skill.name }}
+                </li>
               </ul>
             </div>
           </div>
           <div class="summary">
-            <div class="section-title">
-              Summary
-            </div>
+            <div class="section-title">Summary</div>
             <div class="section-content">
               {{ summary }}
             </div>
           </div>
           <div class="description">
-            <div class="section-title">
-              Description
-            </div>
+            <div class="section-title">Description</div>
             <div class="section-content">
               {{ description }}
             </div>

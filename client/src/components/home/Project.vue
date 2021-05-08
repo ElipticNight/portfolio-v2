@@ -58,26 +58,31 @@ export default {
     };
   },
   mounted() {
-    axios.get(`http://127.0.0.1:3000/project/${this.projectID}`).then(
-      (response) => {
-        let res = response.data[0];
-        this.title = res.title;
-        this.summary = res.summary;
-        this.description = res.description;
-        this.sourceLink = res.sourceLink;
-        this.liveLink = res.liveLink;
-        this.imageNo = res.imageNo;
-        this.technologies = res.technologies;
-        this.skills = res.skills;
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
     axios
-      .get(`http://127.0.0.1:3000/project/${this.projectID}/images/0`, {
-        responseType: "blob",
-      })
+      .get(`${process.env.VUE_APP_API_BASE_URL}/project/${this.projectID}`)
+      .then(
+        (response) => {
+          let res = response.data[0];
+          this.title = res.title;
+          this.summary = res.summary;
+          this.description = res.description;
+          this.sourceLink = res.sourceLink;
+          this.liveLink = res.liveLink;
+          this.imageNo = res.imageNo;
+          this.technologies = res.technologies;
+          this.skills = res.skills;
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    axios
+      .get(
+        `${process.env.VUE_APP_API_BASE_URL}/project/${this.projectID}/images/0`,
+        {
+          responseType: "blob",
+        }
+      )
       .then(
         (response) => {
           this.image = URL.createObjectURL(response.data);
