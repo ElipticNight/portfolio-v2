@@ -163,7 +163,8 @@ export default {
     flex: 10;
     width: 100%;
     border-radius: 5px;
-    border: solid 1px $lavender-grey;
+    border: none;
+    background-color: $llavender-grey;
     padding-left: 25px;
     outline: none;
     transition: border 200ms ease-out;

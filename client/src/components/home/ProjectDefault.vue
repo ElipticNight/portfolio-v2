@@ -162,7 +162,7 @@ export default {
       }
       &.disabled {
         cursor: not-allowed;
-        color: $dlavender-grey;
+        color: $xdlavender-grey;
         &:hover {
           background-color: transparent;
         }
