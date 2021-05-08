@@ -6,10 +6,11 @@ class Projects
         let db = Database.connect();
         return await db.getProject(id);
     }
-    
-    static async getAll() {
+
+    static async getImage(id, imageNo) {
         let db = Database.connect();
-        return await db.getProjects();
+        let images = await db.getProjectImage(id);
+        return images[imageNo];
     }
 }
 

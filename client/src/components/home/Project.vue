@@ -4,7 +4,7 @@
       @expand="expanded = true"
       :title="title"
       :summary="summary"
-      :images="images"
+      :image="image"
       :sourceLink="sourceLink"
       :liveLink="liveLink"
     />
@@ -42,19 +42,23 @@ export default {
       expanded: false,
       title: "example title",
       summary: "this is an example summary",
-      images: ["LeedsTechMapOne.png"],
+      image: null,
       sourceLink: null,
       liveLink: null,
     };
   },
   mounted() {
-    axios.get("http://127.0.0.1:3000/project/" + this.projectID).then(
+    axios.get(`http://127.0.0.1:3000/project/${this.projectID}`).then(
       response => {
-        // console.log(response.data[0].images.map((obj) => {
-        //   return JSON.parse(obj);
-        // }));
-        // console.log(JSON.parse(response.data[0].images));
-        console.log((response.data[0].images));
+        console.log((response.data[0]));
+      },
+      error => {
+        console.log(error);
+      }
+    );
+    axios.get(`http://127.0.0.1:3000/project/${this.projectID}/images/0`, { responseType: 'blob' }).then(
+      response => {
+        this.image = URL.createObjectURL(response.data);
       },
       error => {
         console.log(error);

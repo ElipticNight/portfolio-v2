@@ -12,4 +12,11 @@ var express = require('express'),
 		})();
 	})
 
+	router.get('/project/:id/images/:imageNo', cors(), (req, res) => {
+		(async() => {
+			let image = await Projects.getImage(req.params.id, req.params.imageNo);
+			res.sendFile(__dirname + `/images/${image.filename}`);
+		})();
+	})
+
 module.exports = router;

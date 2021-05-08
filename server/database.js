@@ -31,46 +31,31 @@ class Database
 
 	async getProject(id) {
 		return await this.query(`
-			SELECT
-				projects.id,
-				projects.title,
-				projects.summary,
-				projects.description,
-				projects.liveLink,
-				projects.sourceLink,
-			CONCAT(
-				'[',
-				GROUP_CONCAT(
-				'{',
-				CONCAT (
-					'id:',
-					'"',
-					images.id,
-					'"',
-					', ' 'filename:',
-					'"',
-					images.filename,
-					'"',
-					', ' 'alt:',
-					images.alt
-				),
-				'}' SEPARATOR ','
-				),
-				']'
-			) AS images
-			FROM
-				projects
-			JOIN
-				images
-			ON
-				images.project_id = projects.id
-			WHERE
-				projects.id = ?
-			group BY
-				projects.id
-			`,
+		select
+			projects.id,
+			projects.title,
+			projects.summary,
+			projects.description,
+			projects.liveLink,
+			projects.sourceLink,
+			count(projects.id) as imageNo
+		from
+			projects
+		join
+			images
+		on
+			images.project_id = projects.id
+		WHERE
+			projects.id = ?
+		group by
+			projects.id
+		`,
 			[id]
 		);
+	}
+
+	async getProjectImage(id) {
+		return this.query("SELECT id, filename, alt FROM images WHERE project_id = ?", [id]);
 	}
 }
 

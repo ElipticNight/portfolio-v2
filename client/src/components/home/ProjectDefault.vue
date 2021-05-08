@@ -6,7 +6,7 @@
       </div>
       <div @click="expand()" class="main">
         <div class="image">
-          <img :src="getImgUrl(images[0])" alt="" />
+          <img :src="image" alt="" />
         </div>
         <div class="summary">
           {{ summary }}
@@ -63,9 +63,8 @@ export default {
       type: String,
       default: null,
     },
-    images: {
-      type: Array,
-      default: () => ["LeedsTechMapOne.png"],
+    image: {
+
     },
     sourceLink: {
       type: String,
