@@ -7,7 +7,6 @@ class Projects
         let project = await db.getProject(id);
         project[0].technologies = await db.getProjectTechnologies(id);
         project[0].skills = await db.getProjectSkills(id);
-        console.log(project);
         return project;
     }
 
