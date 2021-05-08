@@ -36,12 +36,11 @@
         <div class="title">
           {{ title }}
         </div>
-        <i v-if="!expanded" class="fas fa-chevron-down"></i>
-        <i @click="expanded = !expanded" v-else class="fas fa-chevron-up"></i>
+        <i :class="'fas fa-chevron-' + (expanded ? 'up' : 'down')"></i>
       </div>
-      <div @click="expand()" v-if="expanded" class="main">
+      <div v-if="expanded" class="main">
         <div class="image">
-          <img :src="getImgUrl(images[0])" alt="" />
+          <img :src="image" alt="" />
         </div>
         <div class="summary">
           {{ summary }}
@@ -220,7 +219,7 @@ export default {
     .summary {
       height: 100%;
       padding: 0px 10px;
-      text-align: left;
+      text-align: center;
       line-height: 20px;
     }
   }

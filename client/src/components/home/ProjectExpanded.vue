@@ -11,8 +11,37 @@
         <div class="image">
           <img :src="images[0]" alt="" />
         </div>
-        <div class="summary">
-          {{ summary }}
+        <div class="content">
+          <div class="tags">
+            <div>
+              Technologies
+              <ul class="list">
+                <li>example</li>
+              </ul>
+            </div>
+            <div>
+              Skills
+              <ul class="list">
+                <li>example</li>
+              </ul>
+            </div>
+          </div>
+          <div class="summary">
+            <div class="section-title">
+              Summary
+            </div>
+            <div class="section-content">
+              {{ summary }}
+            </div>
+          </div>
+          <div class="description">
+            <div class="section-title">
+              Description
+            </div>
+            <div class="section-content">
+              {{ description }}
+            </div>
+          </div>
         </div>
       </div>
       <div class="buttons">
@@ -43,11 +72,15 @@ export default {
   props: {
     title: {
       type: String,
-      default: null,
+      default: "coming soon",
     },
     summary: {
       type: String,
-      default: null,
+      default: "coming soon",
+    },
+    description: {
+      type: String,
+      default: "coming soon",
     },
     images: {
       type: Array,
@@ -130,12 +163,38 @@ export default {
           max-height: 90%;
         }
       }
-      .summary {
+      .content {
         width: 50%;
         height: 95%;
         padding: 0px 10px;
         text-align: left;
         overflow-y: auto;
+        .tags {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          font-size: 20px;
+          font-weight: bold;
+          margin-bottom: 20px;
+          .list {
+            padding-left: 15px;
+            font-size: 16px;
+            font-weight: normal;
+          }
+        }
+        .summary,
+        .description {
+          .section-title {
+            text-align: left;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+          }
+          .section-content {
+            font-size: 16px;
+            font-weight: normal;
+            margin-bottom: 35px;
+          }
+        }
       }
     }
     .buttons {
@@ -170,7 +229,7 @@ export default {
   }
 }
 
-@media screen and (max-width: $s) {
+@media screen and (max-width: $l) {
   .underlay {
     .container {
       height: 80vh;
@@ -182,7 +241,9 @@ export default {
           max-height: 300px;
         }
         .summary {
+          padding-top: 10px;
           width: 100%;
+          text-align: center;
         }
       }
     }
