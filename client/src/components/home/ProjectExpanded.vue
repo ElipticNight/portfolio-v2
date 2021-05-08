@@ -5,14 +5,43 @@
         <i @click="close" id="close" class="fas fa-times"></i>
       </div>
       <div class="title">
-        <slot name="title"></slot>
+        {{ title }}
       </div>
       <div class="main">
         <div class="image">
-          <slot name="image"></slot>
+          <img :src="images[0]" alt="" />
         </div>
-        <div class="description">
-          <slot name="description"></slot>
+        <div class="content">
+          <div class="tags">
+            <div>
+              Technologies
+              <ul class="list">
+                <li v-for="technology in technologies" :key="technology.id">{{ technology.name }}</li>
+              </ul>
+            </div>
+            <div>
+              Skills
+              <ul class="list">
+                <li v-for="skill in skills" :key="skill.id">{{ skill.name }}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="summary">
+            <div class="section-title">
+              Summary
+            </div>
+            <div class="section-content">
+              {{ summary }}
+            </div>
+          </div>
+          <div class="description">
+            <div class="section-title">
+              Description
+            </div>
+            <div class="section-content">
+              {{ description }}
+            </div>
+          </div>
         </div>
       </div>
       <div class="buttons">
@@ -39,18 +68,40 @@
 
 <script>
 export default {
+  name: "ProjectExpanded",
   props: {
+    title: {
+      type: String,
+      default: "coming soon",
+    },
+    summary: {
+      type: String,
+      default: "coming soon",
+    },
+    description: {
+      type: String,
+      default: "coming soon",
+    },
+    images: {
+      type: Array,
+      default: () => [],
+    },
     sourceLink: {
       type: String,
-      default: "",
+      default: null,
     },
     liveLink: {
       type: String,
-      default: "",
+      default: null,
     },
-  },
-  mounted() {
-    document.body.style.overflow = "hidden";
+    technologies: {
+      type: Array,
+      default: () => [],
+    },
+    skills: {
+      type: Array,
+      default: () => [],
+    },
   },
   methods: {
     close(e) {
@@ -75,7 +126,7 @@ export default {
   justify-content: center;
   align-items: center;
   color: $lavender-grey;
-  background-color: rgba(5, 1, 26, 0.65);
+  background-color: rgba(0, 0, 0, 0.8);
   .container {
     height: 650px;
     width: 1100px;
@@ -120,12 +171,41 @@ export default {
           max-height: 90%;
         }
       }
-      .description {
+      .content {
         width: 50%;
         height: 95%;
         padding: 0px 10px;
         text-align: left;
         overflow-y: auto;
+        .tags {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          font-size: 20px;
+          font-weight: bold;
+          margin-bottom: 20px;
+          .list {
+            padding-left: 15px;
+            font-size: 16px;
+            font-weight: normal;
+            li {
+              margin-bottom: 3px;
+            }
+          }
+        }
+        .summary,
+        .description {
+          .section-title {
+            text-align: left;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+          }
+          .section-content {
+            font-size: 16px;
+            font-weight: normal;
+            margin-bottom: 35px;
+          }
+        }
       }
     }
     .buttons {
@@ -160,7 +240,7 @@ export default {
   }
 }
 
-@media screen and (max-width: $s) {
+@media screen and (max-width: $l) {
   .underlay {
     .container {
       height: 80vh;
@@ -171,8 +251,10 @@ export default {
           width: 100%;
           max-height: 300px;
         }
-        .description {
+        .summary {
+          padding-top: 10px;
           width: 100%;
+          text-align: center;
         }
       }
     }

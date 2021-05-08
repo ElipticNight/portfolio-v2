@@ -2,14 +2,14 @@
   <div>
     <div class="desktop-container">
       <div @click="expand()" class="title">
-        <slot name="title"></slot>
+        {{ title }}
       </div>
       <div @click="expand()" class="main">
         <div class="image">
-          <slot name="image"></slot>
+          <img :src="image" alt="" />
         </div>
-        <div class="description">
-          <slot name="description"></slot>
+        <div class="summary">
+          {{ summary }}
         </div>
       </div>
       <div class="buttons">
@@ -34,17 +34,16 @@
     <div class="mobile-container" v-bind:class="{ expanded: expanded }">
       <div class="row-title" @click="expanded = !expanded">
         <div class="title">
-          <slot name="title"></slot>
+          {{ title }}
         </div>
-        <i v-if="!expanded" class="fas fa-chevron-down"></i>
-        <i @click="expanded = !expanded" v-else class="fas fa-chevron-up"></i>
+        <i :class="'fas fa-chevron-' + (expanded ? 'up' : 'down')"></i>
       </div>
-      <div @click="expand()" v-if="expanded" class="main">
+      <div v-if="expanded" class="main">
         <div class="image">
-          <slot name="image"></slot>
+          <img :src="image" alt="" />
         </div>
-        <div class="description">
-          <slot name="description"></slot>
+        <div class="summary">
+          {{ summary }}
         </div>
       </div>
     </div>
@@ -53,9 +52,19 @@
 
 <script>
 export default {
-  name: "ProjectTemplate",
-  components: {},
+  name: "ProjectDefault",
   props: {
+    title: {
+      type: String,
+      default: null,
+    },
+    summary: {
+      type: String,
+      default: null,
+    },
+    image: {
+      type: String,
+    },
     sourceLink: {
       type: String,
       default: null,
@@ -63,6 +72,14 @@ export default {
     liveLink: {
       type: String,
       default: null,
+    },
+    technologies: {
+      type: Array,
+      default: () => [],
+    },
+    skills: {
+      type: Array,
+      default: () => [],
     },
   },
   data() {
@@ -118,7 +135,7 @@ export default {
         max-height: 90%;
       }
     }
-    .description {
+    .summary {
       width: 50%;
       height: 100%;
       padding: 0px 10px;
@@ -207,10 +224,10 @@ export default {
         max-height: 90%;
       }
     }
-    .description {
+    .summary {
       height: 100%;
       padding: 0px 10px;
-      text-align: left;
+      text-align: center;
       line-height: 20px;
     }
   }

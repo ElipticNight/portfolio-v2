@@ -20,33 +20,33 @@
       </router-link>
     </div>
     <div class="hamburger">
-      <i @click="openPopInMenu()" class="fas fa-bars"></i>
+      <i @click="openMobileMenu()" class="fas fa-bars"></i>
     </div>
-    <PopInMenu v-if="popInMenuVisible" @close="closePopInMenu()"
-      >pop in menu placeholder!!!!</PopInMenu
+    <MobileMenu v-if="mobileMenuVisible" @close="closeMobileMenu()"
+      >pop in menu placeholder!!!!</MobileMenu
     >
   </div>
 </template>
 
 <script>
-import PopInMenu from "@/components/PopInMenu.vue";
+import MobileMenu from "@/components/MobileMenu.vue";
 
 export default {
   name: "Header",
   components: {
-    PopInMenu,
+    MobileMenu,
   },
   data() {
     return {
-      popInMenuVisible: false,
+      mobileMenuVisible: false,
     };
   },
   methods: {
-    openPopInMenu() {
-      this.popInMenuVisible = true;
+    openMobileMenu() {
+      this.mobileMenuVisible = true;
     },
-    closePopInMenu() {
-      this.popInMenuVisible = false;
+    closeMobileMenu() {
+      this.mobileMenuVisible = false;
     },
   },
 };

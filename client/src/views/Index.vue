@@ -24,8 +24,8 @@
 
 <script>
 import Header from "@/components/Header.vue";
-import SplashSignature from "@/components/SplashSignature.vue";
-import Divider from "@/components/PageDivider.vue";
+import SplashSignature from "@/components/home/SplashSignature.vue";
+import Divider from "@/components/misc/PageDivider.vue";
 import Projects from "@/views/sections/Projects.vue";
 import ClientProjects from "@/views/sections/ClientProjects.vue";
 import AboutMe from "@/views/sections/AboutMe.vue";
