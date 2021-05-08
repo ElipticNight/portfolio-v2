@@ -73,6 +73,14 @@ export default {
       type: String,
       default: null,
     },
+    technologies: {
+      type: Array,
+      default: () => [],
+    },
+    skills: {
+      type: Array,
+      default: () => [],
+    },
   },
   data() {
     return {

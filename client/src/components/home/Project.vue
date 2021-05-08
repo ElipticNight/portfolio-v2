@@ -7,6 +7,8 @@
       :image="image"
       :sourceLink="sourceLink"
       :liveLink="liveLink"
+      :technologies="technologies"
+      :skills="skills"
     />
     <ProjectExpanded
       v-if="expanded"
@@ -18,6 +20,8 @@
       :imageNo="imageNo"
       :sourceLink="sourceLink"
       :liveLink="liveLink"
+      :technologies="technologies"
+      :skills="skills"
     />
   </div>
 </template>
@@ -49,6 +53,8 @@ export default {
       imageNo: null,
       sourceLink: null,
       liveLink: null,
+      technologies: [],
+      skills: [],
     };
   },
   mounted() {
@@ -61,6 +67,8 @@ export default {
         this.sourceLink = res.sourceLink;
         this.liveLink = res.liveLink;
         this.imageNo = res.imageNo;
+        this.technologies = res.technologies;
+        this.skills = res.skills;
       },
       (error) => {
         console.log(error);

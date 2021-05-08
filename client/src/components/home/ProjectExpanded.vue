@@ -16,13 +16,13 @@
             <div>
               Technologies
               <ul class="list">
-                <li>example</li>
+                <li v-for="technology in technologies" :key="technology.id">{{ technology.name }}</li>
               </ul>
             </div>
             <div>
               Skills
               <ul class="list">
-                <li>example</li>
+                <li v-for="skill in skills" :key="skill.id">{{ skill.name }}</li>
               </ul>
             </div>
           </div>
@@ -93,6 +93,14 @@ export default {
     liveLink: {
       type: String,
       default: null,
+    },
+    technologies: {
+      type: Array,
+      default: () => [],
+    },
+    skills: {
+      type: Array,
+      default: () => [],
     },
   },
   methods: {
@@ -179,6 +187,9 @@ export default {
             padding-left: 15px;
             font-size: 16px;
             font-weight: normal;
+            li {
+              margin-bottom: 3px;
+            }
           }
         }
         .summary,

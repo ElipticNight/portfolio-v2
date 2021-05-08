@@ -54,6 +54,40 @@ class Database
 		);
 	}
 
+	async getProjectTechnologies(id) {
+		return await this.query(`
+			SELECT
+				technologies.id,
+				technologies.name
+			FROM
+				technologies
+			JOIN
+				uses_technology
+			ON
+				uses_technology.technology_id = technologies.id
+			WHERE
+				uses_technology.project_id = ?
+		`, [id]
+		)
+	}
+
+	async getProjectSkills(id) {
+		return await this.query(`
+			SELECT
+				skills.id,
+				skills.name
+			FROM
+				skills
+			JOIN
+				uses_skill
+			ON
+				uses_skill.skill_id = skills.id
+			WHERE
+				uses_skill.project_id = ?
+		`, [id]
+		)
+	}
+
 	async getProjectImage(id) {
 		return this.query("SELECT id, filename, alt FROM images WHERE project_id = ?", [id]);
 	}
