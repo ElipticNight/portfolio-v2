@@ -57,7 +57,7 @@ export default {
         let res = response.data[0];
         this.title = res.title;
         this.summary = res.summary;
-        this.description = res.description
+        this.description = res.description;
         this.sourceLink = res.sourceLink;
         this.liveLink = res.liveLink;
         this.imageNo = res.imageNo;
@@ -73,7 +73,6 @@ export default {
       .then(
         (response) => {
           this.image = URL.createObjectURL(response.data);
-          console.log(typeof(this.image));
         },
         (error) => {
           console.log(error);

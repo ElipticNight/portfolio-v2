@@ -4,8 +4,8 @@
       <template v-slot:title> Client Projects </template>
       <template v-slot:content>
         <div class="projects-container">
-          <LeedsTechMap />
-          <QaMaze />
+          <Project :projectID="1" />
+          <Project :projectID="2" />
         </div>
       </template>
     </SectionTemplate>
@@ -14,15 +14,13 @@
 
 <script>
 import SectionTemplate from "@/views/sections/SectionTemplate.vue";
-import LeedsTechMap from "@/components/projects/LeedsTechMap.vue";
-import QaMaze from "@/components/projects/QaMaze.vue";
+import Project from "@/components/home/Project.vue";
 
 export default {
   name: "ClientProjects",
   components: {
     SectionTemplate,
-    LeedsTechMap,
-    QaMaze,
+    Project,
   },
 };
 </script>
