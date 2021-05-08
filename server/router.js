@@ -2,7 +2,7 @@ const Projects = require('./controllers/projects');
 
 const cors = require('cors');
 const corsOptions = {
-	origin: ["http://localhost:8080", "https://portfolioserver.aidanbyrne.tech"],
+	origin: ["http://localhost:8080", "https://aidanbyrne.tech"],
 }
 
 var express = require('express'),
