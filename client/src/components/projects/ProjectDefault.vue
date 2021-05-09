@@ -91,14 +91,14 @@ export default {
   }
   .title {
     @extend %center-content;
-    height: 20%;
+    height: 10%;
     width: 100%;
     border-radius: 10px 10px 0 0;
     font-size: 22px;
   }
   .main {
-    @extend %center-content-vertical;
-    height:65%;
+    @extend %center-content-vertical-top;
+    height: 75%;
     width: 100%;
     margin-top: 10px;
     .image {
@@ -106,11 +106,12 @@ export default {
       padding: 0px 0px;
       img {
         max-width: 90%;
-        max-height: 90%;
+        max-height: 180px;
       }
     }
     .summary {
       width: 100%;
+      margin-top: 20px;
       padding: 0px 20px;
       text-align: center;
       line-height: 20px;

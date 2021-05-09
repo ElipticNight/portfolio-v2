@@ -5,7 +5,9 @@
       <div class="tags"></div>
       <Divider />
       <div v-if="!loading" class="projects">
-        <Project v-for="project in projects" :key="project.id" :data="project" />
+        <div v-for="project in projects" :key="project.id" class="project-wrapper">
+          <Project :data="project" class="project" />
+        </div>
       </div>
     </div>
   </div>
@@ -61,6 +63,20 @@ export default {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     row-gap: 50px;
+    .project-wrapper {
+      @extend %center-content;
+    }
+    @media screen and (min-width: $s) {
+      width: 90vw;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (min-width: $xl) {
+      width: 90vw;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media screen and (min-width: $xxl) {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 }
 </style>
