@@ -4,7 +4,7 @@
       @expand="expanded = true"
       :title="title"
       :summary="summary"
-      :images="images"
+      :image="images[0]"
       :sourceLink="sourceLink"
       :liveLink="liveLink"
       :technologies="technologies"
@@ -47,7 +47,7 @@ export default {
       title: this.data.title,
       summary: this.data.summary,
       description: this.data.description,
-      images: [],
+      images: this.data.images,
       sourceLink: this.data.sourceLink,
       liveLink: this.data.liveLink,
       technologies: [],

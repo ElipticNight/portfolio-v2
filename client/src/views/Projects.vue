@@ -4,12 +4,8 @@
     <div class="projects-container">
       <div class="tags"></div>
       <Divider />
-      <div class="projects">
+      <div v-if="!loading" class="projects">
         <Project v-for="project in projects" :key="project.id" :data="project" />
-        <!-- <Project />
-        <Project />
-        <Project />
-        <Project /> -->
       </div>
     </div>
   </div>
@@ -30,16 +26,17 @@ export default {
   },
   data() {
     return {
+      loading: true,
       projects: [],
     }
   },
-  mounted() {
+  created() {
     axios
       .get(`${process.env.VUE_APP_API_BASE_URL}/projects`)
       .then(
         (response) => {
           this.projects = response.data;
-          console.log(this.projects);
+          this.loading = false;
         },
         (error) => {
           console.log(error);
