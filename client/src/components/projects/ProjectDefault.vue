@@ -6,7 +6,7 @@
       </div>
       <div @click="expand()" class="main">
         <div class="image">
-          <img :src="images[0]" alt="" />
+          <img :src="`${process.env.VUE_APP_API_BASE_URL}/image/${image.name}`" alt="" />
         </div>
         <div class="summary">
           {{ summary }}
@@ -46,8 +46,8 @@ export default {
       type: String,
       default: null,
     },
-    images: {
-      type: Array,
+    image: {
+      type: Object,
     },
     sourceLink: {
       type: String,

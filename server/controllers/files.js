@@ -1,9 +1,9 @@
-const Database = require('../database');
+const path = require('path');
 
 class Files
 {
     static getProjectImage(filename) {
-        let location = __dirname + `/images/projects/${filename}`;
+        let location = path.join(__dirname + `/../images/projects/${filename}`);
         return location;
     }
 }

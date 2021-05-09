@@ -21,17 +21,10 @@ var express = require('express'),
 			res.send(await Projects.getAll());
 		})();
 	})
- 
-	// router.get('/project/:id/images/:imageNo', cors(corsOptions), (req, res) => {
-	// 	(async() => {
-	// 		let image = await Projects.getImage(req.params.id, req.params.imageNo);
-	// 		res.sendFile(__dirname + `/images/${image.filename}`);
-	// 	})();
-	// })
 
 	router.get('/image/:name', cors(corsOptions), (req, res) => {
 		(async() => {
-			let image = Projects.getImage(req.params.name);
+			let image = Files.getProjectImage(req.params.name);
 			res.sendFile(image);
 		})();
 	})

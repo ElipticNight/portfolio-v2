@@ -25,7 +25,7 @@ import SectionTemplate from "@/views/sections/SectionTemplate.vue";
 import LinkButton from "@/components/misc/LinkButton.vue";
 
 export default {
-  name: "Projects",
+  name: "AboutMe",
   components: {
     SectionTemplate,
     LinkButton,

@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div v-if="loaded">
     <ProjectDefault
       @expand="expanded = true"
       :title="title"
       :summary="summary"
-      :image="image"
+      :image="images[0]"
       :sourceLink="sourceLink"
       :liveLink="liveLink"
       :technologies="technologies"
@@ -16,8 +16,7 @@
       :title="title"
       :summary="summary"
       :description="description"
-      :images="[image]"
-      :imageNo="imageNo"
+      :images="images"
       :sourceLink="sourceLink"
       :liveLink="liveLink"
       :technologies="technologies"
@@ -28,7 +27,7 @@
 
 <script>
 import ProjectDefault from "@/components/home/ProjectDefault.vue";
-import ProjectExpanded from "@/components/home/ProjectExpanded";
+import ProjectExpanded from "@/components/home/ProjectExpanded.vue";
 import axios from "axios";
 
 export default {
@@ -45,19 +44,19 @@ export default {
   },
   data() {
     return {
+      loaded: false,
       expanded: false,
       title: "",
       summary: "",
       description: "",
-      image: null,
-      imageNo: null,
+      images: [],
       sourceLink: null,
       liveLink: null,
       technologies: [],
       skills: [],
     };
   },
-  mounted() {
+  created() {
     axios
       .get(`${process.env.VUE_APP_API_BASE_URL}/project/${this.projectID}`)
       .then(
@@ -68,24 +67,10 @@ export default {
           this.description = res.description;
           this.sourceLink = res.sourceLink;
           this.liveLink = res.liveLink;
-          this.imageNo = res.imageNo;
+          this.images = res.images;
           this.technologies = res.technologies;
           this.skills = res.skills;
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
-    axios
-      .get(
-        `${process.env.VUE_APP_API_BASE_URL}/project/${this.projectID}/images/0`,
-        {
-          responseType: "blob",
-        }
-      )
-      .then(
-        (response) => {
-          this.image = URL.createObjectURL(response.data);
+          this.loaded = true;
         },
         (error) => {
           console.log(error);
