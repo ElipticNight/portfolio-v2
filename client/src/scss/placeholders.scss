@@ -4,9 +4,16 @@
   align-items: center;
 }
 
-%center-content-virtical {
+%center-content-vertical {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+%center-content-vertical-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
 }

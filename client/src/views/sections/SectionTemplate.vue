@@ -18,7 +18,7 @@ export default {};
 
 <style lang="scss" scoped>
 .container {
-  @extend %center-content-virtical;
+  @extend %center-content-vertical;
   margin-bottom: 20px;
   .title {
     margin-top: 0px;

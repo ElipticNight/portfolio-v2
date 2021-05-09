@@ -14,7 +14,7 @@
           link="https://github.com/ElipticNight"
           text="View GitHub"
         />
-        <LinkButton target="AboutMe" text="Find out more" />
+        <LinkButton target="Personal" text="Find out more" />
       </template>
     </SectionTemplate>
   </div>
@@ -25,7 +25,7 @@ import SectionTemplate from "@/views/sections/SectionTemplate.vue";
 import LinkButton from "@/components/misc/LinkButton.vue";
 
 export default {
-  name: "Projects",
+  name: "AboutMe",
   components: {
     SectionTemplate,
     LinkButton,

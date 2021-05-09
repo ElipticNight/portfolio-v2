@@ -23,7 +23,7 @@ export default {
 
 <style lang="scss" scoped>
 .temp {
-  @extend %center-content-virtical;
+  @extend %center-content-vertical;
   height: calc(100vh - 65px);
   width: 100%;
 }

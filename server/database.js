@@ -37,18 +37,11 @@ class Database
 			projects.summary,
 			projects.description,
 			projects.liveLink,
-			projects.sourceLink,
-			count(projects.id) as imageNo
+			projects.sourceLink
 		from
 			projects
-		join
-			images
-		on
-			images.project_id = projects.id
 		WHERE
 			projects.id = ?
-		group by
-			projects.id
 		`,
 			[id]
 		);
@@ -58,7 +51,7 @@ class Database
 		return await this.query(`
 			SELECT
 				technologies.id,
-				technologies.name
+				technologies.name AS name
 			FROM
 				technologies
 			JOIN
@@ -75,7 +68,7 @@ class Database
 		return await this.query(`
 			SELECT
 				skills.id,
-				skills.name
+				skills.name AS name
 			FROM
 				skills
 			JOIN
@@ -88,8 +81,70 @@ class Database
 		)
 	}
 
-	async getProjectImage(id) {
-		return this.query("SELECT id, filename, alt FROM images WHERE project_id = ?", [id]);
+	async getProjectImages(id) {
+		return await this.query("SELECT id, filename AS name, alt FROM images WHERE project_id = ?", [id]);
+	}
+
+	async getAllProjects() {
+		return await this.query("SELECT * FROM projects");
+	}
+
+	async getAllImages() {
+		return await this.query("SELECT filename AS val, project_id FROM images");
+	}
+
+	async getAllTags() {
+		return await this.query(`
+			SELECT
+				tags.name AS val,
+				tagged_by.project_id
+			FROM
+				projects
+			JOIN
+				tagged_by
+			ON
+				projects.id = tagged_by.project_id
+			JOIN
+				tags
+			ON
+				tagged_by.tag_id = tags.id
+		`);
+	}
+
+	async getAllTechnologies() {
+		return await this.query(`
+			SELECT
+				technologies.name AS val,
+				uses_technology.project_id
+			FROM
+				projects
+			JOIN
+				uses_technology
+			ON
+				projects.id = uses_technology.project_id
+			JOIN
+				technologies
+			ON
+				uses_technology.technology_id = technologies.id
+		`);
+	}
+
+	async getAllSkills() {
+		return await this.query(`
+			SELECT
+				skills.name AS val,
+				uses_skill.project_id
+			FROM
+				projects
+			JOIN
+				uses_skill
+			ON
+				projects.id = uses_skill.project_id
+			JOIN
+				skills
+			ON
+				uses_skill.skill_id = skills.id
+		`);
 	}
 }
 

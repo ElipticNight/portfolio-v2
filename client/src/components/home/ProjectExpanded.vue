@@ -9,7 +9,7 @@
       </div>
       <div class="main">
         <div class="image">
-          <img :src="images[0]" alt="" />
+          <img :src="`${BaseUrl}/image/${images[0]}`" alt="" />
         </div>
         <div class="content">
           <div class="tags">
@@ -17,7 +17,7 @@
               Technologies
               <ul class="list">
                 <li v-for="technology in technologies" :key="technology.id">
-                  {{ technology.name }}
+                  {{ technology }}
                 </li>
               </ul>
             </div>
@@ -25,7 +25,7 @@
               Skills
               <ul class="list">
                 <li v-for="skill in skills" :key="skill.id">
-                  {{ skill.name }}
+                  {{ skill }}
                 </li>
               </ul>
             </div>
@@ -39,7 +39,9 @@
           <div class="description">
             <div class="section-title">Description</div>
             <div class="section-content">
-              {{ description }}
+              <p v-for="(paragraph, index) in description.split('\\r')" :key="index">
+                {{ paragraph }}
+              </p>
             </div>
           </div>
         </div>
@@ -102,6 +104,11 @@ export default {
       type: Array,
       default: () => [],
     },
+  },
+  data() {
+    return {
+      BaseUrl: process.env.VUE_APP_API_BASE_URL,
+    }
   },
   methods: {
     close(e) {
