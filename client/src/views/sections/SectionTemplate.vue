@@ -19,13 +19,14 @@ export default {};
 <style lang="scss" scoped>
 .container {
   @extend %center-content-virtical;
+  margin-bottom: 20px;
   .title {
     margin-top: 0px;
     font-size: 36px;
     color: $llavender-grey;
   }
   .content {
-    margin-top: 30px;
+    margin: 20px 0;
   }
   .link-container {
     @extend %center-content;

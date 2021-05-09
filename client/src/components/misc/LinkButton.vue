@@ -1,8 +1,15 @@
 <template>
   <div>
-    <router-link :to="{ name: target }" class="link">
+    <router-link
+      v-if="target !== 'external'"
+      :to="{ name: target }"
+      class="link"
+    >
       <Button :text="text" />
     </router-link>
+    <a :href="link" v-else target="_blank" rel="noopener noreferrer">
+      <Button :text="text" />
+    </a>
   </div>
 </template>
 
@@ -19,14 +26,15 @@ export default {
       type: String,
       required: true,
     },
+    link: {
+      type: String,
+    },
     text: {
       type: String,
       default: "Link",
-    }
-  }
+    },
+  },
 };
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
