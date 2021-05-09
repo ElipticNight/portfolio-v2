@@ -6,6 +6,9 @@
     <div class="content">
       <slot name="content"></slot>
     </div>
+    <div class="link-container">
+      <slot name="links"></slot>
+    </div>
   </div>
 </template>
 
@@ -23,6 +26,12 @@ export default {};
   }
   .content {
     margin-top: 30px;
+  }
+  .link-container {
+    @extend %center-content;
+    div {
+      margin: 0 20px;
+    }
   }
 }
 </style>
