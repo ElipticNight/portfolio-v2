@@ -95,6 +95,10 @@ class Database
 	async getAllProjects() {
 		return this.query("SELECT * FROM projects");
 	}
+
+	async getAllImages() {
+		return this.query("SELECT * FROM images");
+	}
 }
 
 module.exports = Database;

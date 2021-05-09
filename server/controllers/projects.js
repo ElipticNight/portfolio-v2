@@ -2,6 +2,8 @@ const Database = require('../database');
 
 class Projects
 {
+    static builder;
+
     static async get(id) {
         let db = Database.connect();
         let project = await db.getProject(id);
@@ -12,8 +14,22 @@ class Projects
     }
 
     static async getAll() {
+        Projects.builder = [];
         let db = Database.connect();
-        return db.getAllProjects();
+        Projects.builder = await db.getAllProjects();
+        Projects.addToProject("images", await db.getAllImages());
+
+        return Projects.builder;
+    }
+
+    static addToProject(type, arr) {
+        arr.forEach((el) => {
+            let project = Projects.builder.find(x => x.id === el.project_id);
+            if (!project[type]) {
+                project[type] = [];
+            }
+            project[type].push(el.filename);
+        });
     }
 }
 
