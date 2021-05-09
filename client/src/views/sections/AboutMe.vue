@@ -14,7 +14,7 @@
           link="https://github.com/ElipticNight"
           text="View GitHub"
         />
-        <LinkButton target="AboutMe" text="Find out more" />
+        <LinkButton target="Personal" text="Find out more" />
       </template>
     </SectionTemplate>
   </div>
