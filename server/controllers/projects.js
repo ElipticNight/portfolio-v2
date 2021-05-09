@@ -18,6 +18,9 @@ class Projects
         let db = Database.connect();
         Projects.builder = await db.getAllProjects();
         Projects.addToProject("images", await db.getAllImages());
+        Projects.addToProject("tags", await db.getAllTags());
+        Projects.addToProject("technologies", await db.getAllTechnologies());
+        Projects.addToProject("skills", await db.getAllSkills());
 
         return Projects.builder;
     }
@@ -28,7 +31,7 @@ class Projects
             if (!project[type]) {
                 project[type] = [];
             }
-            project[type].push(el.filename);
+            project[type].push(el.val);
         });
     }
 }
