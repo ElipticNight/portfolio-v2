@@ -6,10 +6,10 @@
       <Divider />
       <div class="projects">
         <Project v-for="project in projects" :key="project.id" :data="project" />
+        <!-- <Project />
         <Project />
         <Project />
-        <Project />
-        <Project />
+        <Project /> -->
       </div>
     </div>
   </div>

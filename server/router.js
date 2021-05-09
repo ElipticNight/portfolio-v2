@@ -1,4 +1,5 @@
 const Projects = require('./controllers/projects');
+const Files = require('./controllers/files');
 
 const cors = require('cors');
 const corsOptions = {
@@ -20,11 +21,18 @@ var express = require('express'),
 			res.send(await Projects.getAll());
 		})();
 	})
+ 
+	// router.get('/project/:id/images/:imageNo', cors(corsOptions), (req, res) => {
+	// 	(async() => {
+	// 		let image = await Projects.getImage(req.params.id, req.params.imageNo);
+	// 		res.sendFile(__dirname + `/images/${image.filename}`);
+	// 	})();
+	// })
 
-	router.get('/project/:id/images/:imageNo', cors(corsOptions), (req, res) => {
+	router.get('/image/:name', cors(corsOptions), (req, res) => {
 		(async() => {
-			let image = await Projects.getImage(req.params.id, req.params.imageNo);
-			res.sendFile(__dirname + `/images/${image.filename}`);
+			let image = Projects.getImage(req.params.name);
+			res.sendFile(image);
 		})();
 	})
 

@@ -6,7 +6,7 @@
       </div>
       <div @click="expand()" class="main">
         <div class="image">
-          <img :src="image" alt="" />
+          <img :src="images[0]" alt="" />
         </div>
         <div class="summary">
           {{ summary }}
@@ -46,8 +46,8 @@ export default {
       type: String,
       default: null,
     },
-    image: {
-      type: String,
+    images: {
+      type: Array,
     },
     sourceLink: {
       type: String,
@@ -76,8 +76,8 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 300px;
-  height: 350px;
+  width: 320px;
+  height: 400px;
   border-radius: 10px;
   background-color: $rich-black;
   box-shadow: 0 0 3px 1px $llavender-grey;
@@ -111,7 +111,7 @@ export default {
     .summary {
       width: 100%;
       padding: 0px 20px;
-      text-align: left;
+      text-align: center;
       line-height: 20px;
     }
   }

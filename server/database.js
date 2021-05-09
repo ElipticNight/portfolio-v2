@@ -88,7 +88,7 @@ class Database
 		)
 	}
 
-	async getProjectImage(id) {
+	async getProjectImages(id) {
 		return this.query("SELECT id, filename, alt FROM images WHERE project_id = ?", [id]);
 	}
 
