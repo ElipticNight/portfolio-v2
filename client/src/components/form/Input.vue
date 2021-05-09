@@ -167,9 +167,10 @@ export default {
     background-color: $llavender-grey;
     padding-left: 25px;
     outline: none;
-    transition: border 200ms ease-out;
+    transition: border 300ms ease-in-out;
+    border: solid 2px transparent;
     &.invalid {
-      border: solid 1px $red;
+      border: solid 2px $red;
     }
   }
 

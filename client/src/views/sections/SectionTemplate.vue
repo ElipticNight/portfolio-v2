@@ -20,12 +20,12 @@ export default {};
   justify-content: center;
   align-items: center;
   .title {
-    margin-top: 30px;
+    margin-top: 0px;
     font-size: 36px;
     color: $llavender-grey;
   }
   .content {
-    margin-top: 50px;
+    margin-top: 30px;
   }
 }
 </style>

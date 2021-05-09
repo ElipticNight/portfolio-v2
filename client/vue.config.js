@@ -15,10 +15,10 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        prependData: `@import "~@/scss/variables.scss"`,
+        prependData: `@import "~@/scss/global.scss"`,
       },
       scss: {
-        prependData: `@import "~@/scss/variables.scss";`,
+        prependData: `@import "~@/scss/global.scss";`,
       },
     },
   },
