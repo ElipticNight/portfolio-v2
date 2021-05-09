@@ -37,18 +37,11 @@ class Database
 			projects.summary,
 			projects.description,
 			projects.liveLink,
-			projects.sourceLink,
-			count(projects.id) as imageNo
+			projects.sourceLink
 		from
 			projects
-		join
-			images
-		on
-			images.project_id = projects.id
 		WHERE
 			projects.id = ?
-		group by
-			projects.id
 		`,
 			[id]
 		);
@@ -58,7 +51,7 @@ class Database
 		return await this.query(`
 			SELECT
 				technologies.id,
-				technologies.name
+				technologies.name AS name
 			FROM
 				technologies
 			JOIN
@@ -75,7 +68,7 @@ class Database
 		return await this.query(`
 			SELECT
 				skills.id,
-				skills.name
+				skills.name AS name
 			FROM
 				skills
 			JOIN
@@ -89,7 +82,7 @@ class Database
 	}
 
 	async getProjectImages(id) {
-		return await this.query("SELECT id, filename, alt FROM images WHERE project_id = ?", [id]);
+		return await this.query("SELECT id, filename AS name, alt FROM images WHERE project_id = ?", [id]);
 	}
 
 	async getAllProjects() {

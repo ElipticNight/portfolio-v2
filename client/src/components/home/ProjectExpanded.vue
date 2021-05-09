@@ -9,7 +9,7 @@
       </div>
       <div class="main">
         <div class="image">
-          <img :src="`${BaseUrl}/image/${images[0].filename}`" alt="" />
+          <img :src="`${BaseUrl}/image/${images[0]}`" alt="" />
         </div>
         <div class="content">
           <div class="tags">
@@ -17,7 +17,7 @@
               Technologies
               <ul class="list">
                 <li v-for="technology in technologies" :key="technology.id">
-                  {{ technology.name }}
+                  {{ technology }}
                 </li>
               </ul>
             </div>
@@ -25,7 +25,7 @@
               Skills
               <ul class="list">
                 <li v-for="skill in skills" :key="skill.id">
-                  {{ skill.name }}
+                  {{ skill }}
                 </li>
               </ul>
             </div>

@@ -50,8 +50,8 @@ export default {
       images: this.data.images,
       sourceLink: this.data.sourceLink,
       liveLink: this.data.liveLink,
-      technologies: [],
-      skills: [],
+      technologies: this.data.technologies,
+      skills: this.data.skills,
     };
   },
 };

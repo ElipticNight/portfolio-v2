@@ -6,7 +6,7 @@
       </div>
       <div @click="expand()" class="main">
         <div class="image">
-          <img :src="`${BaseUrl}/image/${image.filename}`" alt="" />
+          <img :src="`${BaseUrl}/image/${image}`" alt="" />
         </div>
         <div class="summary">
           {{ summary }}
@@ -40,7 +40,7 @@
       </div>
       <div v-if="expanded" class="main">
         <div class="image">
-          <img :src="`${BaseUrl}/image/${image.filename}`" alt="" />
+          <img :src="`${BaseUrl}/image/${image}`" alt="" />
         </div>
         <div class="summary">
           {{ summary }}
@@ -63,7 +63,7 @@ export default {
       default: null,
     },
     image: {
-      type: Object,
+      type: String,
     },
     sourceLink: {
       type: String,
