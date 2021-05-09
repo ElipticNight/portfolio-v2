@@ -24,7 +24,7 @@ var express = require('express'),
 
 	router.get('/image/:name', cors(corsOptions), (req, res) => {
 		(async() => {
-			let image = Files.getProjectImage(req.params.name);
+			let image = Files.getImage(req.params.name);
 			res.sendFile(image);
 		})();
 	})

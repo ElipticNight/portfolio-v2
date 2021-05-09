@@ -2,8 +2,8 @@ const path = require('path');
 
 class Files
 {
-    static getProjectImage(filename) {
-        let location = path.join(__dirname + `/../images/projects/${filename}`);
+    static getImage(filename) {
+        let location = path.join(__dirname + `/../images/${filename}`);
         return location;
     }
 }
