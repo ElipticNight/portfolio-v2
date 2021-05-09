@@ -39,7 +39,9 @@
           <div class="description">
             <div class="section-title">Description</div>
             <div class="section-content">
-              {{ description }}
+              <p v-for="(paragraph, index) in description.split('\\r')" :key="index">
+                {{ paragraph }}
+              </p>
             </div>
           </div>
         </div>
