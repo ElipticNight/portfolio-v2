@@ -64,6 +64,7 @@ export default {
     font-size: 60px;
     transition: transform 1000ms;
     color: $white;
+    cursor: pointer;
     &:hover {
       transform: translateY(-15px);
     }

@@ -7,24 +7,35 @@
           I am a full-stack web developer Specialising in VueJs, NodeJs and PHP
         </div>
       </template>
+      <template v-slot:links>
+        <LinkButton target="AboutMe" text="View resume" />
+        <LinkButton
+          target="external"
+          link="https://github.com/ElipticNight"
+          text="View GitHub"
+        />
+        <LinkButton target="AboutMe" text="Find out more" />
+      </template>
     </SectionTemplate>
   </div>
 </template>
 
 <script>
 import SectionTemplate from "@/views/sections/SectionTemplate.vue";
+import LinkButton from "@/components/misc/LinkButton.vue";
 
 export default {
   name: "Projects",
   components: {
     SectionTemplate,
+    LinkButton,
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .content {
-  min-height: 300px;
+  min-height: 100px;
   margin-bottom: 30px;
 }
 </style>

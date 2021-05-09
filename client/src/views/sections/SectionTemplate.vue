@@ -6,6 +6,9 @@
     <div class="content">
       <slot name="content"></slot>
     </div>
+    <div class="link-container">
+      <slot name="links"></slot>
+    </div>
   </div>
 </template>
 
@@ -15,17 +18,21 @@ export default {};
 
 <style lang="scss" scoped>
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @extend %center-content-virtical;
+  margin-bottom: 20px;
   .title {
-    margin-top: 30px;
+    margin-top: 0px;
     font-size: 36px;
     color: $llavender-grey;
   }
   .content {
-    margin-top: 50px;
+    margin: 20px 0;
+  }
+  .link-container {
+    @extend %center-content;
+    div {
+      margin: 0 20px;
+    }
   }
 }
 </style>

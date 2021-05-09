@@ -60,9 +60,6 @@ export default {
   align-items: center;
   justify-content: flex-start;
   .title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 20%;
     font-size: 20px;
     font-weight: normal;

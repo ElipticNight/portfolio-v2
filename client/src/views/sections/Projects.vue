@@ -7,6 +7,9 @@
           <Project :projectID="3" />
         </div>
       </template>
+      <template v-slot:links>
+        <LinkButton target="Projects" text="View all projects" />
+      </template>
     </SectionTemplate>
   </div>
 </template>
@@ -14,12 +17,14 @@
 <script>
 import SectionTemplate from "@/views/sections/SectionTemplate.vue";
 import Project from "@/components/home/Project.vue";
+import LinkButton from "@/components/misc/LinkButton.vue";
 
 export default {
   name: "Projects",
   components: {
     SectionTemplate,
     Project,
+    LinkButton,
   },
 };
 </script>

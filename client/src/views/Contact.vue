@@ -18,11 +18,8 @@ export default {
 
 <style lang="scss" scoped>
 .temp {
+  @extend %center-content-virtical;
   height: calc(100vh - 65px);
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 </style>

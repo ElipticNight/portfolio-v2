@@ -36,7 +36,7 @@
             />
           </div>
           <div class="row-send">
-            <div @click="sendEmail" class="send-button">Send</div>
+            <Button @click.native="sendEmail" text="send" />
           </div>
         </div>
       </template>
@@ -47,6 +47,7 @@
 <script>
 import SectionTemplate from "@/views/sections/SectionTemplate.vue";
 import TextInput from "@/components/form/Input";
+import Button from "@/components/form/Button.vue";
 import emailjs from "emailjs-com";
 
 export default {
@@ -54,6 +55,7 @@ export default {
   components: {
     SectionTemplate,
     TextInput,
+    Button,
   },
   data() {
     return {
@@ -132,16 +134,12 @@ export default {
     }
   }
   .row-send {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @extend %center-content;
     .send-button {
+      @extend %center-content;
       width: 130px;
       height: 50px;
       border-radius: 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       background-color: $blue;
       cursor: pointer;
       &:hover {
