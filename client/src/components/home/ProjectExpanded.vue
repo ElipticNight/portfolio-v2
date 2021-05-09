@@ -9,7 +9,7 @@
       </div>
       <div class="main">
         <div class="image">
-          <img :src="images[0]" alt="" />
+          <img :src="`${BaseUrl}/image/${images[0].filename}`" alt="" />
         </div>
         <div class="content">
           <div class="tags">
@@ -102,6 +102,11 @@ export default {
       type: Array,
       default: () => [],
     },
+  },
+  data() {
+    return {
+      BaseUrl: process.env.VUE_APP_API_BASE_URL,
+    }
   },
   methods: {
     close(e) {
