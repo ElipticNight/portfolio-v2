@@ -15,10 +15,7 @@ export default {};
 
 <style lang="scss" scoped>
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @extend %center-content-virtical;
   .title {
     margin-top: 0px;
     font-size: 36px;

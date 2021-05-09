@@ -132,16 +132,12 @@ export default {
     }
   }
   .row-send {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @extend %center-content;
     .send-button {
+      @extend %center-content;
       width: 130px;
       height: 50px;
       border-radius: 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       background-color: $blue;
       cursor: pointer;
       &:hover {

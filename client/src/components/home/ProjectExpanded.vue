@@ -116,15 +116,13 @@ export default {
 
 <style lang="scss" scoped>
 .underlay {
+  @extend %center-content;
   position: fixed;
   z-index: 998;
   top: 0;
   left: 0;
   height: 100vh;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: $lavender-grey;
   background-color: rgba(0, 0, 0, 0.8);
   .container {
@@ -148,8 +146,6 @@ export default {
       }
     }
     .title {
-      display: flex;
-      justify-content: center;
       height: 10%;
       width: 100%;
       border-radius: 10px 10px 0 0;
@@ -160,11 +156,9 @@ export default {
       height: 70%;
       width: 100%;
       .image {
+        @extend %center-content;
         width: 50%;
         height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         padding: 0px 0px;
         img {
           max-width: 90%;

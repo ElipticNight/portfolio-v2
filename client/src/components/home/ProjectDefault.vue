@@ -113,9 +113,7 @@ export default {
     box-shadow: 0 0 3px 2px $llavender-grey;
   }
   .title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @extend %center-content;
     height: 20%;
     width: 100%;
     border-radius: 10px 10px 0 0;
@@ -150,9 +148,7 @@ export default {
     display: flex;
     .source,
     .live {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @extend %center-content;
       height: 100%;
       width: 50%;
       border-top: 0.5px solid $lavender-grey;
