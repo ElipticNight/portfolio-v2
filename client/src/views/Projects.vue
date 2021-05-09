@@ -1,25 +1,58 @@
 <template>
   <div>
     <Header />
-    <div class="temp"><h1>Coming Soon !</h1></div>
+    <div class="projects-container">
+      <div class="tags"></div>
+      <Divider />
+      <div class="projects"></div>
+    </div>
   </div>
 </template>
 
 <script>
 import Header from "@/components/Header.vue";
+import Divider from "@/components/misc/PageDivider.vue";
+import axios from "axios";
 
 export default {
   name: "Projects",
   components: {
     Header,
+    Divider,
   },
+  data() {
+    return {
+      projects: [],
+    }
+  },
+  mounted() {
+    axios
+      .get(`${process.env.VUE_APP_API_BASE_URL}/projects`)
+      .then(
+        (response) => {
+          this.projects = response.data;
+          console.log(this.projects);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-.temp {
+.projects-container {
   @extend %center-content-virtical;
-  height: calc(100vh - 65px);
   width: 100%;
+  .tags {
+    //
+  }
+  ::v-deep .divider {
+    width: 15vw;
+  }
+  .projects {
+    //
+  }
 }
 </style>

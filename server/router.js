@@ -15,6 +15,12 @@ var express = require('express'),
 		})();
 	})
 
+	router.get('/projects', cors(corsOptions), (req, res) => {
+		(async() => {
+			res.send(await Projects.getAll());
+		})();
+	})
+
 	router.get('/project/:id/images/:imageNo', cors(corsOptions), (req, res) => {
 		(async() => {
 			let image = await Projects.getImage(req.params.id, req.params.imageNo);

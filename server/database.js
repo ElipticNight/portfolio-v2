@@ -91,6 +91,10 @@ class Database
 	async getProjectImage(id) {
 		return this.query("SELECT id, filename, alt FROM images WHERE project_id = ?", [id]);
 	}
+
+	async getAllProjects() {
+		return this.query("SELECT * FROM projects");
+	}
 }
 
 module.exports = Database;

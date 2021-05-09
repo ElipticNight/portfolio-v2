@@ -15,6 +15,11 @@ class Projects
         let images = await db.getProjectImage(id);
         return images[imageNo];
     }
+
+    static async getAll() {
+        let db = Database.connect();
+        return db.getAllProjects();
+    }
 }
 
 module.exports = Projects;
