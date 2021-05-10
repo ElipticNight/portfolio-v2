@@ -18,11 +18,16 @@ class Projects
         let db = Database.connect();
         Projects.builder = await db.getAllProjects();
         Projects.addToProject("images", await db.getAllImages());
-        Projects.addToProject("tags", await db.getAllTags());
+        Projects.addToProject("tags", await db.getAllProjectTags());
         Projects.addToProject("technologies", await db.getAllTechnologies());
         Projects.addToProject("skills", await db.getAllSkills());
 
         return Projects.builder;
+    }
+
+    static async getTags() {
+        let db = Database.connect();
+        return Projects.generateList(await db.getAllUniqueProjectTags());
     }
 
     static generateList(objArray) {
@@ -35,7 +40,7 @@ class Projects
             if (!project[type]) {
                 project[type] = [];
             }
-            project[type].push(el.val);
+            project[type].push(el.name);
         });
     }
 }
