@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <div class="temp"><h1>Coming Soon !</h1></div>
+    <div class="about-me-container"></div>
   </div>
 </template>
 
@@ -17,7 +17,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.temp {
+.about-me-container {
   @extend %center-content-vertical;
   height: calc(100vh - 65px);
   width: 100%;

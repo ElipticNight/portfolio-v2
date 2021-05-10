@@ -4,7 +4,8 @@
       <template v-slot:title> About Me </template>
       <template v-slot:content>
         <div class="content">
-          I am a full-stack web developer Specialising in VueJs, NodeJs and PHP
+          I am a full-stack web developer Specialising in VueJs, NodeJs, PHP, and Laravel
+          <!-- add some icons for the langs/frameworks here -->
         </div>
       </template>
       <template v-slot:links>
