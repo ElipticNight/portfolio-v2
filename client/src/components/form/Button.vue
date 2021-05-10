@@ -1,5 +1,7 @@
 <template>
-  <div class="btn" type="button" v-bind:class="{small: small}">{{ text }}</div>
+  <div class="btn" type="button" v-bind:class="{ small: small }">
+    {{ text }}
+  </div>
 </template>
 
 <script>
