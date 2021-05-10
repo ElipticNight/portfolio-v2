@@ -39,7 +39,10 @@
           <div class="description">
             <div class="section-title">Description</div>
             <div class="section-content">
-              <p v-for="(paragraph, index) in description.split('\\r')" :key="index">
+              <p
+                v-for="(paragraph, index) in description.split('\\r')"
+                :key="index"
+              >
                 {{ paragraph }}
               </p>
             </div>
@@ -108,7 +111,7 @@ export default {
   data() {
     return {
       BaseUrl: process.env.VUE_APP_API_BASE_URL,
-    }
+    };
   },
   methods: {
     close(e) {

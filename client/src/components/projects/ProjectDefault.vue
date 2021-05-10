@@ -56,7 +56,7 @@ export default {
     liveLink: {
       type: String,
       default: null,
-    }
+    },
   },
   data() {
     return {
