@@ -62,6 +62,9 @@ export default {
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
     border-radius: 25px;
+    @media screen and (max-width: $s) {
+      opacity: 1;
+    }
   }
   &:hover:before {
     opacity: 1;
