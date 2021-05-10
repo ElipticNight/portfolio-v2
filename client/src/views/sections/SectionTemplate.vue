@@ -26,12 +26,18 @@ export default {};
     color: $llavender-grey;
   }
   .content {
-    margin: 20px 0;
+    margin: 20px;
   }
   .link-container {
     @extend %center-content;
     div {
       margin: 0 20px;
+    }
+    @media screen and (max-width: $s) {
+      flex-direction: column;
+      div {
+        margin: 20px 0;
+      }
     }
   }
 }

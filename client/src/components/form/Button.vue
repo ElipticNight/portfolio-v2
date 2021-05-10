@@ -1,5 +1,5 @@
 <template>
-  <div class="btn" type="button">{{ text }}</div>
+  <div class="btn" type="button" v-bind:class="{small: small}">{{ text }}</div>
 </template>
 
 <script>
@@ -9,6 +9,10 @@ export default {
     text: {
       type: String,
       default: "Link",
+    },
+    small: {
+      type: Boolean,
+      default: false,
     },
   },
 };
@@ -28,6 +32,10 @@ export default {
   position: relative;
   z-index: 0;
   border-radius: 25px;
+  &.small {
+    width: 150px;
+    height: 40px;
+  }
   &:before {
     content: "";
     background: linear-gradient(
