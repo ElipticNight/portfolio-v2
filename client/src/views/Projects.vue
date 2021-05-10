@@ -68,7 +68,19 @@ export default {
     .project-wrapper {
       @extend %center-content;
     }
+    @media screen and (max-width: $s) {
+      width: 90vw;
+      grid-template-columns: repeat(1, 1fr);
+    }
     @media screen and (min-width: $s) {
+      width: 90vw;
+      grid-template-columns: repeat(1, 1fr);
+    }
+    @media screen and (min-width: $m) {
+      width: 90vw;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (min-width: $l) {
       width: 90vw;
       grid-template-columns: repeat(2, 1fr);
     }

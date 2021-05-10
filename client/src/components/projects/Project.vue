@@ -9,6 +9,18 @@
       :liveLink="liveLink"
       :technologies="technologies"
       :skills="skills"
+      class="project-default"
+    />
+    <ProjectMini
+      @expand="expanded = true"
+      :title="title"
+      :summary="summary"
+      :image="images[0]"
+      :sourceLink="sourceLink"
+      :liveLink="liveLink"
+      :technologies="technologies"
+      :skills="skills"
+      class="project-mini"
     />
     <ProjectExpanded
       v-if="expanded"
@@ -27,12 +39,14 @@
 
 <script>
 import ProjectDefault from "@/components/projects/ProjectDefault.vue";
+import ProjectMini from "@/components/projects/ProjectMini.vue";
 import ProjectExpanded from "@/components/home/ProjectExpanded";
 
 export default {
   name: "Project",
   components: {
     ProjectDefault,
+    ProjectMini,
     ProjectExpanded,
   },
   props: {
@@ -57,4 +71,15 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@media screen and (max-width: $s) {
+  .project-default {
+    display: none;
+  }
+}
+@media screen and (min-width: $s) {
+  .project-mini {
+    display: none;
+  }
+}
+</style>
