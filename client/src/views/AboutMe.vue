@@ -128,6 +128,27 @@
             </div>
           </div>
         </div>
+        <div class="volunteer-experience">
+          <h2 class="section-title">Volunteer Experience</h2>
+          <h4>County Mental Health Advisor</h4>
+          <p>Appointed County Mental Health Advisor for Northumberland Scouts. Involves working closely with both members of the county and external mental health professionals to develop new mental health training which will be used in scouting nationally.</p>
+          <h4>NGS Exec member</h4>
+          <p>Executive committee for the Newcastle Gang Show. Assisting with the management of the show, including, fundraising, and safeguarding.</p>
+        </div>
+        <div class="education">
+          <h2 class="section-title">Education</h2>
+          <h4>Level Three Software Development Apprenticeship – Merit – QA Apprenticeships</h4>
+          <h4>A-Levels</h4>
+          <p>Computer Science</p>
+          <p>Mathematics</p>
+          <p>Further Maths</p>
+          <h4>GCSE's - 11 - including:</h4>
+          <p>Computer Science - B</p>
+          <p>Mathematics - 8 (equivalent to A*)</p>
+          <p>Further Maths - A</p>
+          <h4>Trained First Aider</h4>
+          <h4>Trained Mental Health First Aider</h4>
+        </div>
       </div>
     </div>
   </div>
