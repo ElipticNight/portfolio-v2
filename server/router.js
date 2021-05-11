@@ -35,4 +35,11 @@ var express = require('express'),
 		})();
 	})
 
+	router.get('/document/:name', cors(corsOptions), (req, res) => {
+		(async() => {
+			let image = Files.getDocument(req.params.name);
+			res.sendFile(image);
+		})();
+	})
+
 module.exports = router;
