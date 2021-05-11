@@ -62,9 +62,9 @@ export default {
     height: calc(100% + 4px);
     animation: glowing 30s linear infinite;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
     border-radius: 25px;
-    @media screen and (max-width: $s) {
+    @media screen and (max-width: $m) {
       opacity: 1;
     }
   }
