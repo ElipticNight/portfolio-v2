@@ -135,16 +135,8 @@ export default {
   }
   .row-send {
     @extend %center-content;
-    .send-button {
-      @extend %center-content;
-      width: 130px;
-      height: 50px;
-      border-radius: 10px;
-      background-color: $blue;
-      cursor: pointer;
-      &:hover {
-        background-color: $lblue;
-      }
+    ::v-deep .btn {
+      font-size: 18px;
     }
   }
 }

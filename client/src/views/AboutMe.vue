@@ -112,11 +112,11 @@
                 rel="noopener noreferrer"
                 ><h4>{{ job.link ? "View" : "" }}</h4></a
               >
-              <h3>
+              <h3 class="title">
                 {{ job.company }} - {{ job.contract ? "Contract -" : "" }}
                 {{ job.title }}
               </h3>
-              <h4>{{ job.start }} - {{ job.end }}</h4>
+              <h4 class="date">{{ job.start }} - {{ job.end }}</h4>
               <p v-for="(paragraph, index) in job.description" :key="index">
                 {{ paragraph }}
               </p>
@@ -267,14 +267,17 @@ export default {
         font-size: 28px;
       }
     }
-    h3 {
+    h3,
+    h4,
+    p {
       padding-left: 10px;
     }
     h4 {
-      padding-left: 15px;
+      margin-bottom: 15px;
     }
     p {
-      padding-left: 25px;
+      margin: 0;
+      padding: 7px 10px;
     }
     .skills {
       .table {
@@ -314,7 +317,13 @@ export default {
     .work-history {
       .job-list {
         .job {
-          margin-bottom: 65px;
+          margin-bottom: 50px;
+          .title {
+            margin-bottom: 5px;
+          }
+          .date {
+            margin-top: 0;
+          }
           .link {
             float: right;
             h4 {
@@ -353,8 +362,9 @@ export default {
   }
 }
 @media screen and (min-width: $m) {
+  .link-mobile-container,
   .link-mobile {
-    display: none;
+    display: none !important;
   }
 }
 @media screen and (max-width: $l) and (min-width: $s) {
