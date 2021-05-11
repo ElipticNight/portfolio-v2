@@ -117,6 +117,16 @@
         </div>
         <div class="work-history">
           <h2 class="section-title">Work History</h2>
+          <div class="job-list">
+            <div v-for="(job, index) in workHistory" :key="index" class="job">
+              <a class="link" :href="job.link" target="_blank" rel="noopener noreferrer"><h4>{{ job.link ? "View" : "" }}</h4></a>
+              <h3>{{ job.company }} - {{ job.contract ? "Contract -" : "" }} {{ job.title }}</h3>
+              <h4>{{ job.start }} - {{ job.end }}</h4>
+              <p v-for="(paragraph, index) in job.description" :key="index">
+                {{ paragraph }}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -137,6 +147,48 @@ export default {
     return {
       expanded: false,
       BaseUrl: process.env.VUE_APP_API_BASE_URL,
+      workHistory: {
+        kytschi: {
+          company: "Kytschi",
+          contract: true,
+          title: "Software developer",
+          start: "March 2021",
+          end: "April 2021",
+          link: null,
+          description: [
+            "Worked in a small team with a senior developer & designer build a large-scale CRM with a VueJS front end and a PHP Lumen microservice back end.",
+            "Created the user interface from a set of design boards, and interfaced with the API via AXIOS requests.",
+            "Contributed towards architectural decisions, including the decision to use a WebSocket bastion server acting as a secure single point of access for our microservice’s APIs.",
+          ],
+        },
+        effectivePublishing: {
+          company: "Effective Publishing",
+          contract: true,
+          title: "Lead developer",
+          start: "February 2021",
+          end: "March 2021",
+          link: "https://piko.kytschi.com",
+          description: [
+            "Created a tech map for a conference in Leeds which shows tech companies in the region and information on each of them.",
+            "From a design of the map, took the project through all stages of the SLDC including planning, development, database administration and deployment.",
+            "Developed with VueJs and SVG animations on the front end, and a NodeJs Express server integrating with a MySQL database on the backend.",
+          ],
+        },
+        tritility: {
+          company: "Tritility Ltd",
+          contract: false,
+          title: "Apprentice software developer",
+          start: "December 2019",
+          end: "Frebruary 2021",
+          link: null,
+          description: [
+            "Level three apprenticeship at Tritility, maintaining a legacy CRM built in procedural PHP, and porting it over to VueJS-Lumen/Laravel microservices, and then to a VueJS-Laravel monolith as the company decided to change direction.",
+            "Liaised with the sales team to identify and fix reported bugs in our legacy system.",
+            "Worked with the senior developers to add functionality and automated tests to the new system.",
+            "Generated ad hoc SQL reports for the directors.",
+          ],
+        },
+      }
     };
   },
 };
@@ -186,6 +238,23 @@ export default {
               padding: 0 20px 40px;
               img {
                 max-height: 50px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .work-history {
+      .job-list {
+        .job {
+          margin-bottom: 50px;
+          .link {
+            float: right;
+            h4 {
+              margin: 0;
+              text-decoration: underline;
+              &:hover {
+                transform: scale(1.1);
               }
             }
           }
