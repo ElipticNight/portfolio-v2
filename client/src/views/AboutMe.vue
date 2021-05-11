@@ -2,20 +2,6 @@
   <div>
     <Header />
     <div class="about-me-container">
-      <div class="row-links">
-        <LinkButton
-          target="external"
-          :link="`${BaseUrl}/document/Aidan Byrne CV.pdf`"
-          text="View Pdf"
-          class="button"
-        />
-        <LinkButton
-          target="external"
-          :link="`${BaseUrl}/document/Aidan Byrne CV.docx`"
-          text="Download Docx"
-          class="button"
-        />
-      </div>
       <div class="content">
         <div class="summary">
           <h2 class="section-title">Summary</h2>
@@ -125,6 +111,15 @@
               <p v-for="(paragraph, index) in job.description" :key="index">
                 {{ paragraph }}
               </p>
+              <div v-if="job.link" class="link-mobile-container">
+                <LinkButton
+                  target="external"
+                  :link="job.link"
+                  text="View"
+                  class="link-mobile"
+                  :small="true"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -139,16 +134,30 @@
           <h2 class="section-title">Education</h2>
           <h4>Level Three Software Development Apprenticeship – Merit – QA Apprenticeships</h4>
           <h4>A-Levels</h4>
-          <p>Computer Science</p>
-          <p>Mathematics</p>
-          <p>Further Maths</p>
+          <p> - Computer Science</p>
+          <p> - Mathematics</p>
+          <p> - Further Maths</p>
           <h4>GCSE's - 11 - including:</h4>
-          <p>Computer Science - B</p>
-          <p>Mathematics - 8 (equivalent to A*)</p>
-          <p>Further Maths - A</p>
+          <p> - Computer Science - B</p>
+          <p> - Mathematics - 8 (equivalent to A*)</p>
+          <p> - Further Maths - A</p>
           <h4>Trained First Aider</h4>
           <h4>Trained Mental Health First Aider</h4>
         </div>
+      </div>
+      <div class="row-links">
+        <LinkButton
+          target="external"
+          :link="`${BaseUrl}/document/Aidan Byrne CV.pdf`"
+          text="View Pdf"
+          class="button"
+        />
+        <LinkButton
+          target="external"
+          :link="`${BaseUrl}/document/Aidan Byrne CV.docx`"
+          text="Download Docx"
+          class="button"
+        />
       </div>
     </div>
   </div>
@@ -220,31 +229,48 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: calc(100vh - 65px);
   width: 100%;
-  .row-links {
-    @extend %center-content;
-    margin: 40px 0;
-    .button {
-      padding: 0 20px;
-    }
-  }
+  margin-bottom: 40px;
   .content {
-    margin-top: 20px;
-    width: 60vw;
+    margin-top: 40px;
+    width: 70vw;
     text-align: left;
+    @media screen and (max-width: $xl) {
+      width: 80vw;
+    }
+    @media screen and (max-width: $l) {
+      width: 90vw;
+    }
     > div {
       margin-bottom: 50px;
       .section-title {
         font-size: 28px;
       }
     }
+    h3 {
+      padding-left: 10px;
+    }
+    h4 {
+      padding-left: 15px;
+    }
+    p {
+      padding-left: 25px;
+    }
     .skills {
       .table {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
         .col {
           @extend %center-content-vertical-top;
+          width: 33%;
+          @media screen and (max-width: $l) {
+            width: 50%;
+          }
+          @media screen and (max-width: $m) {
+            width: 100%;
+          }
           h3 {
             margin-bottom: 60px;
           }
@@ -268,7 +294,7 @@ export default {
     .work-history {
       .job-list {
         .job {
-          margin-bottom: 50px;
+          margin-bottom: 65px;
           .link {
             float: right;
             h4 {
@@ -279,9 +305,42 @@ export default {
               }
             }
           }
+          .link-mobile-container {
+            @extend %center-content;
+            margin-top: 50px
+          }
         }
       }
     }
+  }
+  .row-links {
+    @extend %center-content;
+    margin: 40px 0;
+    .button {
+      padding: 0 20px;
+    }
+    @media screen and (max-width: $s) {
+      flex-direction: column;
+      .button {
+        padding: 20px 20px;
+      }
+    }
+  }
+}
+@media screen and (max-width: $m) {
+  .link {
+    display: none;
+  }
+}
+@media screen and (min-width: $m) {
+  .link-mobile-container {
+    display: none;
+  }
+}
+@media screen and (max-width: $l) and (min-width: $s) {
+  ::v-deep .btn {
+    width: 150px;
+    height: 40px;
   }
 }
 </style>
