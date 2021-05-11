@@ -22,6 +22,12 @@ var express = require('express'),
 		})();
 	})
 
+	router.get('/projects/tags', cors(corsOptions), (req, res) => {
+		(async() => {
+			res.send(await Projects.getTags());
+		})();
+	})
+
 	router.get('/image/:name', cors(corsOptions), (req, res) => {
 		(async() => {
 			let image = Files.getImage(req.params.name);

@@ -5,7 +5,11 @@
       <div class="tags"></div>
       <Divider />
       <div v-if="!loading" class="projects">
-        <div v-for="project in projects" :key="project.id" class="project-wrapper">
+        <div
+          v-for="project in projects"
+          :key="project.id"
+          class="project-wrapper"
+        >
           <Project :data="project" class="project" />
         </div>
       </div>
@@ -30,21 +34,19 @@ export default {
     return {
       loading: true,
       projects: [],
-    }
+    };
   },
   created() {
-    axios
-      .get(`${process.env.VUE_APP_API_BASE_URL}/projects`)
-      .then(
-        (response) => {
-          this.projects = response.data;
-          this.loading = false;
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
-  }
+    axios.get(`${process.env.VUE_APP_API_BASE_URL}/projects`).then(
+      (response) => {
+        this.projects = response.data;
+        this.loading = false;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  },
 };
 </script>
 
@@ -66,7 +68,19 @@ export default {
     .project-wrapper {
       @extend %center-content;
     }
+    @media screen and (max-width: $s) {
+      width: 90vw;
+      grid-template-columns: repeat(1, 1fr);
+    }
     @media screen and (min-width: $s) {
+      width: 90vw;
+      grid-template-columns: repeat(1, 1fr);
+    }
+    @media screen and (min-width: $m) {
+      width: 90vw;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (min-width: $l) {
       width: 90vw;
       grid-template-columns: repeat(2, 1fr);
     }

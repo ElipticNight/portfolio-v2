@@ -5,10 +5,10 @@
       :to="{ name: target }"
       class="link"
     >
-      <Button :text="text" />
+      <Button :text="text" :small="small" />
     </router-link>
     <a :href="link" v-else target="_blank" rel="noopener noreferrer">
-      <Button :text="text" />
+      <Button :text="text" :small="small" />
     </a>
   </div>
 </template>
@@ -32,6 +32,10 @@ export default {
     text: {
       type: String,
       default: "Link",
+    },
+    small: {
+      type: Boolean,
+      default: false,
     },
   },
 };

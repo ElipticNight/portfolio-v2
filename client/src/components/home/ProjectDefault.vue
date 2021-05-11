@@ -177,7 +177,7 @@ export default {
 
 .mobile-container {
   width: 85vw;
-  height: 75px;
+  min-height: 75px;
   border-radius: 10px;
   background-color: $rich-black;
   box-shadow: 0 0 3px 1px $lavender-grey;
@@ -209,20 +209,19 @@ export default {
   .main {
     display: flex;
     flex-direction: column;
-    height: 60%;
+    height: calc(100% - 75px);
     width: 100%;
     margin-top: 10px;
     padding-bottom: 30px;
     .image {
-      height: 100%;
       padding: 0px 0px;
       img {
-        max-width: 90%;
-        max-height: 90%;
+        max-width: 80%;
       }
     }
     .summary {
       height: 100%;
+      margin-top: 30px;
       padding: 0px 10px;
       text-align: center;
       line-height: 20px;

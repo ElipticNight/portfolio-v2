@@ -90,13 +90,13 @@ class Database
 	}
 
 	async getAllImages() {
-		return await this.query("SELECT filename AS val, project_id FROM images");
+		return await this.query("SELECT filename AS name, project_id FROM images");
 	}
 
-	async getAllTags() {
+	async getAllProjectTags() {
 		return await this.query(`
 			SELECT
-				tags.name AS val,
+				tags.name AS name,
 				tagged_by.project_id
 			FROM
 				projects
@@ -111,10 +111,14 @@ class Database
 		`);
 	}
 
+	async getAllUniqueProjectTags() {
+		return await this.query("SELECT tags.name AS name FROM tags");
+	}
+
 	async getAllTechnologies() {
 		return await this.query(`
 			SELECT
-				technologies.name AS val,
+				technologies.name AS name,
 				uses_technology.project_id
 			FROM
 				projects
@@ -132,7 +136,7 @@ class Database
 	async getAllSkills() {
 		return await this.query(`
 			SELECT
-				skills.name AS val,
+				skills.name AS name,
 				uses_skill.project_id
 			FROM
 				projects

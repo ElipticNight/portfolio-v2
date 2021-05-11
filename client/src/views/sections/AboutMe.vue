@@ -37,6 +37,11 @@ export default {
 <style lang="scss" scoped>
 .content {
   min-height: 100px;
-  margin-bottom: 30px;
+}
+@media screen and (max-width: $l) and (min-width: $s) {
+  ::v-deep .btn {
+    width: 150px;
+    height: 40px;
+  }
 }
 </style>
