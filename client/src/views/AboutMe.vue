@@ -105,8 +105,17 @@
           <h2 class="section-title">Work History</h2>
           <div class="job-list">
             <div v-for="(job, index) in workHistory" :key="index" class="job">
-              <a class="link" :href="job.link" target="_blank" rel="noopener noreferrer"><h4>{{ job.link ? "View" : "" }}</h4></a>
-              <h3>{{ job.company }} - {{ job.contract ? "Contract -" : "" }} {{ job.title }}</h3>
+              <a
+                class="link"
+                :href="job.link"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><h4>{{ job.link ? "View" : "" }}</h4></a
+              >
+              <h3>
+                {{ job.company }} - {{ job.contract ? "Contract -" : "" }}
+                {{ job.title }}
+              </h3>
               <h4>{{ job.start }} - {{ job.end }}</h4>
               <p v-for="(paragraph, index) in job.description" :key="index">
                 {{ paragraph }}
@@ -126,21 +135,32 @@
         <div class="volunteer-experience">
           <h2 class="section-title">Volunteer Experience</h2>
           <h4>County Mental Health Advisor</h4>
-          <p>Appointed County Mental Health Advisor for Northumberland Scouts. Involves working closely with both members of the county and external mental health professionals to develop new mental health training which will be used in scouting nationally.</p>
+          <p>
+            Appointed County Mental Health Advisor for Northumberland Scouts.
+            Involves working closely with both members of the county and
+            external mental health professionals to develop new mental health
+            training which will be used in scouting nationally.
+          </p>
           <h4>NGS Exec member</h4>
-          <p>Executive committee for the Newcastle Gang Show. Assisting with the management of the show, including, fundraising, and safeguarding.</p>
+          <p>
+            Executive committee for the Newcastle Gang Show. Assisting with the
+            management of the show, including, fundraising, and safeguarding.
+          </p>
         </div>
         <div class="education">
           <h2 class="section-title">Education</h2>
-          <h4>Level Three Software Development Apprenticeship – Merit – QA Apprenticeships</h4>
+          <h4>
+            Level Three Software Development Apprenticeship – Merit – QA
+            Apprenticeships
+          </h4>
           <h4>A-Levels</h4>
-          <p> - Computer Science</p>
-          <p> - Mathematics</p>
-          <p> - Further Maths</p>
+          <p>- Computer Science</p>
+          <p>- Mathematics</p>
+          <p>- Further Maths</p>
           <h4>GCSE's - 11 - including:</h4>
-          <p> - Computer Science - B</p>
-          <p> - Mathematics - 8 (equivalent to A*)</p>
-          <p> - Further Maths - A</p>
+          <p>- Computer Science - B</p>
+          <p>- Mathematics - 8 (equivalent to A*)</p>
+          <p>- Further Maths - A</p>
           <h4>Trained First Aider</h4>
           <h4>Trained Mental Health First Aider</h4>
         </div>
@@ -218,7 +238,7 @@ export default {
             "Generated ad hoc SQL reports for the directors.",
           ],
         },
-      }
+      },
     };
   },
 };
@@ -307,7 +327,7 @@ export default {
           }
           .link-mobile-container {
             @extend %center-content;
-            margin-top: 50px
+            margin-top: 50px;
           }
         }
       }
@@ -333,7 +353,7 @@ export default {
   }
 }
 @media screen and (min-width: $m) {
-  .link-mobile-container {
+  .link-mobile {
     display: none;
   }
 }
