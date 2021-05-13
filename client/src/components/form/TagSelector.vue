@@ -51,8 +51,14 @@ export default {
 <style lang="scss" scoped>
 .tag-container {
   @extend %center-content-wrap;
-  @media screen and (max-width: $s) {
+  @media screen and (min-width: $xxs) {
     margin-top: 10px;
+    width: 350px;
+  }
+  @media screen and (min-width: $xs) {
+    width: 400px;
+  }
+  @media screen and (min-width: $s) {
     width: 500px;
   }
   @media screen and (min-width: $s) {
