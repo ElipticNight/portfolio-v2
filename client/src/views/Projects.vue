@@ -1,15 +1,21 @@
 <template>
   <PageLayout>
     <template v-slot:page-content>
-      <!-- <div class="tags"></div> -->
-      <Divider v-if="false" />
-      <div v-if="!loading" class="projects">
+      <div class="tags">
+        <TagSelector v-if="!tagsLoading" v-model="tags" />
+      </div>
+      <Divider />
+      <div v-if="!projectsLoading" class="projects">
         <div
-          v-for="project in projects"
+          v-for="project in filteredProjects"
           :key="project.id"
           class="project-wrapper"
         >
-          <Project :data="project" class="project" />
+          <Project
+            v-if="matchesTags(project.tags)"
+            :data="project"
+            class="project"
+          />
         </div>
       </div>
     </template>
@@ -18,6 +24,7 @@
 
 <script>
 import PageLayout from "@/views/PageLayout.vue";
+import TagSelector from "@/components/form/TagSelector.vue";
 import Divider from "@/components/misc/PageDivider.vue";
 import Project from "@/components/projects/Project.vue";
 import axios from "axios";
@@ -26,37 +33,61 @@ export default {
   name: "Projects",
   components: {
     PageLayout,
+    TagSelector,
     Divider,
     Project,
   },
   data() {
     return {
-      loading: true,
+      projectsLoading: true,
+      tagsLoading: true,
       projects: [],
+      tags: [],
     };
+  },
+  computed: {
+    tagList() {
+      return this.tags.filter((obj) => obj.selected).map((obj) => obj.name);
+    },
+    filteredProjects() {
+      return this.projects.filter((project) => this.matchesTags(project.tags));
+    },
   },
   created() {
     axios.get(`${process.env.VUE_APP_API_BASE_URL}/projects`).then(
       (response) => {
         this.projects = response.data;
-        this.loading = false;
+        this.projectsLoading = false;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+    axios.get(`${process.env.VUE_APP_API_BASE_URL}/projects/tags`).then(
+      (response) => {
+        this.tags = response.data;
+        this.tagsLoading = false;
       },
       (error) => {
         console.log(error);
       }
     );
   },
+  methods: {
+    matchesTags(projectTags) {
+      return this.tagList.every((tag) => projectTags.includes(tag));
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-// .projects-container {
-//   @extend %center-content-vertical;
-//   height: 100%;
-//   width: 100%;
-//   margin-bottom: 100px;
+::v-deep .page-content {
+  justify-content: flex-start;
+}
 ::v-deep .divider {
   width: 15vw;
+  margin-top: 0px;
 }
 .projects {
   height: 100%;
@@ -91,5 +122,4 @@ export default {
     grid-template-columns: repeat(4, 1fr);
   }
 }
-// }
 </style>
