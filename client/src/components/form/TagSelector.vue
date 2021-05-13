@@ -52,7 +52,23 @@ export default {
 <style lang="scss" scoped>
 .tag-container {
   @extend %center-content-wrap;
-  width: 900px;
+  @media screen and (max-width: $s) {
+    margin-top: 10px;
+    width: 500px;
+  }
+  @media screen and (min-width: $s) {
+    width: 600px;
+  }
+  @media screen and (min-width: $m) {
+    margin-top: 20px;
+    width: 700px;
+  }
+  @media screen and (min-width: $l) {
+    width: 800px;
+  }
+  @media screen and (min-width: $xl) {
+    width: 900px;
+  }
   .tag {
     @extend %center-content;
     cursor: pointer;
