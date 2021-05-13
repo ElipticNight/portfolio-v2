@@ -1,8 +1,11 @@
 <template>
   <PageLayout>
     <template v-slot:page-content>
-      <!-- <div class="tags"></div> -->
-      <Divider v-if="false" />
+      <div class="tags">
+        <TagSelector v-model="tags" />
+        {{tags}}
+      </div>
+      <Divider />
       <div v-if="!loading" class="projects">
         <div
           v-for="project in projects"
@@ -18,6 +21,7 @@
 
 <script>
 import PageLayout from "@/views/PageLayout.vue";
+import TagSelector from "@/components/form/TagSelector.vue";
 import Divider from "@/components/misc/PageDivider.vue";
 import Project from "@/components/projects/Project.vue";
 import axios from "axios";
@@ -26,6 +30,7 @@ export default {
   name: "Projects",
   components: {
     PageLayout,
+    TagSelector,
     Divider,
     Project,
   },
@@ -33,6 +38,14 @@ export default {
     return {
       loading: true,
       projects: [],
+      tags: [
+        {
+          name: "one",
+        },
+        {
+          name: "two",
+        },
+      ]
     };
   },
   created() {
@@ -50,11 +63,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// .projects-container {
-//   @extend %center-content-vertical;
-//   height: 100%;
-//   width: 100%;
-//   margin-bottom: 100px;
 ::v-deep .divider {
   width: 15vw;
 }
@@ -91,5 +99,4 @@ export default {
     grid-template-columns: repeat(4, 1fr);
   }
 }
-// }
 </style>
