@@ -40,7 +40,7 @@
 <script>
 import ProjectDefault from "@/components/projects/ProjectDefault.vue";
 import ProjectMini from "@/components/projects/ProjectMini.vue";
-import ProjectExpanded from "@/components/home/ProjectExpanded";
+import ProjectExpanded from "@/components/projects/ProjectExpanded";
 
 export default {
   name: "Project",

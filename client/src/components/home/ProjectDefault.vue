@@ -104,8 +104,8 @@ export default {
   width: 550px;
   height: 320px;
   border-radius: 10px;
-  background-color: $rich-black;
-  box-shadow: 0 0 3px 1px $llavender-grey;
+  background-color: $drich-black;
+  box-shadow: 0 0 4px 1px $llavender-grey;
   transition: transform 200ms;
   cursor: pointer;
   color: $lavender-grey;
@@ -179,7 +179,7 @@ export default {
   width: 85vw;
   min-height: 75px;
   border-radius: 10px;
-  background-color: $rich-black;
+  background-color: $drich-black;
   box-shadow: 0 0 3px 1px $lavender-grey;
   transition: transform 200ms;
   color: $lavender-grey;

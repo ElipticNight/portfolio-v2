@@ -27,7 +27,7 @@
 
 <script>
 import ProjectDefault from "@/components/home/ProjectDefault.vue";
-import ProjectExpanded from "@/components/home/ProjectExpanded.vue";
+import ProjectExpanded from "@/components/projects/ProjectExpanded.vue";
 import axios from "axios";
 
 export default {

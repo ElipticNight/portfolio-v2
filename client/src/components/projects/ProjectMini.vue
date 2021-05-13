@@ -68,7 +68,7 @@ export default {
   width: 85vw;
   min-height: 75px;
   border-radius: 10px;
-  background-color: $rich-black;
+  background-color: $drich-black;
   box-shadow: 0 0 3px 1px $lavender-grey;
   transition: transform 200ms;
   color: $lavender-grey;
