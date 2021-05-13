@@ -13,6 +13,24 @@
       <div class="summary">
         {{ summary }}
       </div>
+      <div class="buttons">
+        <a
+          :href="sourceLink"
+          target="_blank"
+          class="source"
+          v-bind:class="{ disabled: this.sourceLink === null }"
+        >
+          View Source
+        </a>
+        <a
+          :href="liveLink"
+          target="_blank"
+          class="live"
+          v-bind:class="{ disabled: this.liveLink === null }"
+        >
+          View Live
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -68,7 +86,7 @@ export default {
   width: 85vw;
   min-height: 75px;
   border-radius: 10px;
-  background-color: $rich-black;
+  background-color: $drich-black;
   box-shadow: 0 0 3px 1px $lavender-grey;
   transition: transform 200ms;
   color: $lavender-grey;
@@ -76,11 +94,6 @@ export default {
   flex-direction: column;
   &.expanded {
     min-height: 300px;
-    &:hover {
-      cursor: pointer;
-      transform: scale(1.01);
-      box-shadow: 0 0 3px 2px $lavender-grey;
-    }
   }
   .row-title {
     height: 75px;
@@ -96,12 +109,10 @@ export default {
     }
   }
   .main {
-    display: flex;
-    flex-direction: column;
+    @extend %center-content-vertical;
     height: calc(100% - 75px);
     width: 100%;
     margin-top: 10px;
-    padding-bottom: 30px;
     .image {
       padding: 0px 0px;
       img {
@@ -114,6 +125,34 @@ export default {
       padding: 0px 10px;
       text-align: center;
       line-height: 20px;
+    }
+    .buttons {
+      height: 50px;
+      width: 100%;
+      margin-top: 30px;
+      border-radius: 0 0 10px 10px;
+      display: flex;
+      .source,
+      .live {
+        @extend %center-content;
+        height: 100%;
+        width: 50%;
+        border-top: 0.5px solid $lavender-grey;
+        color: $lavender-grey;
+        &:hover {
+          background-color: $lrich-black;
+        }
+        &.disabled {
+          cursor: not-allowed;
+          color: $xdlavender-grey;
+          &:hover {
+            background-color: transparent;
+          }
+        }
+      }
+      .source {
+        border-right: 0.5px solid $lavender-grey;
+      }
     }
   }
 }

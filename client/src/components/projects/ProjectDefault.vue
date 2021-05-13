@@ -80,7 +80,7 @@ export default {
   width: 320px;
   height: 400px;
   border-radius: 10px;
-  background-color: $rich-black;
+  background-color: $drich-black;
   box-shadow: 0 0 3px 1px $llavender-grey;
   transition: transform 200ms;
   cursor: pointer;

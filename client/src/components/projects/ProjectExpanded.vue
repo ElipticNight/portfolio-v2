@@ -139,7 +139,7 @@ export default {
     height: 650px;
     width: 1100px;
     border-radius: 10px;
-    background-color: $rich-black;
+    background-color: $drich-black;
     box-shadow: 0 0 3px 1px $lavender-grey;
     .exit {
       height: 5%;
