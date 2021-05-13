@@ -1,10 +1,5 @@
 <template>
   <div>
-    <div class="contact-info">
-      <div>Get in touch at:</div>
-      <div class="email">contact@aidan-byrne.org.uk</div>
-      <div>or fill in the form below</div>
-    </div>
     <div class="form">
       <div class="row-headings">
         <TextInput
@@ -85,15 +80,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.contact-info {
-  margin-bottom: 60px;
-  div {
-    margin-bottom: 5px;
-    &.email {
-      margin-bottom: 20px;
-    }
-  }
-}
 .form {
   @media screen and (max-width: $l) {
     width: 700px;
