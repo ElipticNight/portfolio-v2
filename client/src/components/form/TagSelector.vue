@@ -42,7 +42,6 @@ export default {
       let unselected = this.tags
         .filter((tag) => !tag.selected)
         .sort((a, b) => (a.id > b.id ? 1 : -1));
-      console.log(unselected);
       sortedTags.push(...unselected);
       this.tags = sortedTags;
     },
