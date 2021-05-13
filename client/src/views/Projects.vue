@@ -83,7 +83,7 @@ export default {
 }
 ::v-deep .divider {
   width: 15vw;
-  margin-top: 5px;
+  margin-top: 0px;
 }
 .projects {
   height: 100%;

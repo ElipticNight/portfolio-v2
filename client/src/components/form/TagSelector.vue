@@ -42,21 +42,21 @@ export default {
 <style lang="scss" scoped>
 .tag-container {
   @extend %center-content-wrap;
+  width: 900px;
   .tag {
+    @extend %center-content;
     cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     padding: 8px 15px;
-    border-radius: 5px;
+    border-radius: 50px;
+    margin-bottom: 15px;
     margin-right: 10px;
-    background-color: $xdlavender-grey;
+    border: solid 1px $lavender-grey;
+    background-color: $drich-black;
+    color: $llavender-grey;
     font-size: 14px;
     user-select: none;
     &.selected {
-      background-color: $blue;
-      color: $llavender-grey;
+      background-color: $dgreen;
     }
   }
 }
