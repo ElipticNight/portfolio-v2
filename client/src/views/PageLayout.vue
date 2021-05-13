@@ -16,7 +16,7 @@
 import Header from "@/components/Header.vue";
 
 export default {
-  name:"PageLayout",
+  name: "PageLayout",
   components: {
     Header,
   },
@@ -24,8 +24,8 @@ export default {
     header: {
       type: Boolean,
       default: true,
-    }
-  }
+    },
+  },
 };
 </script>
 

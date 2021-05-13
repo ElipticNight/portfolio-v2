@@ -1,5 +1,5 @@
 <template>
-<PageLayout>
+  <PageLayout>
     <template v-slot:page-content>
       <div class="info">
         <h2>Do you think I may be a good fit for your company?</h2>

@@ -55,41 +55,41 @@ export default {
 //   height: 100%;
 //   width: 100%;
 //   margin-bottom: 100px;
-  ::v-deep .divider {
-    width: 15vw;
+::v-deep .divider {
+  width: 15vw;
+}
+.projects {
+  height: 100%;
+  width: 80vw;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 50px;
+  .project-wrapper {
+    @extend %center-content;
   }
-  .projects {
-    height: 100%;
-    width: 80vw;
-    display: grid;
+  @media screen and (max-width: $s) {
+    width: 90vw;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  @media screen and (min-width: $s) {
+    width: 90vw;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  @media screen and (min-width: $m) {
+    width: 90vw;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (min-width: $l) {
+    width: 90vw;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (min-width: $xl) {
+    width: 90vw;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media screen and (min-width: $xxl) {
     grid-template-columns: repeat(4, 1fr);
-    row-gap: 50px;
-    .project-wrapper {
-      @extend %center-content;
-    }
-    @media screen and (max-width: $s) {
-      width: 90vw;
-      grid-template-columns: repeat(1, 1fr);
-    }
-    @media screen and (min-width: $s) {
-      width: 90vw;
-      grid-template-columns: repeat(1, 1fr);
-    }
-    @media screen and (min-width: $m) {
-      width: 90vw;
-      grid-template-columns: repeat(2, 1fr);
-    }
-    @media screen and (min-width: $l) {
-      width: 90vw;
-      grid-template-columns: repeat(2, 1fr);
-    }
-    @media screen and (min-width: $xl) {
-      width: 90vw;
-      grid-template-columns: repeat(3, 1fr);
-    }
-    @media screen and (min-width: $xxl) {
-      grid-template-columns: repeat(4, 1fr);
-    }
   }
+}
 // }
 </style>

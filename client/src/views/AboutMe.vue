@@ -1,5 +1,5 @@
 <template>
-<PageLayout>
+  <PageLayout>
     <template v-slot:page-content>
       <div class="content">
         <div class="summary">
