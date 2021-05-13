@@ -30,8 +30,9 @@ export default {
 <style lang="scss" scoped>
 .contact {
   @extend %center-content-vertical;
-  height: calc(100vh - 65px);
+  min-height: calc(100vh - 65px);
   width: 100%;
+  margin: 20px 0;
   .info {
     margin-bottom: 50px;
   }
