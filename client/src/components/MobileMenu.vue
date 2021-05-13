@@ -26,6 +26,7 @@ export default {};
 <style lang="scss" scoped>
 .pop-in-menu-container {
   position: absolute;
+  z-index: 999;
   height: 100vh;
   width: 100vw;
   top: 0;
