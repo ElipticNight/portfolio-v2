@@ -245,7 +245,6 @@ export default {
 
 <style lang="scss" scoped>
 .content {
-  margin-top: 40px;
   width: 70vw;
   text-align: left;
   @media screen and (max-width: $xl) {
