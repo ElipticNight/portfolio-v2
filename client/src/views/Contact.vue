@@ -1,23 +1,27 @@
 <template>
   <div>
     <Header />
-    <div class="temp"><h1>Coming Soon !</h1></div>
+    <div class="contact">
+      <ContactForm />
+    </div>
   </div>
 </template>
 
 <script>
 import Header from "@/components/Header.vue";
+import ContactForm from "@/components/contact/ContactForm";
 
 export default {
   name: "Contact",
   components: {
     Header,
+    ContactForm,
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.temp {
+.contact {
   @extend %center-content-vertical;
   height: calc(100vh - 65px);
   width: 100%;
