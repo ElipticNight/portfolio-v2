@@ -1,29 +1,29 @@
 <template>
-  <div>
-    <Header />
-    <div class="hero-banner">
-      <SplashSignature />
-      <a
-        ><i
-          class="fas fa-chevron-down"
-          @click="scrollToSection('main-page')"
-        ></i
-      ></a>
-    </div>
-    <Divider id="main-page" />
-    <AboutMe />
-    <Divider />
-    <ClientProjects />
-    <Divider />
-    <Projects />
-    <Divider />
-    <Contact />
-    <div class="footer"></div>
-  </div>
+  <PageLayout>
+    <template v-slot:page-content>
+      <div class="splash-page">
+        <SplashSignature />
+        <a
+          ><i
+            class="fas fa-chevron-down"
+            @click="scrollToSection('main-page')"
+          ></i
+        ></a>
+      </div>
+      <Divider id="main-page" />
+      <AboutMe />
+      <Divider />
+      <ClientProjects />
+      <Divider />
+      <Projects />
+      <Divider />
+      <Contact />
+    </template>
+  </PageLayout>
 </template>
 
 <script>
-import Header from "@/components/Header.vue";
+import PageLayout from "@/views/PageLayout.vue";
 import SplashSignature from "@/components/home/SplashSignature.vue";
 import Divider from "@/components/misc/PageDivider.vue";
 import Projects from "@/views/sections/Projects.vue";
@@ -34,7 +34,7 @@ import Contact from "@/views/sections/Contact.vue";
 export default {
   name: "Index",
   components: {
-    Header,
+    PageLayout,
     SplashSignature,
     Divider,
     Projects,
@@ -51,7 +51,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.hero-banner {
+.splash-page {
   width: 100%;
   height: calc(100vh - 65px);
   display: flex;

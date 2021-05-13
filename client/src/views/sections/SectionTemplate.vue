@@ -13,7 +13,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "SectionTemplate",
+};
 </script>
 
 <style lang="scss" scoped>
