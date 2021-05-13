@@ -3,7 +3,6 @@
     <template v-slot:page-content>
       <div class="tags">
         <TagSelector v-if="!tagsLoading" v-model="tags" />
-        {{tagList}}
       </div>
       <Divider />
       <div v-if="!projectsLoading" class="projects">
@@ -12,7 +11,7 @@
           :key="project.id"
           class="project-wrapper"
         >
-          <Project :data="project" class="project" />
+          <Project v-if="matchesTags(project.tags)" :data="project" class="project" />
         </div>
       </div>
     </template>
@@ -67,6 +66,11 @@ export default {
       }
     );
   },
+  methods: {
+    matchesTags(projectTags) {
+      return this.tagList.every(tag => projectTags.includes(tag));
+    }
+  }
 };
 </script>
 
