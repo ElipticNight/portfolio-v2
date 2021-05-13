@@ -1,9 +1,8 @@
 <template>
-  <div>
-    <Header />
-    <div class="projects-container">
-      <div class="tags"></div>
-      <Divider />
+  <PageLayout>
+    <template v-slot:page-content>
+      <!-- <div class="tags"></div> -->
+      <Divider v-if="false" />
       <div v-if="!loading" class="projects">
         <div
           v-for="project in projects"
@@ -13,12 +12,12 @@
           <Project :data="project" class="project" />
         </div>
       </div>
-    </div>
-  </div>
+    </template>
+  </PageLayout>
 </template>
 
 <script>
-import Header from "@/components/Header.vue";
+import PageLayout from "@/views/PageLayout.vue";
 import Divider from "@/components/misc/PageDivider.vue";
 import Project from "@/components/projects/Project.vue";
 import axios from "axios";
@@ -26,7 +25,7 @@ import axios from "axios";
 export default {
   name: "Projects",
   components: {
-    Header,
+    PageLayout,
     Divider,
     Project,
   },
@@ -51,11 +50,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.projects-container {
-  @extend %center-content-vertical;
-  height: 100%;
-  width: 100%;
-  margin-bottom: 100px;
+// .projects-container {
+//   @extend %center-content-vertical;
+//   height: 100%;
+//   width: 100%;
+//   margin-bottom: 100px;
   ::v-deep .divider {
     width: 15vw;
   }
@@ -92,5 +91,5 @@ export default {
       grid-template-columns: repeat(4, 1fr);
     }
   }
-}
+// }
 </style>

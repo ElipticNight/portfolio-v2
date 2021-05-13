@@ -1,7 +1,6 @@
 <template>
-  <div>
-    <Header />
-    <div class="contact">
+<PageLayout>
+    <template v-slot:page-content>
       <div class="info">
         <h2>Do you think I may be a good fit for your company?</h2>
         <h2>Do you have a website you want built?</h2>
@@ -10,31 +9,25 @@
         <h4>Or fill in the form below</h4>
       </div>
       <ContactForm />
-    </div>
-  </div>
+    </template>
+  </PageLayout>
 </template>
 
 <script>
-import Header from "@/components/Header.vue";
+import PageLayout from "@/views/PageLayout.vue";
 import ContactForm from "@/components/contact/ContactForm";
 
 export default {
   name: "Contact",
   components: {
-    Header,
+    PageLayout,
     ContactForm,
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.contact {
-  @extend %center-content-vertical;
-  min-height: calc(100vh - 65px);
-  width: 100%;
+.info {
   margin: 20px 0;
-  .info {
-    margin-bottom: 50px;
-  }
 }
 </style>

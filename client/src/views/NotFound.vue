@@ -1,17 +1,18 @@
 <template>
-  <div>
-    <Header />
-    <div class="temp"><h1>Page not found</h1></div>
-  </div>
+  <PageLayout>
+    <template v-slot:page-content>
+      <h1>Page not found</h1>
+    </template>
+  </PageLayout>
 </template>
 
 <script>
-import Header from "@/components/Header.vue";
+import PageLayout from "@/views/PageLayout.vue";
 
 export default {
   name: "NotFound",
   components: {
-    Header,
+    PageLayout,
   },
   mounted() {
     //hit some sort of random fact api to keep it interesting
@@ -21,10 +22,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.temp {
-  @extend %center-content-vertical;
-  height: calc(100vh - 65px);
-  width: 100%;
-}
-</style>
+<style lang="scss" scoped></style>

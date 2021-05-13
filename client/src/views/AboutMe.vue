@@ -1,7 +1,6 @@
 <template>
-  <div>
-    <Header />
-    <div class="about-me-container">
+<PageLayout>
+    <template v-slot:page-content>
       <div class="content">
         <div class="summary">
           <h2 class="section-title">Summary</h2>
@@ -179,18 +178,18 @@
           class="button"
         />
       </div>
-    </div>
-  </div>
+    </template>
+  </PageLayout>
 </template>
 
 <script>
-import Header from "@/components/Header.vue";
+import PageLayout from "@/views/PageLayout.vue";
 import LinkButton from "@/components/misc/LinkButton.vue";
 
 export default {
   name: "AboutMe",
   components: {
-    Header,
+    PageLayout,
     LinkButton,
   },
   data() {
@@ -245,114 +244,107 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.about-me-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 40px;
-  .content {
-    margin-top: 40px;
-    width: 70vw;
-    text-align: left;
-    @media screen and (max-width: $xl) {
-      width: 80vw;
+.content {
+  margin-top: 40px;
+  width: 70vw;
+  text-align: left;
+  @media screen and (max-width: $xl) {
+    width: 80vw;
+  }
+  @media screen and (max-width: $l) {
+    width: 90vw;
+  }
+  > div {
+    margin-bottom: 50px;
+    .section-title {
+      font-size: 28px;
     }
-    @media screen and (max-width: $l) {
-      width: 90vw;
-    }
-    > div {
-      margin-bottom: 50px;
-      .section-title {
-        font-size: 28px;
-      }
-    }
-    h3,
-    h4,
-    p {
-      padding-left: 10px;
-    }
-    h4 {
-      margin-bottom: 15px;
-    }
-    p {
-      margin: 0;
-      padding: 7px 10px;
-    }
-    .skills {
-      .table {
-        display: grid;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-around;
-        .col {
-          @extend %center-content-vertical-top;
-          width: 33%;
-          @media screen and (max-width: $l) {
-            width: 50%;
-          }
-          @media screen and (max-width: $m) {
-            width: 100%;
-          }
-          h3 {
-            margin-bottom: 60px;
-          }
-          .icons {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-flow: row wrap;
-            .wrapper {
-              @extend %center-content;
-              width: 50%;
-              padding: 0 20px 40px;
-              img {
-                max-height: 50px;
-              }
-            }
-          }
+  }
+  h3,
+  h4,
+  p {
+    padding-left: 10px;
+  }
+  h4 {
+    margin-bottom: 15px;
+  }
+  p {
+    margin: 0;
+    padding: 7px 10px;
+  }
+  .skills {
+    .table {
+      display: grid;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+      .col {
+        @extend %center-content-vertical-top;
+        width: 33%;
+        @media screen and (max-width: $l) {
+          width: 50%;
         }
-      }
-    }
-    .work-history {
-      .job-list {
-        .job {
-          margin-bottom: 50px;
-          .title {
-            margin-bottom: 5px;
-          }
-          .date {
-            margin-top: 0;
-          }
-          .link {
-            float: right;
-            h4 {
-              margin: 0;
-              text-decoration: underline;
-              &:hover {
-                transform: scale(1.1);
-              }
-            }
-          }
-          .link-mobile-container {
+        @media screen and (max-width: $m) {
+          width: 100%;
+        }
+        h3 {
+          margin-bottom: 60px;
+        }
+        .icons {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          flex-flow: row wrap;
+          .wrapper {
             @extend %center-content;
-            margin-top: 50px;
+            width: 50%;
+            padding: 0 20px 40px;
+            img {
+              max-height: 50px;
+            }
           }
         }
       }
     }
   }
-  .row-links {
-    @extend %center-content;
-    margin: 40px 0;
-    .button {
-      padding: 0 20px;
-    }
-    @media screen and (max-width: $s) {
-      flex-direction: column;
-      .button {
-        padding: 20px 20px;
+  .work-history {
+    .job-list {
+      .job {
+        margin-bottom: 50px;
+        .title {
+          margin-bottom: 5px;
+        }
+        .date {
+          margin-top: 0;
+        }
+        .link {
+          float: right;
+          h4 {
+            margin: 0;
+            text-decoration: underline;
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
+        }
+        .link-mobile-container {
+          @extend %center-content;
+          margin-top: 30px;
+        }
       }
+    }
+  }
+}
+.row-links {
+  @extend %center-content;
+  margin: 40px 0;
+  .button {
+    padding: 0 20px;
+  }
+  @media screen and (max-width: $s) {
+    flex-direction: column;
+    .button {
+      padding: 20px 20px;
     }
   }
 }

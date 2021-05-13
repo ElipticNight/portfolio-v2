@@ -37,5 +37,6 @@ export default {
   @extend %center-content-vertical;
   min-height: calc(100vh - 85px);
   width: 100%;
+  padding: 20px;
 }
 </style>

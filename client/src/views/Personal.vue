@@ -1,25 +1,20 @@
 <template>
-  <div>
-    <Header />
-    <div class="temp"><h1>Coming Soon !</h1></div>
-  </div>
+  <PageLayout>
+    <template v-slot:page-content>
+      <h1>Coming soon!</h1>
+    </template>
+  </PageLayout>
 </template>
 
 <script>
-import Header from "@/components/Header.vue";
+import PageLayout from "@/views/PageLayout.vue";
 
 export default {
   name: "Personal",
   components: {
-    Header,
+    PageLayout,
   },
 };
 </script>
 
-<style lang="scss" scoped>
-.temp {
-  @extend %center-content-vertical;
-  height: calc(100vh - 65px);
-  width: 100%;
-}
-</style>
+<style lang="scss" scoped></style>
