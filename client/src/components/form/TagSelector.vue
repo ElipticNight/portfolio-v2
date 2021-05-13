@@ -34,7 +34,17 @@ export default {
       } else {
         Vue.set(this.tags[index], "selected", true);
       }
+      this.sortTags();
       this.$emit("input", this.tags);
+    },
+    sortTags() {
+      let sortedTags = this.tags.filter((tag) => tag.selected);
+      let unselected = this.tags
+        .filter((tag) => !tag.selected)
+        .sort((a, b) => (a.id > b.id ? 1 : -1));
+      console.log(unselected);
+      sortedTags.push(...unselected);
+      this.tags = sortedTags;
     },
   },
 };

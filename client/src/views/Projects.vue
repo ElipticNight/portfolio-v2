@@ -11,7 +11,11 @@
           :key="project.id"
           class="project-wrapper"
         >
-          <Project v-if="matchesTags(project.tags)" :data="project" class="project" />
+          <Project
+            v-if="matchesTags(project.tags)"
+            :data="project"
+            class="project"
+          />
         </div>
       </div>
     </template>
@@ -43,11 +47,11 @@ export default {
   },
   computed: {
     tagList() {
-      return this.tags.filter(obj => obj.selected).map(obj => obj.name);
+      return this.tags.filter((obj) => obj.selected).map((obj) => obj.name);
     },
     filteredProjects() {
-      return this.projects.filter(project => this.matchesTags(project.tags));
-    }
+      return this.projects.filter((project) => this.matchesTags(project.tags));
+    },
   },
   created() {
     axios.get(`${process.env.VUE_APP_API_BASE_URL}/projects`).then(
@@ -71,9 +75,9 @@ export default {
   },
   methods: {
     matchesTags(projectTags) {
-      return this.tagList.every(tag => projectTags.includes(tag));
-    }
-  }
+      return this.tagList.every((tag) => projectTags.includes(tag));
+    },
+  },
 };
 </script>
 

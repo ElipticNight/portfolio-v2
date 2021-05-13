@@ -112,7 +112,7 @@ class Database
 	}
 
 	async getAllUniqueProjectTags() {
-		return await this.query("SELECT tags.name AS name FROM tags");
+		return await this.query("SELECT id, name FROM tags");
 	}
 
 	async getAllTechnologies() {
