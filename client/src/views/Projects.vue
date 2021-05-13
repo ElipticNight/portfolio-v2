@@ -7,7 +7,7 @@
       <Divider />
       <div v-if="!projectsLoading" class="projects">
         <div
-          v-for="project in projects"
+          v-for="project in filteredProjects"
           :key="project.id"
           class="project-wrapper"
         >
@@ -44,6 +44,9 @@ export default {
   computed: {
     tagList() {
       return this.tags.filter(obj => obj.selected).map(obj => obj.name);
+    },
+    filteredProjects() {
+      return this.projects.filter(project => this.matchesTags(project.tags));
     }
   },
   created() {
