@@ -27,7 +27,7 @@ class Projects
 
     static async getTags() {
         let db = Database.connect();
-        return Projects.generateList(await db.getAllUniqueProjectTags());
+        return await db.getAllUniqueProjectTags();
     }
 
     static generateList(objArray) {

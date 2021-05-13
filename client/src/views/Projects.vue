@@ -2,11 +2,11 @@
   <PageLayout>
     <template v-slot:page-content>
       <div class="tags">
-        <TagSelector v-model="tags" />
-        {{tags}}
+        <TagSelector v-if="!tagsLoading" v-model="tags" />
+        {{tagList}}
       </div>
       <Divider />
-      <div v-if="!loading" class="projects">
+      <div v-if="!projectsLoading" class="projects">
         <div
           v-for="project in projects"
           :key="project.id"
@@ -36,23 +36,31 @@ export default {
   },
   data() {
     return {
-      loading: true,
+      projectsLoading: true,
+      tagsLoading: true,
       projects: [],
-      tags: [
-        {
-          name: "one",
-        },
-        {
-          name: "two",
-        },
-      ]
+      tags: [],
     };
+  },
+  computed: {
+    tagList() {
+      return this.tags.filter(obj => obj.selected).map(obj => obj.name);
+    }
   },
   created() {
     axios.get(`${process.env.VUE_APP_API_BASE_URL}/projects`).then(
       (response) => {
         this.projects = response.data;
-        this.loading = false;
+        this.projectsLoading = false;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+    axios.get(`${process.env.VUE_APP_API_BASE_URL}/projects/tags`).then(
+      (response) => {
+        this.tags = response.data;
+        this.tagsLoading = false;
       },
       (error) => {
         console.log(error);
@@ -63,8 +71,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+::v-deep .page-content {
+  justify-content: flex-start;
+}
 ::v-deep .divider {
   width: 15vw;
+  margin-top: 5px;
 }
 .projects {
   height: 100%;
