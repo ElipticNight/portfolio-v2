@@ -5,6 +5,7 @@
       <template v-slot:content>
         <div class="projects-container">
           <Project :projectID="3" />
+          <Project :projectID="4" />
         </div>
       </template>
       <template v-slot:links>
