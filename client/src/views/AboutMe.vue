@@ -216,7 +216,7 @@ export default {
           title: "Lead developer",
           start: "February 2021",
           end: "March 2021",
-          link: "https://piko.kytschi.com",
+          link: "https://leedstechmap.aidanbyrne.tech",
           description: [
             "Created a tech map for a conference in Leeds which shows tech companies in the region and information on each of them.",
             "From a design of the map, took the project through all stages of the SLDC including planning, development, database administration and deployment.",
@@ -245,7 +245,6 @@ export default {
 
 <style lang="scss" scoped>
 .content {
-  margin-top: 40px;
   width: 70vw;
   text-align: left;
   @media screen and (max-width: $xl) {

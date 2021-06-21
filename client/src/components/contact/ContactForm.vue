@@ -28,7 +28,7 @@
         />
       </div>
       <div class="row-send">
-        <Button @click.native="sendEmail" text="send" />
+        <Button @click.native="sendEmail" text="Send" />
       </div>
     </div>
   </div>

@@ -26,7 +26,7 @@
         <LinkButton target="AboutMe" text="View resume" />
         <LinkButton
           target="external"
-          link="https://github.com/ElipticNight"
+          link="https://github.com/EllipticElysium"
           text="View GitHub"
         />
         <LinkButton target="Personal" text="Find out more" />
