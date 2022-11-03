@@ -5,9 +5,9 @@
                 <div class="summary">
                     <h2 class="section-title">Summary</h2>
                     <p>
-                        I am a full stack web developer with a passion for developing high qulity, well designed
-                        systems. My main language is currently JavaScript, however I use whichever language/tool is most
-                        suitable for each project
+                        I am a full stack web developer with a passion for developing high-quality, well-designed
+                        systems. My main language is currently JavaScript; however, I use whichever language/tool is
+                        most suitable for each project
                     </p>
                 </div>
                 <div class="skills">
@@ -98,7 +98,7 @@
                     <h4>NGS Exec member</h4>
                     <p>
                         Executive committee member for both Newcastle district and Newcastle Gang Show. Assisting with
-                        the management of the district/show, including, fundraising applications and dealing with
+                        the management of the district/show, including, fundraising applications, and dealing with
                         safeguarding issues.
                     </p>
                 </div>
@@ -155,7 +155,7 @@ export default {
                     link: null,
                     description: [
                         "Lead an external team to develop our E-Learning platform. Spearheaded major reworks of the most critical sections of our system, drastically reducing time spent on maintenance and allowing for future scalability/expansion.",
-                        "Worked with the senior developer to handle architectural decisions and plan the implementation new features. Assisted the team with their own development and ensured good code quality by implementing a code review process.",
+                        "Worked with the senior developer to handle architectural decisions and plan the implementation of new features. Assisted the team with their own development and ensured good code quality by implementing a code review process.",
                     ],
                 },
                 unumbox: {
@@ -204,7 +204,7 @@ export default {
                     end: "Frebruary 2021",
                     link: "https://qamaze.aidanbyrne.tech",
                     description: [
-                        "Level three apprenticeship at Tritility, maintaining a legacy CRM built in procedural PHP, and porting it over to VueJS-Lumen/Laravel microservices, and then to a VueJS-Laravel monolith as the company decided to change direction.",
+                        "Level three apprenticeship at Tritility, maintaining a legacy CRM built in procedural PHP, and porting it over to VueJS-Lumen/Laravel microservices, and then to a VueJS/Laravel monolith as the company decided to change direction.",
                         "As part of my apprenticeship assessments, I developed a maze game built with HTML5 canvas, and a recursive backtracker algorithm to generate a new maze each time.",
                     ],
                 },
