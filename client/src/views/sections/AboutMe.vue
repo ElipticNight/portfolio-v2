@@ -4,19 +4,20 @@
             <template v-slot:title> About Me </template>
             <template v-slot:content>
                 <div class="content">
-                    I am a full-stack web developer Specialising in VueJs, NodeJs, PHP, and Laravel
+                    I am a full-stack web developer Specialising in ReactJs, SCSS, and NodeJs PHP. With additional
+                    experience in VueJs
                     <div class="icon-container">
                         <div class="wrapper">
-                            <img src="@/assets/icons/sass.png" alt="" class="sass" />
+                            <img src="@/assets/icons/react.png" title="ReactJs" alt="ReactJs logo" />
                         </div>
                         <div class="wrapper">
-                            <img src="@/assets/icons/vue.png" alt="" class="vue" />
+                            <img src="@/assets/icons/sass.png" alt="SASS logo" />
                         </div>
                         <div class="wrapper">
-                            <img src="@/assets/icons/node.png" alt="" class="node" />
+                            <img src="@/assets/icons/node.png" alt="NodeJs Logo" />
                         </div>
                         <div class="wrapper">
-                            <img src="@/assets/icons/laravel.png" alt="" class="laravel" />
+                            <img src="@/assets/icons/vue.png" alt="VueJs Logo" />
                         </div>
                     </div>
                 </div>
