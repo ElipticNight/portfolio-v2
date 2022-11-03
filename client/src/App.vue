@@ -15,7 +15,7 @@ body {
     margin: 0;
     padding: 0;
     background-image: url(./assets/backgrounds/dark.jpg);
-    background-repeat: repeat;
+    background-attachment: fixed;
     color: $lavender-grey;
     overflow-x: hidden;
 }

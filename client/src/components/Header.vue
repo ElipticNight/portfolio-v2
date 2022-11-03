@@ -7,7 +7,7 @@
         <div class="navbar">
             <router-link :to="{ name: 'Index' }" class="link"> Home </router-link>
             <router-link :to="{ name: 'Projects' }" class="link"> Projects </router-link>
-            <router-link :to="{ name: 'Blog' }" class="link"> Blog </router-link>
+            <!-- <router-link :to="{ name: 'Blog' }" class="link"> Blog </router-link> -->
             <router-link :to="{ name: 'AboutMe' }" class="link"> About Me </router-link>
             <router-link :to="{ name: 'Contact' }" class="link"> Contact </router-link>
         </div>

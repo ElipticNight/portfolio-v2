@@ -5,8 +5,9 @@
                 <div class="summary">
                     <h2 class="section-title">Summary</h2>
                     <p>
-                        I am a full stack web developer who enjoys working on projects from large CMS monoliths and
-                        distributed microservices to small independent sites.
+                        I am a full stack web developer with a passion for developing high qulity, well designed
+                        systems. My main language is currently JavaScript, however I use whichever language/tool is most
+                        suitable for each project
                     </p>
                 </div>
                 <div class="skills">
@@ -16,16 +17,13 @@
                             <h3>Front-end</h3>
                             <div class="icons">
                                 <div class="wrapper">
-                                    <img src="@/assets/icons/html.png" title="HTML 5" alt="HTML 5 logo" />
-                                </div>
-                                <div class="wrapper">
-                                    <img src="@/assets/icons/sass.png" title="SASS" alt="SASS logo" />
+                                    <img src="@/assets/icons/react.png" title="ReactJs" alt="ReactJs logo" />
                                 </div>
                                 <div class="wrapper">
                                     <img src="@/assets/icons/vue.png" title="VueJs" alt="VueJs logo" />
                                 </div>
                                 <div class="wrapper">
-                                    <img src="@/assets/icons/jquery.png" title="Jquery" alt="Jquery logo" />
+                                    <img src="@/assets/icons/sass.png" title="SASS" alt="SASS logo" />
                                 </div>
                             </div>
                         </div>
@@ -36,7 +34,7 @@
                                     <img src="@/assets/icons/node.png" title="NodeJs" alt="NodeJs logo" />
                                 </div>
                                 <div class="wrapper">
-                                    <img src="@/assets/icons/laravel.png" title="Laravel" alt="Laravel logo" />
+                                    <img src="@/assets/icons/mongodb.png" title="MongoDb" alt="MongoDb logo" />
                                 </div>
                                 <div class="wrapper">
                                     <img src="@/assets/icons/mysql.png" title="MySQL" alt="MySQL logo" />
@@ -47,14 +45,13 @@
                             <h3>Tools</h3>
                             <div class="icons">
                                 <div class="wrapper">
+                                    <img src="@/assets/icons/typescript.png" title="Typescript" alt="Typescript logo" />
+                                </div>
+                                <div class="wrapper">
                                     <img src="@/assets/icons/git.png" title="Git bash" alt="Git bash logo" />
                                 </div>
                                 <div class="wrapper">
-                                    <img
-                                        src="@/assets/icons/linux.png"
-                                        title="Linux server management"
-                                        alt="Linux server management logo"
-                                    />
+                                    <img src="@/assets/icons/azure.png" title="Azure" alt="Azure logo" />
                                 </div>
                                 <div class="wrapper">
                                     <img src="@/assets/icons/nginx.png" title="Nginx" alt="Nginx logo" />
@@ -94,29 +91,26 @@
                     <h2 class="section-title">Volunteer Experience</h2>
                     <h4>County Mental Health Advisor</h4>
                     <p>
-                        Appointed County Mental Health Advisor for Northumberland Scouts. Involves working closely with
-                        both members of the county and external mental health professionals to develop new mental health
-                        training which will be used in scouting nationally.
+                        County Mental Health Advisor for Northumberland Scouts. Involves working closely with both
+                        members of the county and external mental health professionals to develop new mental health
+                        training, raise awareness, and develop resources.
                     </p>
                     <h4>NGS Exec member</h4>
                     <p>
-                        Executive committee for the Newcastle Gang Show. Assisting with the management of the show,
-                        including, fundraising, and safeguarding.
+                        Executive committee member for both Newcastle district and Newcastle Gang Show. Assisting with
+                        the management of the district/show, including, fundraising applications and dealing with
+                        safeguarding issues.
                     </p>
                 </div>
-                <div class="education">
-                    <h2 class="section-title">Education</h2>
-                    <h4>Level Three Software Development Apprenticeship – Merit – QA Apprenticeships</h4>
-                    <h4>A-Levels</h4>
-                    <p>- Computer Science</p>
-                    <p>- Mathematics</p>
-                    <p>- Further Maths</p>
-                    <h4>GCSE's - 11 - including:</h4>
-                    <p>- Computer Science - B</p>
-                    <p>- Mathematics - 8 (equivalent to A*)</p>
-                    <p>- Further Maths - A</p>
-                    <h4>Trained First Aider</h4>
-                    <h4>Trained Mental Health First Aider</h4>
+                <div class="qualifications">
+                    <h2 class="section-title">Qualifications</h2>
+                    <p>- Level Three Software Development Apprenticeship – Merit – QA Apprenticeships</p>
+                    <p>- A-Levels: Computer Science, Mathematics, Further Maths</p>
+                    <p>
+                        - 11 GCSE’s - including: Computer Science (B), Mathematics (8 – equivalent to A*), Further Maths
+                        (A)
+                    </p>
+                    <p>- Trained First Aider, Trained Mental Health First Aider, Trained archery instructor</p>
                 </div>
             </div>
             <div class="row-links">
@@ -152,17 +146,41 @@ export default {
             expanded: false,
             BaseUrl: process.env.VUE_APP_API_BASE_URL,
             workHistory: {
+                unumboxLead: {
+                    company: "Unumbox",
+                    contract: false,
+                    title: "Lead developer",
+                    start: "March 2022",
+                    end: "Current",
+                    link: null,
+                    description: [
+                        "Lead an external team to develop our E-Learning platform. Spearheaded major reworks of the most critical sections of our system, drastically reducing time spent on maintenance and allowing for future scalability/expansion.",
+                        "Worked with the senior developer to handle architectural decisions and plan the implementation new features. Assisted the team with their own development and ensured good code quality by implementing a code review process.",
+                    ],
+                },
+                unumbox: {
+                    company: "Unumbox",
+                    contract: false,
+                    title: "Software developer",
+                    start: "June 2021",
+                    end: "March 2022",
+                    link: null,
+                    description: [
+                        "Worked with a small team of mid/junior level developers working on multiple projects in ReactJs and NodeJs, using MongoDb and Azure.",
+                        "Maintained and expanded a custom E-learning platform, improved code quality by converting to TypeScript, setting clear standards and refactoring some of the old sections of the system.",
+                        "Improved development practices by implementing CICD with GitHub Actions and Azure and setting up a Kanban board to manage our tickets.",
+                    ],
+                },
                 kytschi: {
                     company: "Kytschi",
                     contract: true,
                     title: "Software developer",
                     start: "March 2021",
-                    end: "April 2021",
+                    end: "June 2021",
                     link: null,
                     description: [
                         "Worked in a small team with a senior developer & designer build a large-scale CRM with a VueJS front end and a PHP Lumen microservice back end.",
-                        "Created the user interface from a set of design boards, and interfaced with the API via AXIOS requests.",
-                        "Contributed towards architectural decisions, including the decision to use a WebSocket bastion server acting as a secure single point of access for our microservice’s APIs.",
+                        "Created the user interface from a set of design boards, and interfaced with the API via AXIOS requests, and contributed towards architectural decisions.",
                     ],
                 },
                 effectivePublishing: {
@@ -171,9 +189,9 @@ export default {
                     title: "Lead developer",
                     start: "February 2021",
                     end: "March 2021",
-                    link: "https://leedstechmap.aidanbyrne.tech",
+                    link: "https://leedstechmap.com",
                     description: [
-                        "Created a tech map for a conference in Leeds which shows tech companies in the region and information on each of them.",
+                        "Created a tech map for a conference in Leeds which showing tech companies in the region and information on each of them.",
                         "From a design of the map, took the project through all stages of the SLDC including planning, development, database administration and deployment.",
                         "Developed with VueJs and SVG animations on the front end, and a NodeJs Express server integrating with a MySQL database on the backend.",
                     ],
@@ -184,12 +202,10 @@ export default {
                     title: "Apprentice software developer",
                     start: "December 2019",
                     end: "Frebruary 2021",
-                    link: null,
+                    link: "https://qamaze.aidanbyrne.tech",
                     description: [
                         "Level three apprenticeship at Tritility, maintaining a legacy CRM built in procedural PHP, and porting it over to VueJS-Lumen/Laravel microservices, and then to a VueJS-Laravel monolith as the company decided to change direction.",
-                        "Liaised with the sales team to identify and fix reported bugs in our legacy system.",
-                        "Worked with the senior developers to add functionality and automated tests to the new system.",
-                        "Generated ad hoc SQL reports for the directors.",
+                        "As part of my apprenticeship assessments, I developed a maze game built with HTML5 canvas, and a recursive backtracker algorithm to generate a new maze each time.",
                     ],
                 },
             },
