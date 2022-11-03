@@ -1,7 +1,7 @@
 <template>
-    <div class="btn" type="button" v-bind:class="{ small: small }">
+    <button class="button" type="button" v-bind:class="{ small: small }">
         {{ text }}
-    </div>
+    </button>
 </template>
 
 <script>
@@ -21,78 +21,55 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.btn {
-    @extend %center-content;
-    width: 260px;
+.button {
+    background-color: transparent;
+    color: $white;
     height: 50px;
-    border: none;
-    outline: none;
-    color: $llavender-grey;
-    font-size: 15px;
-    background-image: url(../../assets/backgrounds/dark.jpg);
-    cursor: pointer;
+    text-align: center;
+    width: 250px;
+    transition: all 0.5s;
     position: relative;
-    z-index: 0;
-    border-radius: 25px;
-    &.small {
-        width: 150px;
-        height: 40px;
-    }
-    &:before {
-        content: "";
-        background: linear-gradient(
-            45deg,
-            #ff0000,
-            #ff7300,
-            #fffb00,
-            #48ff00,
-            #00ffd5,
-            #002bff,
-            #7a00ff,
-            #ff00c8,
-            #ff0000
-        );
-        position: absolute;
-        top: -2px;
-        left: -2px;
-        background-size: 400%;
-        z-index: -1;
-        filter: blur(5px);
-        width: calc(100% + 4px);
-        height: calc(100% + 4px);
-        animation: glowing 30s linear infinite;
-        opacity: 0;
-        transition: opacity 0.5s ease-in-out;
-        border-radius: 25px;
-        @media screen and (max-width: $m) {
+    line-height: 50px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    &:hover {
+        cursor: pointer;
+        &::before {
+            opacity: 0;
+            transform: scale(0.5, 0.5);
+        }
+        &::after {
             opacity: 1;
+            transform: scale(1, 1);
         }
     }
-    &:hover:before {
-        opacity: 1;
-    }
-    &:after {
-        z-index: -1;
+    &::before {
         content: "";
         position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
-        background-image: url(../../assets/backgrounds/dark.jpg);
-        left: 0;
+        z-index: 1;
+        color: rgb(205, 205, 205);
+        border: 1px solid $white;
+        transition: all 0.3s;
+        border-radius: 10px;
+    }
+    &::after {
+        content: "";
+        position: absolute;
         top: 0;
-        border-radius: 25px;
-    }
-}
-
-@keyframes glowing {
-    0% {
-        background-position: 0 0;
-    }
-    50% {
-        background-position: 400% 0;
-    }
-    100% {
-        background-position: 0 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        opacity: 0;
+        transition: all 0.3s;
+        background-color: $faded-white;
+        transform: scale(1.2, 1.2);
+        border-radius: 10px;
     }
 }
 </style>
