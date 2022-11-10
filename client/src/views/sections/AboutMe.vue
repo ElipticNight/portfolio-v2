@@ -4,8 +4,8 @@
             <template v-slot:title> About Me </template>
             <template v-slot:content>
                 <div class="content">
-                    I am a full-stack web developer Specialising in ReactJs, SCSS, and NodeJs PHP. With additional
-                    experience in VueJs
+                    I am a full-stack web developer Specialising in ReactJs, SCSS, and NodeJs. With additional
+                    experience in VueJs and Laravel
                     <div class="icon-container">
                         <div class="wrapper">
                             <img src="@/assets/icons/react.png" title="ReactJs" alt="ReactJs logo" />
