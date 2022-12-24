@@ -26,7 +26,7 @@ export default {};
     top: 0;
     left: 0;
     background-image: url(../assets/backgrounds/dark.jpg);
-    background-repeat: repeat;
+    background-attachment: fixed;
     .exit {
         height: 50px;
         display: flex;

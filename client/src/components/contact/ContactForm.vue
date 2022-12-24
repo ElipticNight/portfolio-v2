@@ -8,6 +8,7 @@
                     validation="text"
                     class="name"
                     v-bind:isValid.sync="isValid.name"
+                    name="name"
                 />
                 <TextInput
                     v-model="contactForm.email"
@@ -15,6 +16,7 @@
                     validation="email"
                     class="email"
                     v-bind:isValid.sync="isValid.email"
+                    name="email"
                 />
             </div>
             <div class="row-message">
@@ -25,6 +27,7 @@
                     validation="text"
                     class="message"
                     v-bind:isValid.sync="isValid.message"
+                    name="message"
                 />
             </div>
             <div class="row-send">

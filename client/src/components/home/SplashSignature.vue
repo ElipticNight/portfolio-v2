@@ -198,7 +198,7 @@ export default {
     }
     #subtitle {
         margin-top: -35px;
-        width: 30vw;
+        width: 35vw;
         .letter {
             stroke: $llavender-grey;
             stroke-width: 0.1;

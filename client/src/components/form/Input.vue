@@ -23,7 +23,7 @@
             :name="name"
             v-bind:class="{ invalid: !isValid }"
         ></textarea>
-        <label :class="content ? 'input-with-value' : ''">
+        <label :class="content ? 'input-with-value' : ''" :for="name">
             <span>{{ label }}</span>
         </label>
     </div>
@@ -145,13 +145,11 @@ export default {
             color: $red;
         }
     }
-
     .icon {
         position: relative;
         margin-top: 12px;
         right: 30px;
     }
-
     input,
     textarea {
         display: flex;
@@ -169,14 +167,12 @@ export default {
             border: solid 2px $red;
         }
     }
-
     textarea {
         resize: none;
         height: 150px !important;
         padding-top: 10px;
         font-size: 15px;
     }
-
     label {
         width: auto;
         display: flex;
@@ -194,7 +190,6 @@ export default {
         transform: translateY(20px);
         pointer-events: none;
         font-size: 15px;
-
         span {
             background: none;
             padding: 0 5px;

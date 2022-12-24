@@ -1,14 +1,16 @@
 <template>
     <div class="container">
-        <div class="title">
-            <slot name="title"></slot>
-        </div>
-        <div class="content">
+        <header>
+            <h1 class="title">
+                <slot name="title"></slot>
+            </h1>
+        </header>
+        <main class="content">
             <slot name="content"></slot>
-        </div>
-        <div class="link-container">
+        </main>
+        <footer class="link-container">
             <slot name="links"></slot>
-        </div>
+        </footer>
     </div>
 </template>
 
@@ -23,7 +25,7 @@ export default {
     @extend %center-content-vertical;
     margin-bottom: 20px;
     .title {
-        margin-top: 0px;
+        margin: 0px;
         font-size: 36px;
         color: $llavender-grey;
     }

@@ -25,7 +25,7 @@
             <template v-slot:links>
                 <LinkButton target="AboutMe" text="View resume" />
                 <LinkButton target="external" link="https://github.com/EllipticElysium" text="View GitHub" />
-                <LinkButton target="Personal" text="Find out more" />
+                <!-- <LinkButton target="Personal" text="Find out more" /> -->
             </template>
         </SectionTemplate>
     </div>
